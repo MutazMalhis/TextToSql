@@ -1,0 +1,4 @@
+# Create the directory if it doesn't exist and set proper permissions
+sudo mkdir -p /ephemeral/huggingface_cache
+sudo chown -R ubuntu:ubuntu /ephemeral/huggingface_cache
+sudo chmod -R 755 /ephemeral/huggingface_cache

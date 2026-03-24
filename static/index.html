@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rennix AI - Text-to-SQL Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 15px;
+            top: 15px;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            opacity: 0.6;
+        }
+
+        .sidebar-toggle:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        .sidebar.open + .sidebar-toggle {
+            left: 365px;
+            opacity: 0.8;
+        }
+
+        .sidebar.open + .sidebar-toggle:hover {
+            opacity: 1;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .new-chat-btn {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .new-chat-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chat-history-item {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+        }
+
+        .chat-history-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-preview {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .chat-time {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .main-container {
+            transition: margin-left 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .sidebar.open ~ .main-container {
+            margin-left: 350px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: #000;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-tagline {
+            font-size: 14px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .input-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: inherit;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .textarea::placeholder {
+            color: #666;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .button {
+            flex: 1;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .results-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .copy-button {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #ccc;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .code {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ffffff;
+            white-space: pre-wrap;
+        }
+
+        .tables-section {
+            margin-top: 20px;
+        }
+
+        .tables-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .tables-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .table-tag {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .explanation-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .explanation-text {
+            color: #ffffff;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 59, 48, 0.9);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 10000;
+            box-shadow: 0 8px 32px rgba(255, 59, 48, 0.4);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar.open ~ .main-container {
+                margin-left: 0;
+            }
+
+            .sidebar.open + .sidebar-toggle {
+                left: calc(100% - 50px);
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .brand-name {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">R</div>
+            <div class="sidebar-title">Rennix AI</div>
+        </div>
+
+        <button class="new-chat-btn" id="new-chat-btn">
+            <span>➕</span>
+            <span>New Chat</span>
+        </button>
+
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Recent Chats</div>
+            <div id="chat-history-container"></div>
+        </div>
+    </div>
+
+    <div class="sidebar-toggle" id="sidebar-toggle">☰</div>
+
+    <div class="main-container">
+        <div class="container">
+            <header class="header">
+                <div class="logo-section">
+                    <div class="logo">R</div>
+                    <div class="brand-text">
+                        <div class="brand-name">Rennix AI</div>
+                        <div class="brand-tagline">Text to SQL Converter</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="input-section">
+                <label class="label" for="query-input">
+                    What data would you like to query?
+                </label>
+                <textarea 
+                    id="query-input" 
+                    class="textarea"
+                    placeholder="e.g., Show me all customers who made purchases in the last 30 days"
+                    rows="4"
+                ></textarea>
+                <div class="button-group">
+                    <button id="generate-btn" class="button">
+                        ✨ Generate SQL
+                    </button>
+                    <button id="clear-btn" class="button">
+                        🗑️ Clear History
+                    </button>
+                </div>
+            </div>
+
+            <div id="results-section" class="results-section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">Generated SQL Query</h2>
+                    <button id="copy-sql-btn" class="copy-button">📋 Copy</button>
+                </div>
+                
+                <div class="code-block">
+                    <pre id="sql-code" class="code"></pre>
+                </div>
+
+                <div class="tables-section">
+                    <div class="tables-label">Tables Used:</div>
+                    <div id="tables-list" class="tables-container"></div>
+                </div>
+
+                <div class="button-group">
+                    <button id="explain-btn" class="button" style="display: none;">
+                        💡 Explain Query
+                    </button>
+                </div>
+            </div>
+
+            <div id="explanation-result" class="explanation-section hidden">
+                <h2 class="section-title" style="margin-bottom: 20px;">Query Explanation</h2>
+                <div id="explanation-text" class="explanation-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // =====================================================================
+        // CONFIGURATION: MEMORY SETTINGS
+        // =====================================================================
+        // Set to true: Memory persists across the whole conversation (same conversation_id)
+        // Set to false: Each query gets a new conversation_id (no memory between queries)
+        const MEMORY_PER_CONVERSATION = false;
+        // =====================================================================
+
+        const API_BASE_URL = 'http://69.19.136.9:8000';
+        const currentLanguage = 'ar';
+        let currentConversationId = null;
+        let currentSqlQuery = null;
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function showLoading(show) {
+            const overlay = document.getElementById('loading-overlay');
+            if (show) {
+                overlay.classList.add('active');
+            } else {
+                overlay.classList.remove('active');
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            document.body.appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+
+async function copyToClipboard() {
+    const sqlCode = document.getElementById('sql-code').textContent;
+    const copyBtn = document.getElementById('copy-sql-btn');
+    
+    if (!sqlCode) {
+        showError('No SQL code to copy');
+        return;
+    }
+    
+    const textarea = document.createElement('textarea');
+    textarea.value = sqlCode;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-999999px';
+    textarea.style.top = '-999999px';
+    document.body.appendChild(textarea);
+    
+    try {
+        textarea.focus();
+        textarea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showCopySuccess(copyBtn);
+            } else {
+                showError('Failed to copy to clipboard');
+            }
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+            showError('Failed to copy to clipboard');
+        }
+    } finally {
+        document.body.removeChild(textarea);
+    }
+}
+
+function showCopySuccess(copyBtn) {
+    const originalText = copyBtn.textContent;
+    copyBtn.textContent = 'Copied!';
+    copyBtn.style.background = 'rgba(52, 199, 89, 0.2)';
+    copyBtn.style.borderColor = 'rgba(52, 199, 89, 0.4)';
+    copyBtn.style.color = '#34c759';
+    
+    setTimeout(() => {
+        copyBtn.textContent = originalText;
+        copyBtn.style.background = 'rgba(255, 255, 255, 0.1)';
+        copyBtn.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+        copyBtn.style.color = '#ccc';
+    }, 2000);
+}
+
+        function generateConversationId() {
+            return 'conv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        async function generateSQL() {
+            const input = document.getElementById('query-input').value.trim();
+            if (!input) {
+                showError('Please enter a query');
+                return;
+            }
+
+            // Memory logic: If MEMORY_PER_CONVERSATION is false, generate new ID for each query
+            if (!MEMORY_PER_CONVERSATION) {
+                currentConversationId = generateConversationId();
+                console.log('Memory OFF: Generated new conversation ID:', currentConversationId);
+            } else if (!currentConversationId) {
+                // Memory ON: Only generate ID if it doesn't exist
+                currentConversationId = generateConversationId();
+                console.log('Memory ON: Using conversation ID:', currentConversationId);
+            }
+
+            showLoading(true);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: input,
+                        language: currentLanguage,
+                        conversation_id: currentConversationId
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || `HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                currentSqlQuery = data.sql_query;
+                
+                document.getElementById('sql-code').textContent = data.sql_query;
+                
+                const tablesContainer = document.getElementById('tables-list');
+                tablesContainer.innerHTML = '';
+                data.tables_used.forEach(table => {
+                    const tableTag = document.createElement('span');
+                    tableTag.className = 'table-tag';
+                    tableTag.textContent = table;
+                    tablesContainer.appendChild(tableTag);
+                });
+                
+                document.getElementById('results-section').classList.remove('hidden');
+                document.getElementById('explain-btn').style.display = 'inline-block';
+                
+                addToChatHistory(input, data.sql_query);
+                
+            } catch (error) {
+                console.error('Error generating SQL:', error);
+                showError(`Failed to generate SQL: ${error.message}`);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function explainQuery() {
+            if (!currentSqlQuery) {
+                showError('No SQL query to explain');
+                return;
+            }
+
+            // Memory logic: If MEMORY_PER_CONVERSATION is false, generate new ID for explain request
+            // This ensures explanation doesn't carry over context from previous queries
+            let explainConversationId = currentConversationId;
+            if (!MEMORY_PER_CONVERSATION) {
+                explainConversationId = generateConversationId();
+                console.log('Memory OFF: Generated new conversation ID for explanation:', explainConversationId);
+            }
+
+            showLoading(true);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/explain`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        sql_query: currentSqlQuery,
+                        language: currentLanguage,
+                        conversation_id: explainConversationId
+                    })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.detail || `HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                document.getElementById('explanation-text').textContent = data.explanation;
+                document.getElementById('explanation-result').classList.remove('hidden');
+                
+            } catch (error) {
+                console.error('Error explaining query:', error);
+                showError(`Failed to explain query: ${error.message}`);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function addToChatHistory(query, sqlResult) {
+            const historyContainer = document.getElementById('chat-history-container');
+            
+            const historyItem = document.createElement('div');
+            historyItem.className = 'chat-history-item';
+            historyItem.onclick = () => loadChatHistory(query, sqlResult);
+            
+            const preview = document.createElement('div');
+            preview.className = 'chat-preview';
+            preview.textContent = query.length > 50 ? query.substring(0, 50) + '...' : query;
+            
+            const time = document.createElement('div');
+            time.className = 'chat-time';
+            time.textContent = new Date().toLocaleTimeString();
+            
+            historyItem.appendChild(preview);
+            historyItem.appendChild(time);
+            
+            historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+            
+            while (historyContainer.children.length > 10) {
+                historyContainer.removeChild(historyContainer.lastChild);
+            }
+        }
+
+        function loadChatHistory(query, sqlResult) {
+            document.getElementById('query-input').value = query;
+            document.getElementById('sql-code').textContent = sqlResult;
+            document.getElementById('results-section').classList.remove('hidden');
+            currentSqlQuery = sqlResult;
+            document.getElementById('explain-btn').style.display = 'inline-block';
+        }
+
+        async function clearHistory() {
+            if (!currentConversationId) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/conversation/${currentConversationId}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    document.getElementById('chat-history-container').innerHTML = '';
+                    document.getElementById('query-input').value = '';
+                    document.getElementById('results-section').classList.add('hidden');
+                    document.getElementById('explanation-result').classList.add('hidden');
+                    document.getElementById('explain-btn').style.display = 'none';
+                    
+                    currentConversationId = null;
+                    currentSqlQuery = null;
+                    
+                    console.log('History cleared successfully');
+                } else {
+                    throw new Error('Failed to clear history');
+                }
+            } catch (error) {
+                console.error('Error clearing history:', error);
+                showError('Failed to clear history');
+            }
+        }
+
+        function newChat() {
+            currentConversationId = null;
+            currentSqlQuery = null;
+            
+            document.getElementById('query-input').value = '';
+            document.getElementById('results-section').classList.add('hidden');
+            document.getElementById('explanation-result').classList.add('hidden');
+            document.getElementById('explain-btn').style.display = 'none';
+            
+            console.log('Started new chat');
+        }
+
+        async function healthCheck() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/health`);
+                const data = await response.json();
+                console.log('API Health:', data);
+                return data.status === 'healthy';
+            } catch (error) {
+                console.error('API health check failed:', error);
+                return false;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            createParticles();
+            
+            document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
+            document.getElementById('new-chat-btn').addEventListener('click', newChat);
+            document.getElementById('generate-btn').addEventListener('click', generateSQL);
+            document.getElementById('explain-btn').addEventListener('click', explainQuery);
+            document.getElementById('clear-btn').addEventListener('click', clearHistory);
+            document.getElementById('copy-sql-btn').addEventListener('click', copyToClipboard);
+            
+            document.getElementById('query-input').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                    e.preventDefault();
+                    generateSQL();
+                }
+            });
+            
+            const isHealthy = await healthCheck();
+            if (!isHealthy) {
+                showError('API connection failed. Please check if the server is running.');
+            }
+            
+            // Log memory setting on startup
+            console.log('Rennix AI Text-to-SQL Converter loaded!');
+            console.log('Memory mode:', MEMORY_PER_CONVERSATION ? 'WHOLE CONVERSATION' : 'PER QUERY');
+        });
+    </script>
+</body>
+</html>

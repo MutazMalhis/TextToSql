@@ -1,0 +1,1261 @@
+  {
+    "name": "IAS_BILL_DTL",
+    "description": "Sales Invoices Details - فواتير المبيعات تفصيلي",
+    "columns": [
+      {
+        "name": "BILL_DOC_TYPE",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "النوع الفرعي للوثيقة - The sub -type of the document",
+        "default": null
+      },
+      {
+        "name": "BILL_NO",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "رقم الفاتورة - The bill number",
+        "default": null
+      },
+      {
+        "name": "BILL_SER",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "تسلسل الفواتير - Serial invoices",
+        "default": null
+      },
+      {
+        "name": "I_CODE",
+        "type": "VARCHAR2",
+        "nullable": false,
+        "description": "رقم الصنف-Item No.",
+        "default": null
+      },
+      {
+        "name": "I_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية - Quantity",
+        "default": "0"
+      },
+      {
+        "name": "ITM_UNT",
+        "type": "VARCHAR2",
+        "nullable": false,
+        "description": "الوحدة - Unity",
+        "default": null
+      },
+      {
+        "name": "P_SIZE",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "العبوه - Playback",
+        "default": null
+      },
+      {
+        "name": "P_QTY",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "الكمية بالاب - Quantity",
+        "default": null
+      },
+      {
+        "name": "I_PRICE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "السعر - the price",
+        "default": "0"
+      },
+      {
+        "name": "STK_COST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "التكلفة - Cost",
+        "default": "0"
+      },
+      {
+        "name": "OUT_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية - Quantity",
+        "default": "0"
+      },
+      {
+        "name": "OUT_FREE_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكميات المجانيه - Free quantities",
+        "default": "0"
+      },
+      {
+        "name": "OUT_QTY_YR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية المنصرفة من سنوات سابقة-The Quantity spent from previous years",
+        "default": "0"
+      },
+      {
+        "name": "OUT_FREE_QTY_YR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية المجانية المنصرفة من سنوات سابقة-The Free Quantity spent from previous years",
+        "default": "0"
+      },
+      {
+        "name": "W_CODE",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "المخزن - Warehouse",
+        "default": null
+      },
+      {
+        "name": "CC_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "المركز - Center",
+        "default": null
+      },
+      {
+        "name": "PJ_NO",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "المشروع - Project",
+        "default": null
+      },
+      {
+        "name": "ACTV_NO",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "النشاط - Activity",
+        "default": null
+      },
+      {
+        "name": "EXPIRE_DATE",
+        "type": "DATE",
+        "nullable": false,
+        "description": "تاريخ الإنتهاء - The end date",
+        "default": null
+      },
+      {
+        "name": "BATCH_NO",
+        "type": "VARCHAR2",
+        "nullable": false,
+        "description": "رقم الدفعة - Batch number",
+        "default": "0"
+      },
+      {
+        "name": "FREE_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "ك.المجانيه - K",
+        "default": "0"
+      },
+      {
+        "name": "FREE_TYP",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نوع الكمية المجانية -Free quantity type",
+        "default": "1"
+      },
+      {
+        "name": "ITM_FREE_QTY_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الكمية المجانية -Free quantity amount",
+        "default": "0"
+      },
+      {
+        "name": "DIS_PER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم% - opponent%",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم - opponent",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_MST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم - opponent",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم - opponent",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AFTR_VAT_MST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "This column is not used",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم - opponent",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL2_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "خصم2 - Discount 2",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL3_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "خصم3 - Discount 3",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_MST_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم على مستوى الفاتورة شامل للضريبة -Discount on invoice level is tax inclusive.",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_DIS_DTL_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة الخصم على مستوى الصنف 1 -Tax Amount Of The Discount Of Item 1",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_DIS_DTL2_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة الخصم على مستوى الصنف 2 -Tax Amount Of The Discount Of Item 2",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_DIS_DTL3_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة الخصم على مستوى الصنف 3 -Tax Amount Of The Discount Of Item 3",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_AFTR_DIS",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الضريبة بعد الخصم - The tax amount after Discount",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_BFR_DIS",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الضريبة قبل الخصم - Tax amount before Discount",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_DIS_MST_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة الخصم على مستوى الفاتورة -Tax Amount Of The Discount By Invoice",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_AFTR_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم بعد الضريبة - Discount after tax",
+        "default": "0"
+      },
+      {
+        "name": "DIS_PER_QT_PRM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نسبة خصم العروض الترويجية -Promotional discount percentage",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL_QT_PRM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم العروض الترويجية - Promotional Discount Amount",
+        "default": "0"
+      },
+      {
+        "name": "DIS_AMT_DTL_QT_PRM_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم العروض الترويجية شامل للضريبة-Promotional discount amount includes tax",
+        "default": "0"
+      },
+      {
+        "name": "OTHR_AMT_DISC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم الاعباء-Discount Amount For Charges",
+        "default": "0"
+      },
+      {
+        "name": "OTHR_AMT_DISC_ITM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم الاعباء على مستوى الصنف-Discount Amount For Charges By Item",
+        "default": "0"
+      },
+      {
+        "name": "VAT_PER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نسبة الضريبة - Tax rate",
+        "default": null
+      },
+      {
+        "name": "VAT_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "ضريبة - tax",
+        "default": "0"
+      },
+      {
+        "name": "OTHR_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الأعباء و الضريبة - Burdens and tax",
+        "default": "0"
+      },
+      {
+        "name": "OTHR_AMT_ITM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الأعباء - Burdens",
+        "default": "0"
+      },
+      {
+        "name": "I_PRICE_LEV_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "سعر مستوى التسعيرة-Pricing level price",
+        "default": null
+      },
+      {
+        "name": "USE_SERIALNO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "S/N",
+        "default": "0"
+      },
+      {
+        "name": "SERVICE_ITEM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "صنف خدمي - Service class",
+        "default": "0"
+      },
+      {
+        "name": "RCRD_NO",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "م - M",
+        "default": null
+      },
+      {
+        "name": "DOC_SEQUENCE",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "الحركة - Movement",
+        "default": null
+      },
+      {
+        "name": "ITEM_DESC",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "البيان - Statement",
+        "default": null
+      },
+      {
+        "name": "SI_TYPE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نوع الفاتورة -Sales Invoice Type",
+        "default": null
+      },
+      {
+        "name": "BARCODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رقم الباركود - Barcode number",
+        "default": null
+      },
+      {
+        "name": "SO_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم طلب العميل - Customer request number",
+        "default": null
+      },
+      {
+        "name": "SO_SER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "التسلسل - Sequence",
+        "default": null
+      },
+      {
+        "name": "DOC_TYPE_REF",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "النوع الفرعي لمرجع الوثيقة - The sub -type of the document reference",
+        "default": null
+      },
+      {
+        "name": "DOC_NO_REF",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم الطلب - order number",
+        "default": null
+      },
+      {
+        "name": "DOC_SER_REF",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "التسلسل - Sequence",
+        "default": null
+      },
+      {
+        "name": "EXTERNAL_POST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "النظام - order",
+        "default": "0"
+      },
+      {
+        "name": "TRNSFR_FLG",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "BILL_PY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "من سنة سابقة او لا - From a previous year or not",
+        "default": "0"
+      },
+      {
+        "name": "USE_ATTCH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "إستخدام الملحقات - Using accessories",
+        "default": "0"
+      },
+      {
+        "name": "REC_ATTCH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الملحقات - Accessories",
+        "default": null
+      },
+      {
+        "name": "ADD_DIS_AMT_MST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الخصم الاضافي على مستوى الفاتورة-Additional discount amount By Invoice",
+        "default": "0"
+      },
+      {
+        "name": "ADD_DIS_AMT_DTL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الخصم الاضافي على مستوى الصنف-Additional discount amount By Item",
+        "default": "0"
+      },
+      {
+        "name": "DIS_PER2",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم2% - Discount 2%",
+        "default": null
+      },
+      {
+        "name": "DIS_AMT_DTL2",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "خصم2 - Discount 2",
+        "default": null
+      },
+      {
+        "name": "DIS_PER3",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخصم3% - Discount 3%",
+        "default": null
+      },
+      {
+        "name": "DIS_AMT_DTL3",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "خصم3 - Discount 3",
+        "default": null
+      },
+      {
+        "name": "RCRD_NO_REF",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم السجل المرجع - Reference registry number",
+        "default": null
+      },
+      {
+        "name": "EMP_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم الموظف - Employee number",
+        "default": null
+      },
+      {
+        "name": "I_LENGTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الطول - height",
+        "default": null
+      },
+      {
+        "name": "I_PRICE_VAT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "السعرشامل الضريبة - Price Including Tax",
+        "default": null
+      },
+      {
+        "name": "I_WIDTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "العرض - the offer",
+        "default": null
+      },
+      {
+        "name": "I_HEIGHT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الإرتفاع - Height",
+        "default": null
+      },
+      {
+        "name": "I_NUMBER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "العدد - number",
+        "default": null
+      },
+      {
+        "name": "CNT_LENGTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "كم طول - How long",
+        "default": null
+      },
+      {
+        "name": "CNT_WIDTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "كم عرض - How much offered",
+        "default": null
+      },
+      {
+        "name": "CRCMFRNC_CRCL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "محيط دائرة - Circle",
+        "default": null
+      },
+      {
+        "name": "DMTR_CRCL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "قطر الدائرة - diameter",
+        "default": null
+      },
+      {
+        "name": "WT_UNT",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الوحدة العددية - Numerical unit",
+        "default": null
+      },
+      {
+        "name": "WT_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية العددية - Numerical quantity",
+        "default": null
+      },
+      {
+        "name": "DIFF_I_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "فارق الكمية-Quantity difference",
+        "default": null
+      },
+      {
+        "name": "POST_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "كود ترحيل لحسابات المخزون-Stock Accounts Transfer Code",
+        "default": null
+      },
+      {
+        "name": "QT_PRM_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم العرض - Quotation number",
+        "default": null
+      },
+      {
+        "name": "QT_PRM_SER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "تسلسل العرض-Quotation sequence",
+        "default": null
+      },
+      {
+        "name": "QT_PRM_RCRD_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم سجل العرض-Quotation record number",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_LOAD_PER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نسبة التحمل - The tolerance ratio",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_LOAD_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ التحمل - Endure",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_ADD_LMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "فارق السقف - Ceiling",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_ADD_LMT_MST",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "فارق السقف للفترة - Limit Difference For Priod",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_ADD_LMT_VAT_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة فارق السقف للفترة- Tax Amount For Limit Difference For Priod",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_APPRVD_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "كود الموافقة - Approval code",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_LOAD_AMT_VAT_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة مبلغ التحمل-Tax amount deductible amount",
+        "default": null
+      },
+      {
+        "name": "INSRNCE_I_CODE_VAT_AMT",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رقم الصنف لضريبة التحمل -Item No For Load Tax Amount.",
+        "default": null
+      },
+      {
+        "name": "SUB_C_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رقم المستفيد - The beneficiary number",
+        "default": null
+      },
+      {
+        "name": "I_PRICE_OUTGONG",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "سعر الصنف الخاص بالصرف-Item Price For Outgoing",
+        "default": null
+      },
+      {
+        "name": "PKG_UNT",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الوحدة - Unity",
+        "default": null
+      },
+      {
+        "name": "PKG_UNT_SIZE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "العبوه - Playback",
+        "default": null
+      },
+      {
+        "name": "PKG_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية - Quantity",
+        "default": null
+      },
+      {
+        "name": "PKG_LENGTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الطول - height",
+        "default": null
+      },
+      {
+        "name": "PKG_WIDTH",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "العرض - the offer",
+        "default": null
+      },
+      {
+        "name": "PKG_HEIGHT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الإرتفاع - Height",
+        "default": null
+      },
+      {
+        "name": "PKG_SIZE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الحجم - Size",
+        "default": null
+      },
+      {
+        "name": "PKG_WEIGHT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الوزن - the weight",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL1",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 1 -Add Field 1",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL2",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 2-Add Field 2",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL3",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 3-Add Field 3",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL4",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 4 -Add Field 4",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL5",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 5-Add Field 5",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL6",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 6- Add Field 6",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL7",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 7-Add Field 7",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL8",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 8-Add Field 8",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL9",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 9-Add Field 9",
+        "default": null
+      },
+      {
+        "name": "FIELD_DTL10",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الحقل الاضافي 10 -Add Field 10",
+        "default": null
+      },
+      {
+        "name": "PRCNT_PRICE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "سعر نسبة الطبيب - The percentage of the doctor's ratio",
+        "default": null
+      },
+      {
+        "name": "PRCNT_AMT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ نسب الاطباء - The amount of doctors ’ratios",
+        "default": null
+      },
+      {
+        "name": "PRCDR_TYP",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نوع الإجراء الطبي - Type of medical procedure",
+        "default": null
+      },
+      {
+        "name": "PRCNT_FLG",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الخدمه عليها نسبة - Service has a percentage",
+        "default": null
+      },
+      {
+        "name": "LEV_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "المستوى - Level",
+        "default": null
+      },
+      {
+        "name": "MEASUR_PRICE",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "سعر الوحده - Unity price",
+        "default": "0"
+      },
+      {
+        "name": "ARGMNT_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "المعامل - Laboratory",
+        "default": null
+      },
+      {
+        "name": "CPN_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "كمية الكوبون-Coupon Quantity",
+        "default": null
+      },
+      {
+        "name": "DOC_SEQ_TMP",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "تسلسل مؤقت-Sequence temporary",
+        "default": null
+      },
+      {
+        "name": "USED_ITM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "صنف مستخدم-Used Item",
+        "default": "0"
+      },
+      {
+        "name": "VAT_AMT_OTHR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ ضريبة الاعباء-Tax Amount Charges",
+        "default": null
+      },
+      {
+        "name": "PRM_GRP_NO",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم مجموعة العروض الترويجية-Promotional Group Number",
+        "default": null
+      },
+      {
+        "name": "ADD_DISC_AMT_DTL_YR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "ملبغ الخصم الاضافي على مستوى الصنف سنوي-Additional discount amount By item annually",
+        "default": "0"
+      },
+      {
+        "name": "QR_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رمز الاستجابة السريع-QR code",
+        "default": null
+      },
+      {
+        "name": "SSCC_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رمز حاوية الشحن التسلسلي-Serial Shipping Container Code",
+        "default": null
+      },
+      {
+        "name": "GTIN_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الرقم التجاري العالمي للصنف-Global Trade Item Number",
+        "default": null
+      },
+      {
+        "name": "SRLNO_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رمز تسلسل الصنف-Item serial code",
+        "default": null
+      },
+      {
+        "name": "MFG_DATE",
+        "type": "DATE",
+        "nullable": true,
+        "description": "تاريخ التصنيع-Manufacturing Date",
+        "default": null
+      },
+      {
+        "name": "REP_CODE_SP",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رقم المندوب العلمي - Scientific delegate number",
+        "default": null
+      },
+      {
+        "name": "PRM_CODE_OUT",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رقم المسوق الخارجي - External marketer number",
+        "default": null
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "رقم الشركة - Company number",
+        "default": null
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER",
+        "nullable": false,
+        "description": "رقم النشاط - Activity number",
+        "default": null
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "السنة - Sunnah",
+        "default": null
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم النشاط - Activity number",
+        "default": null
+      },
+      {
+        "name": "COMM_PER",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "نسبة العمولة - Commission",
+        "default": "0"
+      },
+      {
+        "name": "COMM_AMT_DTL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ العمولة - Commission",
+        "default": "0"
+      },
+      {
+        "name": "DOC_SEQUENCE_REF",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "تسلسل الصنف للوثيقة المرجعية-Item sequence for reference document",
+        "default": null
+      },
+      {
+        "name": "DOC_SEQUENCE_BR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "تسلسل الصنف للوثيقة المرجعية-Item sequence for reference document",
+        "default": null
+      },
+      {
+        "name": "RCRD_NO_BR",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم السجل للوثيقة المرجعية-Reference document registration number",
+        "default": null
+      },
+      {
+        "name": "NOT_OUT_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "كمية المرتجع الغير منصرف - The quantity of the returning is not spent",
+        "default": null
+      },
+      {
+        "name": "NOT_OUT_FREE_QTY",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "الكمية المجانية للمرتجع الغير منصرف- The Free quantity of the returning is not spent",
+        "default": null
+      },
+      {
+        "name": "BNK_AMT_DTL",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ بطاقة الائتمان -Credit card amount",
+        "default": "0"
+      },
+      {
+        "name": "DOC_NO_FDA",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "This column is not used",
+        "default": null
+      },
+      {
+        "name": "FDA_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "كود الوصفة الطبية-Prescription code",
+        "default": null
+      },
+      {
+        "name": "FDA_ID",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "رقم الوصفة الطبية-Prescription number",
+        "default": null
+      },
+      {
+        "name": "USG_ITM",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "تعليمات استخدام الصنف-Instructions for using the product",
+        "default": null
+      },
+      {
+        "name": "FDA_CMNT",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "ملاحظات الوصفة الطبية-Prescription notes",
+        "default": null
+      },
+      {
+        "name": "ITM_QR_SQ",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "تسلسل رمز الاستجابة السريع-QR code sequence",
+        "default": null
+      },
+      {
+        "name": "OTHR_AMT_AC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ عبئ حساب الطرف الاخر-The amount of the other party's account charge",
+        "default": null
+      },
+      {
+        "name": "OTHR_AMT_ITM_AC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ عبئ حساب الطرف الاخر حسب الصنف-The amount of the other party's account charge by Item",
+        "default": null
+      },
+      {
+        "name": "OTHR_AMT_DISC_AC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم عبئ حساب الطرف الاخر -The amount of the other party's account charge is deducted.",
+        "default": null
+      },
+      {
+        "name": "OTHR_AMT_DISC_ITM_AC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ خصم عبئ حساب الطرف الاخر على مستوى الصنف-The amount of the other party's account charge discount By Item",
+        "default": null
+      },
+      {
+        "name": "VAT_AMT_OTHR_AC",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الضريبة للعبئ حساب الطرف الاخر-The tax amount to be charged to the other party's account",
+        "default": null
+      },
+      {
+        "name": "VAT_AMT_OTHR_ITM",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مبلغ الضريبة للعبئ حساب الطرف الاخر على مستوى الصنف-The tax amount to be charged to the other party's account By Item.",
+        "default": null
+      },
+      {
+        "name": "PRSPN_DOSAGE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الجرعة-DOSAGE",
+        "default": null
+      },
+      {
+        "name": "PRSPN_USG",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "الاستخدام-Use",
+        "default": null
+      },
+      {
+        "name": "PRSPN_USG_DRTON",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "مدة الاستخدام-Duration of use",
+        "default": null
+      },
+      {
+        "name": "PRSPN_USG_MTHD",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "طريقة الاستخدام -Instructions for use",
+        "default": null
+      },
+      {
+        "name": "SFDA_CODE",
+        "type": "VARCHAR2",
+        "nullable": true,
+        "description": "رمز الدواء الخاص بهئية الغذاء والدواء-FDA drug code",
+        "default": null
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER",
+        "nullable": true,
+        "description": "مرات التعديل - Modification times",
+        "default": null
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": [
+      {
+        "local_columns": [
+          "ACTV_NO"
+        ],
+        "foreign_table": "IAS_ACTVTY",
+        "foreign_columns": [
+          "ACTV_NO"
+        ],
+        "references": "IAS_ACTVTY(ACTV_NO)"
+      },
+      {
+        "local_columns": [
+          "PJ_NO"
+        ],
+        "foreign_table": "IAS_PROJECTS",
+        "foreign_columns": [
+          "PJ_NO"
+        ],
+        "references": "IAS_PROJECTS(PJ_NO)"
+      },
+      {
+        "local_columns": [
+          "EMP_NO"
+        ],
+        "foreign_table": "S_EMP",
+        "foreign_columns": [
+          "EMP_NO"
+        ],
+        "references": "S_EMP(EMP_NO)"
+      },
+      {
+        "local_columns": [
+          "CC_CODE"
+        ],
+        "foreign_table": "COST_CENTERS",
+        "foreign_columns": [
+          "CC_CODE"
+        ],
+        "references": "COST_CENTERS(CC_CODE)"
+      },
+      {
+        "local_columns": [
+          "BILL_SER"
+        ],
+        "foreign_table": "IAS_BILL_MST",
+        "foreign_columns": [
+          "BILL_SER"
+        ],
+        "references": "IAS_BILL_MST(BILL_SER)"
+      },
+      {
+        "local_columns": [
+          "I_CODE",
+          "I_CODE",
+          "ITM_UNT",
+          "ITM_UNT"
+        ],
+        "foreign_table": "IAS_ITM_DTL",
+        "foreign_columns": [
+          "I_CODE",
+          "ITM_UNT",
+          "I_CODE",
+          "ITM_UNT"
+        ],
+        "references": "IAS_ITM_DTL(I_CODE, ITM_UNT, I_CODE, ITM_UNT)"
+      },
+      {
+        "local_columns": [
+          "W_CODE"
+        ],
+        "foreign_table": "WAREHOUSE_DETAILS",
+        "foreign_columns": [
+          "W_CODE"
+        ],
+        "references": "WAREHOUSE_DETAILS(W_CODE)"
+      }
+    ]
+  },

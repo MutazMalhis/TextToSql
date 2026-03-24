@@ -1,0 +1,4515 @@
+Table: ARS_BILL_CRDT_CRD
+Description: Credit card sales - مبيعات بطائق الائتمان
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable]
+   Description: نوع الوثيقة - Document type
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SRL (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - RCRD_NO (NUMBER) [Not Nullable] Primary Key
+   Description: م - M
+ - A_CY (VARCHAR2) [Not Nullable] Primary Key
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Transfer price
+ - BANK_NO (NUMBER) [Nullable]
+   Description: رقم البنك - Bank number
+ - A_CODE_BANK (VARCHAR2) [Nullable]
+   Description: رقم حساب البنك - Bank account number
+ - CR_CRD_NO (NUMBER) [Not Nullable] Primary Key
+   Description: نوع الفيزا - Visa type
+ - CR_CRD_AMT (NUMBER) [Nullable]
+   Description: مبلغ الفيزا - Visa
+ - CR_CRD_DSC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - CR_CRD_COMM_PRCNT (NUMBER) [Nullable]
+   Description: نسبة العمولة - Commission
+ - CR_CRD_CST_NO (VARCHAR2) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CR_CRD_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CR_CRD_MAX_COMM_AMT (NUMBER) [Nullable]
+   Description: اقصى مبلغ للعمولة - The maximum amount of the commission
+ - A_CY_MAX_COMM (VARCHAR2) [Nullable]
+   Description: عملة اقصى حد للعمولة - The maximum commission currency
+ - A_CODE_COMM (VARCHAR2) [Nullable]
+   Description: حساب العمولة للبطائق - Community account for the cards
+ - CR_CRD_VALUED (NUMBER) [Nullable]
+   Description: الإستحقاق - Entitlement
+ - CR_CRD_VALUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - CR_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم المرجع-Ref Code.
+ - DUE_PERIOD (NUMBER) [Nullable]
+   Description: فترة الاستحقاق - The entitlement period
+ - CR_CRD_TYPE (NUMBER) [Nullable]
+   Description: نوع البطاقة - Card type
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: الضريبة% - Tax%
+ - TAX_AMT (NUMBER) [Nullable]
+   Description: مبلغ الضريبة - Tax amount
+ - CR_CRD_COMM_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ العمولة - Commission
+ - CLC_COMM_ON_CST_FLG (NUMBER) [Nullable, Default: 0]
+   Description: إحتساب العمولة على العميل-Calculating the commission from the customer
+ - ACODE_REC_LETTER (VARCHAR2) [Nullable]
+   Description: حساب اوراق القبض - Calculate the papers of the arrest
+ - EXTERNAL_POST (NUMBER) [Nullable]
+   Description: رقم النظام المرجعي-Reference system number.
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - COMM_AMT (NUMBER) [Nullable]
+   Description: مبلغ اضافي على مبلغ العمولة للبطائق - An additional amount on the commission amount for the cards
+ - DOC_POST (NUMBER) [Nullable, Default: 0]
+   Description: تم ترحيلة-Posted 
+ - POST_DATE (DATE) [Nullable]
+   Description: تاريخ الترحيل -Post DATE
+ - POST_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المُرحل-Posted User No.
+ - UNPOST_DATE (DATE) [Nullable]
+   Description: تاريخ الغاء الترحيل -Unposted Date 
+ - UNPOST_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم الملغي الترحيل -Unposted User No.
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المدخل-Input User No.
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز المعدل- The name of the device Modified
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+================================================================================
+
+Table: ARS_LOAD_AMT_ITM_DTL
+Description: Deductible amounts for health insurance subscribers - مبالغ التحمل لمشتركي التأمين الصحي
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable] Primary Key
+   Description: نوع الوثيقة - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع-Payment method
+ - DOC_JV_TYPE (NUMBER) [Nullable]
+   Description: نوع الوثيقة التحليلي - Type of analytical document
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SER (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Not Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Not Nullable] Primary Key
+   Description: وحدةالصنف-Item unit
+ - LOAD_AMT (NUMBER) [Nullable]
+   Description: مبلغ التحمل - Endure
+ - LOAD_AMT_VAT_AMT (NUMBER) [Nullable]
+   Description: الضريبة - Tax
+ - I_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - FREE_QTY (NUMBER) [Nullable]
+   Description: الكمية المجانية -free Quantity
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: رقم النظام المرجعي-Reference system number.
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - DR_CR_FLG (NUMBER) [Nullable]
+   Description: مدين او دائن -Debtor or creditor (-1 Means Debtor ,1 Means creditor).
+ - SRVC_ITM_TYP (NUMBER) [Nullable]
+   Description: الاصناف الخدمية لضريبة التحمل-Service items subject to withholding tax
+ - CMP_NO (NUMBER) [Not Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز المعدل- The name of the device Modified
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+Foreign Keys:
+ - (I_CODE, I_CODE, ITM_UNT, ITM_UNT) → IAS_ITM_DTL(I_CODE, ITM_UNT, I_CODE, ITM_UNT)
+================================================================================
+Table: COLLERCTOR
+Description: Data of collectors - بيانات المحصلين
+Columns:
+ - COL_SER (NUMBER) [Not Nullable]
+   Description: تسلسل -sequence
+ - COL_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم المحصل - The number number
+ - COL_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم المحصل - The name of the collector
+ - COL_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - COL_NOTES (VARCHAR2) [Nullable]
+   Description: ملاحظات - comments
+ - COL_TEL (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - COL_MOBILE (VARCHAR2) [Nullable]
+   Description: رقم الجوال - Mobile number
+ - COL_ADDRESS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - COL_E_MAIL (VARCHAR2) [Nullable]
+   Description: البريد الالكتروني - e-mail
+ - COL_TYPE (NUMBER) [Nullable]
+   Description: نوع المحصل - Gennate type
+ - COMM_PER (NUMBER) [Nullable]
+   Description: نسبة العمولة - Commission
+ - CASH_NO (NUMBER) [Nullable]
+   Description: رقم الصندوق - Fund number
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - COL_A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 1 - Additional field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 2 - Additional field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 3 - Additional field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 4 - Additional field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 5 - Additional field 5
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (EMP_NO) → S_EMP(EMP_NO)
+================================================================================
+Table: CUSTOMER_CLASS
+Description: Customer types - أنواع العملاء
+Columns:
+ - C_CLASS (NUMBER) [Not Nullable] Primary Key
+   Description: رقم النوع - Type number
+ - C_CLASS_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم النوع - Type name
+ - C_CLASS_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: CUSTOMER_CURR
+Description: Customer currency data - بيانات عملات العملاء
+Columns:
+ - C_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم العميل - Customer number
+ - A_CY (VARCHAR2) [Not Nullable] Primary Key
+   Description: العملة - Currency
+ - CR_LIMIT (NUMBER) [Nullable]
+   Description: حد الدين - Limit
+ - INV_LIMIT (NUMBER) [Nullable]
+   Description: حد الدين للفاتورة - The debt limit of the bill
+ - CST_LMT_PER (NUMBER) [Nullable, Default: NULL ]
+   Description: نسبة التجاوز لحد الدين - The percentage of transgression of debt
+ - CST_LMT_TYP (NUMBER) [Nullable, Default: 2 ]
+   Description: تجاوز حد الدين - Beyond the debt limit
+ - LEV_NO (NUMBER) [Nullable]
+   Description: مستوى التسعيرة للبيع الاجل- Pricing level For Selling on credit
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: توقيف - Arrest
+ - INACTIVE_SALES (NUMBER) [Nullable, Default: 0]
+   Description: توقيف المبيعات - Sales
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - CNFRM_LST_DATE (DATE) [Nullable]
+   Description: This column is not used
+ - LEV_NO_CSH (NUMBER) [Nullable]
+   Description: مستوى التسعيرة للبيع النقدي-Pricing level for cash sale
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: رقم النظام المرجعي-Reference system number.
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - TRNS_LMT_MOBILE (NUMBER) [Nullable]
+   Description: This column is not used 
+ - TRNS_MIN_LMT_MOBILE (NUMBER) [Nullable]
+   Description: This column is not used
+ - DFLT_FLG (NUMBER) [Nullable, Default: 0]
+   Description: العملة الإفتراضية - The virtual currency
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+Foreign Keys:
+ - (LEV_NO) → IAS_PRICING_LEVELS(LEV_NO)
+ - (A_CY) → EX_RATE(CUR_CODE)
+================================================================================
+Table: CUSTOMER_DEGREE
+Description: Customer scores - درجات العملاء
+Columns:
+ - C_DEGREE (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الدرجة - Class number
+ - C_DEGREE_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم الدرجة - Class name
+ - C_DEGREE_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - DEGREE_VALUE (NUMBER) [Nullable]
+   Description: قيمة الدرجة - The value of the degree
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+Table: CUSTOMER_GROUP
+Description: Customer groups - مجموعات العملاء
+Columns:
+ - C_GROUP_CODE (NUMBER) [Not Nullable] Primary Key
+   Description: رقم المجموعة - Group number
+ - C_GROUP_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم المجموعة - Group name
+ - C_GROUP_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - C_A_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم حساب المجموعة - Group account number
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم حساب - الدفعة المقدمة
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (C_A_CODE) → ACCOUNT(A_CODE)
+================================================================================
+Table: EX_RATE
+Description: Currencies and Exchange Rates - العملات و أسعار التحويل
+Columns:
+ - CUR_NO (NUMBER) [Not Nullable]
+   Description: الرقم - Number
+ - CUR_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رمز العملة - Currency
+ - CUR_CODE_STNDR (VARCHAR2) [Nullable]
+   Description: رمز العملة العالمي - Global currency code
+ - CUR_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم العملة - Currency
+ - CUR_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - CUR_RATE (NUMBER) [Nullable, Default: 1]
+   Description: سعر التحويل - Transfer price
+ - CUR_RATE_POS (NUMBER) [Nullable]
+   Description: سعر تحويل نقاط البيع - Point transfer price price
+ - CUR_FRACTION (VARCHAR2) [Nullable]
+   Description: الفكه - Fruit
+ - CUR_E_FRACTION (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - L_F (NUMBER) [Not Nullable]
+   Description: محلي - أجنبي
+ - STOCK_CUR (NUMBER) [Nullable, Default: 0]
+   Description: عملة المخزون - Stock currency
+ - MAX_CUR_RATE (NUMBER) [Nullable]
+   Description: أعلى سعر تحويل - The highest transfer price
+ - MIN_CUR_RATE (NUMBER) [Nullable]
+   Description: أدنى سعر تحويل - The lowest transfer price
+ - CUR_FRC_NO (NUMBER) [Not Nullable, Default: 2 ]
+   Description: عدد خانات الكسور - The number of fractures
+ - SLS_PRICE (NUMBER) [Nullable]
+   Description: سعر البيع-selling price
+ - MAX_SLS_PRICE (NUMBER) [Nullable]
+   Description: اعلى سعر بيع-Highest selling price
+ - MIN_SLS_PRICE (NUMBER) [Nullable]
+   Description: ادنى سعر بيع-Lowest selling price
+ - PUR_PRICE (NUMBER) [Nullable]
+   Description: سعر الشراء-Purchase price
+ - MAX_PUR_PRICE (NUMBER) [Nullable]
+   Description: اعلى سعر شراء-Highest purchase price
+ - MIN_PUR_PRICE (NUMBER) [Nullable]
+   Description: ادنى سعر شراء-Lowest purchase price
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+Table: GNR_TAX_CODE_DTL
+Description: tax types coding Details - ترميز أنواع الضرائب تفصيلي
+Columns:
+ - TAX_NO (NUMBER) [Not Nullable]
+   Description: نوع الضريبة - Tax
+ - AGNCY_NO (NUMBER) [Not Nullable]
+   Description: رقم الجهة - Region number
+ - AGNCY_L_NM (VARCHAR2) [Not Nullable]
+   Description: الاسم المحلي - Local name
+ - AGNCY_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - AC_CODE_AR (VARCHAR2) [Nullable]
+   Description: حساب مبيعات - Sales account
+ - AC_CODE_AP (VARCHAR2) [Nullable]
+   Description: حساب مشتريات - Procurement account
+ - AC_CODE_DUE_TAX (VARCHAR2) [Nullable]
+   Description: حساب الضريبة المؤجلة - Calculate the deferred tax
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: نسبة الضريبة-Tax Percent
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (AC_CODE_AR) → ACCOUNT(A_CODE)
+ - (AC_CODE_AP) → ACCOUNT(A_CODE)
+ - (TAX_NO) → GNR_TAX_CODE_MST(TAX_NO)
+================================================================================
+Table: GNR_TAX_CODE_MST
+Description: tax types coding Master - ترميز أنواع الضرائب رئيسي
+Columns:
+ - TAX_NO (NUMBER) [Not Nullable] Primary Key
+   Description: نوع الضريبة - Tax
+ - TAX_L_NM (VARCHAR2) [Not Nullable]
+   Description: اسم الضريبة-Tax name
+ - TAX_F_NM (VARCHAR2) [Nullable]
+   Description: اسم الضريبة الاجنبي-Foreign tax name
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax type code .
+ - CLC_DOC_TYP (NUMBER) [Not Nullable]
+   Description: طريقة الاحتساب-Calculation method
+ - AGNCY_CNT (NUMBER) [Not Nullable]
+   Description: عدد الجهات-Agancy Count 
+ - DFLT_FLG (NUMBER) [Nullable, Default: 0]
+   Description: افتراضي-Default
+ - CONN_CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة-Company No.
+ - CLC_TAX_BY_DOC (NUMBER) [Nullable, Default: 0 ]
+   Description: مرتبط بالاعباء-Related to charged
+ - TAX_TYP (NUMBER) [Nullable]
+   Description: نوع الضريبة -Tax type
+ - TDS_FLG (NUMBER) [Nullable, Default: 0 ]
+   Description: ضريبة الخصم-Tax Deduction Source
+ - MIN_LMT_AMT (NUMBER) [Nullable]
+   Description: مبلغ الحد الادنى-Minimum amount
+ - TAX_PER_PRPD_AMT (NUMBER) [Nullable]
+   Description: نسبة الضريبة لمبالغ الدفع المسبق - The tax rate for pre -payment amounts
+ - TAX_CLSS (NUMBER) [Nullable]
+   Description: تصنيف الضريبة-Tax classification
+ - SYNC_FLG (NUMBER) [Nullable, Default: 1]
+   Description: مزامنة البيانات-Data Synchronization
+ - INACTIVE (NUMBER) [Nullable, Default: 0 ]
+   Description: موقف - position
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - AD_U_ID (NUMBER) [Nullable]
+   Description:  مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+Table: GNR_TAX_INPT
+Description: Input Tax Coding (Charges) - ترميز ضرائب المدخلات(أعباء)
+Columns:
+ - INPT_TYP (NUMBER) [Not Nullable] Primary Key
+   Description: رقم النوع للمدخل-Type number of the Input
+ - INPT_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: قيمة المدخل - The entrance value
+ - TAX_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الضريبة - Tax number
+ - AGNCY_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الجهة - Region number
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax Type Code.
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - VAT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء-Exemption code
+ - VAT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الاعفاء -Reason for exemption
+ - INPT_CAT_CODE (VARCHAR2) [Nullable]
+   Description:  رمز نوع الضريبة للمدخلات-Tax type code for inputs
+ - INPT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء للمدخلات-Exemption code for inputs
+ - INPT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الاعفاء للمدخلات-Reason for exemption of inputs
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (TAX_NO, TAX_NO, AGNCY_NO, AGNCY_NO) → GNR_TAX_CODE_DTL(TAX_NO, AGNCY_NO, TAX_NO, AGNCY_NO)
+================================================================================
+Table: GNR_TAX_INPT_MOVMNT
+Description: Tax movement for players - حركة الضريبة للاعباء
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable]
+   Description: نوع الوثيقة - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع-payment method
+ - DOC_JV_TYPE (NUMBER) [Nullable]
+   Description: نوع الوثيقة التحليلي - Type of analytical document
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SER (NUMBER) [Not Nullable]
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Not Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - TAX_NO (NUMBER) [Not Nullable]
+   Description: رقم الضريبة-Tax_No
+ - CLC_TYP_NO (NUMBER) [Not Nullable]
+   Description: طريقة احتساب الضريبة-Tax calculation method
+ - AGNCY_NO (NUMBER) [Not Nullable]
+   Description: رقم الجهة - Region number
+ - INPT_TYP (NUMBER) [Not Nullable]
+   Description: رقم النوع للمدخل-Type number of the Input
+ - INPT_CODE (VARCHAR2) [Not Nullable]
+   Description: قيمة المدخل - The entrance value
+ - A_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم الحساب - Account number
+ - A_CY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Not Nullable]
+   Description: سعر الصرف-Exchange rate
+ - INPT_AMT (NUMBER) [Nullable]
+   Description: مبلغ المدخل-Input amount
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - TAX_AMT (NUMBER) [Nullable]
+   Description: مبلغ الضريبة-Tax Amount
+ - TAX_AMT_L (NUMBER) [Nullable]
+   Description: مبلغ الضريبة بالمحلي-Local tax amount
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: رقم السجل - Register number
+ - DOC_SEQUENCE (NUMBER) [Nullable]
+   Description: تسلسل الحركة - Movement
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: رقم النظام المرجعي-Reference system number.
+ - DR_CR_FLG (NUMBER) [Nullable]
+   Description: مدين او دائن -Debtor or creditor (-1 Means Debtor ,1 Means creditor).
+ - BATCH_NO (VARCHAR2) [Nullable, Default: 1]
+   Description: This column is not used
+ - ITEM_COD (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - TAX_PRD_NO (NUMBER) [Nullable]
+   Description: نوع الفترة الضريبة -Tax period type
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax Type Code.
+ - INPT_VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة للمدخلات-Tax type code for inputs
+ - INPT_VAT_EX_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء للمدخلات-Exemption code for inputs
+ - INPT_VAT_EX_RSN_TXT (VARCHAR2) [Nullable]
+   Description:  سبب الاعفاء للمدخلات-Reason for exemption of inputs
+ - INPT_BS_AMT (NUMBER) [Nullable]
+   Description: This column is not used
+ - INPT_BS_PRCNT (NUMBER) [Nullable]
+   Description: This column is not used
+ - INPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: his column is not used
+ - INPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: his column is not used
+ - INPT_NET_AMT (NUMBER) [Nullable]
+   Description: مبلغ المدخل - Input amount
+ - TAX_CUR_CODE (VARCHAR2) [Nullable]
+   Description: رمز عملة الضريبة-Tax currency symbol
+ - TAX_CUR_RATE (NUMBER) [Nullable]
+   Description: سعر الصرف من عملة الضريبة-Exchange rate From Tax Currency 
+ - NET_TAX_AMT (NUMBER) [Nullable]
+   Description: صافي مبلغ الضريبة-Net tax amount
+ - TAX_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الضريبة-Tax due date
+ - TAX_HAS_JRNL (NUMBER) [Nullable]
+   Description: ضريبة غير مستحقة-Tax not due
+ - BILL_TAX_STATUS (NUMBER) [Nullable]
+   Description: حالة استحقاق الضريبة-Tax due Status
+ - CPN_TYP (NUMBER) [Nullable]
+   Description: his column is not used
+ - CPN_NO (VARCHAR2) [Nullable]
+   Description: his column is not used
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (CLC_TYP_NO) → GNR_TAX_TYP_CLC_MST(CLC_TYP_NO)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (TAX_NO) → GNR_TAX_CODE_MST(TAX_NO)
+================================================================================
+Table: GNR_TAX_ITM
+Description: Linking items to tax types - ربط الأصناف بالانواع الضريبية
+Columns:
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - TAX_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الضريبة-Tax_No
+ - AGNCY_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الجهة - Region number
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - MIN_LMT_AMT (NUMBER) [Nullable]
+   Description: مبلغ الحد الادنى-Minimum amount
+ - VAT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء-Exemption code
+ - VAT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الاعفاء -Reason for exemption
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax Type Code.
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - EXMPT_LOADAMT_TAX_BYNTNLTY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: معفي من ضريبة التحمل حسب الجنسية-Exempt from carrying tax according to nationality
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (I_CODE) → IAS_ITM_MST(I_CODE)
+================================================================================
+Table: GNR_TAX_ITM_MOVMNT
+Description: Tax movement for items - حركة الضريبة للاصناف
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable] Primary Key
+   Description: نوع الوثيقة - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع-payment method
+ - DOC_JV_TYPE (NUMBER) [Nullable]
+   Description: نوع الوثيقة التحليلي - Type of analytical document
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SER (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Not Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - TAX_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الضريبة-Tax_No
+ - CLC_TYP_NO (NUMBER) [Not Nullable]
+   Description: طريقة احتساب الضريبة-Tax calculation method
+ - AGNCY_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الجهة - Region number
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Not Nullable]
+   Description: وحدةالصنف-Item unit
+ - P_SIZE (NUMBER) [Not Nullable]
+   Description: العبوة-Package
+ - I_PRICE (NUMBER) [Nullable]
+   Description: السعر - the price
+ - DISC_AMT (NUMBER) [Nullable]
+   Description: مبلغ الخصم-Discount Amount
+ - A_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم الحساب - Account number
+ - A_CY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Not Nullable]
+   Description: سعر الصرف-Exchange rate
+ - TAX_PRCNT (NUMBER) [Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - TAX_AMT (NUMBER) [Nullable]
+   Description: مبلغ الضريبة-Tax Amount
+ - W_CODE (NUMBER) [Nullable]
+   Description: رقم المخزن - Store number
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - RCRD_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم السجل - Register number
+ - TAX_AMT_L (NUMBER) [Nullable]
+   Description: مبلغ الضريبة بالمحلي-Local tax amount
+ - I_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - FREE_QTY (NUMBER) [Nullable]
+   Description: الكمية المجانية -free Quantity
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - STK_COST (NUMBER) [Nullable]
+   Description: التكلفة-Cost
+ - STK_RATE (NUMBER) [Nullable]
+   Description: سعر الصرف من عملة المخزون-Exchange rate of the stock currency
+ - DOC_SEQUENCE (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الحركة - Movement
+ - CLC_TAX_FREE_QTY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: احتساب الضريبة على الكمية المجانية-Calculate tax on free quantity
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: رقم النظام المرجعي-Reference system number.
+ - DR_CR_FLG (NUMBER) [Not Nullable] Primary Key
+   Description: مدين او دائن -Debtor or creditor (-1 Means Debtor ,1 Means creditor).
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - TAX_PRD_NO (NUMBER) [Nullable]
+   Description: نوع الفترة الضريبة -Tax period type
+ - PRC_BS_QTY (NUMBER) [Nullable]
+   Description: This column is not used
+ - PRC_DED_AMT (NUMBER) [Nullable]
+   Description: مبالغ الخصومات والكميات المجانية  - Discount amounts and free quantities
+ - ITM_NET_PRICE (NUMBER) [Nullable]
+   Description: صافي السعر -Net price
+ - ITM_NET_QTY (NUMBER) [Nullable]
+   Description: صافي الكمية-Net quantity
+ - OTHR_AMT_ITM_DISC (NUMBER) [Nullable]
+   Description: مبلغ خصم الاعباء حسب الصنف-Amount of discounted expenses according to the category
+ - OTHR_AMT_ITM (NUMBER) [Nullable]
+   Description: مبلغ الاعباء حسب الصنف-Amount of burdens according to the category
+ - ITM_NET_AMT (NUMBER) [Nullable]
+   Description: صافي المبلغ-Net amount
+ - TAX_CUR_CODE (VARCHAR2) [Nullable]
+   Description: رمز عملة الضريبة-Tax currency symbol
+ - TAX_CUR_RATE (NUMBER) [Nullable]
+   Description: سعر الصرف من عملة الضريبة-Exchange rate From Tax Currency 
+ - NET_TAX_AMT (NUMBER) [Nullable]
+   Description: صافي مبلغ الضريبة-Net tax amount
+ - ITM_VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - ITM_VAT_EX_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء-Exemption code
+ - ITM_VAT_EX_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الاعفاء -Reason for exemption
+ - TAX_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الضريبة-Tax due date
+ - TAX_HAS_JRNL (NUMBER) [Nullable]
+   Description: ضريبة غير مستحقة-Tax not due
+ - BILL_TAX_STATUS (NUMBER) [Nullable]
+   Description: حالة استحقاق الضريبة-Tax due Status
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax Type Code.
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (CLC_TYP_NO) → GNR_TAX_TYP_CLC_MST(CLC_TYP_NO)
+ - (I_CODE) → IAS_ITM_MST(I_CODE)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (TAX_NO) → GNR_TAX_CODE_MST(TAX_NO)
+================================================================================
+Table: GNR_TAX_SLICE
+Description: Tax bracket coding - ترميز الشرائح الضريبية
+Columns:
+ - SLICE_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الشريحة - Slide number
+ - SLICE_L_NM (VARCHAR2) [Not Nullable]
+   Description: الاسم المحلي - Local name
+ - SLICE_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - SLICE_PRCNT (NUMBER) [Not Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - DFLT_FLG (NUMBER) [Nullable, Default: 0 ]
+   Description: الإفتراضي - Virtual
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+Table: GNR_TAX_TYP_CLC_DTL
+Description: Tax calculation methods coding Details - ترميز طرق احتساب الضرائب تفصيلي
+Columns:
+ - CLC_TYP_NO (NUMBER) [Not Nullable] Primary Key
+   Description: نوع إحتساب الضريبة - Type of tax calculation
+ - TAX_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الضريبة - Tax number
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة - Tax code
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة - Tax code
+ - VAT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الإعفاء - Exemption code
+ - VAT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الإعفاء - The reason for the exemption
+ - TAX_CLC_ORDR (NUMBER) [Nullable, Default: 1 ]
+   Description: ترتيب احتساب الضريبة-Order of tax calculation
+ - INPT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة للمدخلات-Tax type code for inputs
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (CLC_TYP_NO) → GNR_TAX_TYP_CLC_MST(CLC_TYP_NO)
+================================================================================
+
+Table: GNR_TAX_TYP_CLC_MST
+Description: Tax calculation methods coding Master - ترميز طرق احتساب الضرائب رئيسي
+Columns:
+ - CLC_TYP_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الطريقة - Method number
+ - CLC_TYP_L_NM (VARCHAR2) [Not Nullable]
+   Description: الاسم المحلي - Local name
+ - CLC_TYP_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - TAX_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة - Tax code
+ - CLC_TYP_DFLT_FLG (NUMBER) [Nullable, Default: 0]
+   Description: الإفتراضي - Virtual
+ - CLC_TAX_TYP (NUMBER) [Nullable]
+   Description: نوع الضريبة - Tax
+ - CLC_TYP_NO_EXMPT (NUMBER) [Nullable]
+   Description: رقم طريقة احتساب الضريبة للمعفي - Tax calculation method for Mu'tafi
+ - CLC_TYP_NO_TRNSPRD (NUMBER) [Nullable]
+   Description: رقم طريقة احتساب الضريبة للفترة الإنتقالية - Tax calculation method for the transitional period
+ - TRNS_PRD (NUMBER) [Nullable, Default: 0]
+   Description: له فترة إنتقالية - It has a transitional period
+ - PUR_EXPNS (NUMBER) [Nullable, Default: 0]
+   Description: nan
+ - FAS_SYS_FLG (NUMBER) [Nullable, Default: 0]
+   Description: خاص بنظام الاصول-Specific to the asset system
+ - REM_SYS_FLG (NUMBER) [Nullable, Default: 0]
+   Description: خاص بنظام العقارات-Specific to the real estate system
+ - PMS_SYS_FLG (NUMBER) [Nullable, Default: 0]
+   Description: خاص بنظام المشاريع-Specific to the project system
+ - CONN_CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - REM_LOCAL_BILL (NUMBER) [Nullable]
+   Description: طريقة الضريبة للفواتير الداخلية لنظام العقارات-Tax Method for Internal Invoices of the Real Estate System
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: IAS_ASSCTN_TRNS
+Description: Sales Donations Movement - حركة التبرعات للمبيعات
+Columns:
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة-Invoice number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفاتورة-Invoice sequence
+ - BILL_DOC_TYPE_SUB (NUMBER) [Nullable]
+   Description: طريقة الدفع التحليلية -Sub-payment method
+ - ASS_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الجهة-Agency number
+ - A_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - ASS_AMT (NUMBER) [Nullable]
+   Description: المبلغ-Amount
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BILL_DATE (DATE) [Nullable]
+   Description: تاريخ الفاتورة-Invoice Number
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: رقم النظام المرجعي-Reference system number.
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+   Description : This column is not used
+ - OPRTN_TYP (NUMBER) [Nullable, Default: -1]
+   Description: مدين او دائن -Debtor or creditor (-1 Means Debtor ,1 Means creditor).
+ - ASS_NO_REF (NUMBER) [Nullable]
+   Description: رقم الجهة المرجعية - Reference agency number
+ - ASS_NM_REF (VARCHAR2) [Nullable]
+   Description: اسم الجهة المرجعية - Name of the referring agency
+ - ASS_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي - Tax number
+ - ASS_CRD_ID (NUMBER) [Nullable]
+   Description: رقم البطاقة للمستفيد-The beneficiary's card number
+ - ASS_ADRS (VARCHAR2) [Nullable]
+   Description: عنوان الجهة المرجعية - Address of the reference body
+ - ASS_REF_NO_TRNS (NUMBER) [Nullable]
+   Description: رقم العملية المرجعية-Reference transaction number
+ - ASS_BLNC (NUMBER) [Nullable]
+   Description: الرصيد-Balance
+ - ASS_BLNC_TYP (VARCHAR2) [Nullable]
+   Description: نوع الرصيد - Balance Type
+ - ASS_NOTE (VARCHAR2) [Nullable]
+   Description: ملاحظات عامة - General Notes
+ - ASS_FMLY_NOTE (VARCHAR2) [Nullable]
+   Description: ملاحظات الأسرة - Family Notes
+ - ASS_ADMN_NOTE (VARCHAR2) [Nullable]
+   Description: ملاحظات المشرف - Admin Notes
+ - ASS_ITM_TYP (VARCHAR2) [Nullable]
+   Description: نوع البند - Article Type
+ - ASS_TYPE (NUMBER) [Nullable] This column is not used
+ - ASS_DR (NUMBER) [Nullable, Default: 0] This column is not used
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (BILL_SER) → IAS_BILL_MST(BILL_SER)
+================================================================================
+
+Table: IAS_ASSISTANT_GROUP
+Description: Auxiliary Groups - المجموعات المساعدة
+Columns:
+ - G_CODE (VARCHAR2) [Nullable]
+   Description: مجموعة رئيسيه - Major
+ - MNG_CODE (VARCHAR2) [Nullable]
+   Description: رقم م.الفرعية - Branch
+ - SUBG_CODE (VARCHAR2) [Nullable]
+   Description: رقم م. تحت الفرعية - No. M.Sub -subtitle
+ - ASSISTANT_NO (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم المجموعة - Group number
+ - ASSIST_I_CODE (VARCHAR2) [Nullable]
+   Description: كود رقم الصنف - Code number code
+ - ASSISTANT_A_NAME (VARCHAR2) [Not Nullable]
+   Description: الاسم - the name
+ - ASSISTANT_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - SYNCHRNZ_TO_WEB_FLG (NUMBER) [Nullable, Default: 0 ]
+   Description: مزامنة إلى موقع الويب - Sync to the web site
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: IAS_BILL_CPN
+Description: Coupon Sales - Details - مبيعات الكوبونات- تفصيلي
+Columns:
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - CPN_TYP_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم النوع - Type number
+ - CPN_BOOK_NO (VARCHAR2) [Nullable]
+   Description: رقم الدفتر - Book number
+ - CPN_NO (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الكوبون - Coupon number
+ - CPN_AMT (NUMBER) [Not Nullable]
+   Description: مبلغ الكوبون - Coupon
+ - CPN_DSC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: م - M
+ - DOC_SEQ (NUMBER) [Nullable]
+   Description: تسلسل الحركة - Movement
+ - I_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: المركز - Center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - I_CODE (VARCHAR2) [Nullable]
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Nullable]
+   Description: وحدة الصنف-Item Unit
+ - DOC_SRL_ADVNC (NUMBER) [Nullable]
+   Description: تسلسل وثيقة الدفعة المقدمة-Advance Payment Document Sequence
+ - TAX_PER (NUMBER) [Nullable]
+   Description: نسبة الضريبة-Tax rate
+ - AD_U_ID (NUMBER) [Not Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Not Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+Foreign Keys:
+ - (REP_CODE) → SALES_MAN(REPRS_CODE)
+ - (BILL_SER) → IAS_BILL_MST(BILL_SER)
+================================================================================
+
+Table: IAS_BILL_DTL
+Description: Sales Invoices Details - فواتير المبيعات تفصيلي
+Columns:
+ - BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable]
+   Description: تسلسل الفواتير - Serial invoices
+ - I_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم الصنف-Item No.
+ - I_QTY (NUMBER) [Nullable, Default: 0]
+   Description: الكمية - Quantity
+ - ITM_UNT (VARCHAR2) [Not Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Not Nullable]
+   Description: العبوه - Playback
+ - P_QTY (NUMBER) [Not Nullable]
+   Description: الكمية بالاب - Quantity
+ - I_PRICE (NUMBER) [Nullable, Default: 0]
+   Description: السعر - the price
+ - STK_COST (NUMBER) [Nullable, Default: 0]
+   Description: التكلفة - Cost
+ - OUT_QTY (NUMBER) [Nullable, Default: 0]
+   Description: الكمية - Quantity
+ - OUT_FREE_QTY (NUMBER) [Nullable, Default: 0]
+   Description: الكميات المجانيه - Free quantities
+ - OUT_QTY_YR (NUMBER) [Nullable, Default: 0]
+   Description: الكمية المنصرفة من سنوات سابقة-The Quantity spent from previous years
+ - OUT_FREE_QTY_YR (NUMBER) [Nullable, Default: 0]
+   Description: الكمية المجانية المنصرفة من سنوات سابقة-The Free Quantity spent from previous years
+ - W_CODE (NUMBER) [Not Nullable]
+   Description: المخزن - Warehouse
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: المركز - Center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: المشروع - Project
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: النشاط - Activity
+ - EXPIRE_DATE (DATE) [Not Nullable]
+   Description: تاريخ الإنتهاء - The end date
+ - BATCH_NO (VARCHAR2) [Not Nullable, Default: 0  	]
+   Description: رقم الدفعة - Batch number
+ - FREE_QTY (NUMBER) [Nullable, Default: 0 ]
+   Description: ك.المجانيه - K
+ - FREE_TYP (NUMBER) [Nullable, Default: 1]
+   Description: نوع الكمية المجانية -Free quantity type
+ - ITM_FREE_QTY_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الكمية المجانية -Free quantity amount
+ - DIS_PER (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم% - opponent%
+ - DIS_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DIS_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DIS_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DIS_AFTR_VAT_MST (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - DIS_AMT_DTL_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم - opponent
+ - DIS_AMT_DTL2_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: خصم2 - Discount 2
+ - DIS_AMT_DTL3_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: خصم3 - Discount 3
+ - DIS_AMT_MST_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم على مستوى الفاتورة شامل للضريبة -Discount on invoice level is tax inclusive.
+ - VAT_AMT_DIS_DTL_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الصنف 1 -Tax Amount Of The Discount Of Item 1 
+ - VAT_AMT_DIS_DTL2_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الصنف 2 -Tax Amount Of The Discount Of Item 2 
+ - VAT_AMT_DIS_DTL3_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الصنف 3 -Tax Amount Of The Discount Of Item 3 
+ - VAT_AMT_AFTR_DIS (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ الضريبة بعد الخصم - The tax amount after Discount
+ - VAT_AMT_BFR_DIS (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ الضريبة قبل الخصم - Tax amount before Discount
+ - VAT_AMT_DIS_MST_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الفاتورة -Tax Amount Of The Discount By Invoice 
+ - DIS_AMT_AFTR_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم بعد الضريبة - Discount after tax
+ - DIS_PER_QT_PRM (NUMBER) [Nullable, Default: 0]
+   Description: نسبة خصم العروض الترويجية -Promotional discount percentage
+ - DIS_AMT_DTL_QT_PRM (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ خصم العروض الترويجية - Promotional Discount Amount
+ - DIS_AMT_DTL_QT_PRM_VAT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ خصم العروض الترويجية شامل للضريبة-Promotional discount amount includes tax
+ - OTHR_AMT_DISC (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ خصم الاعباء-Discount Amount For Charges
+ - OTHR_AMT_DISC_ITM (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ خصم الاعباء على مستوى الصنف-Discount Amount For Charges By Item
+ - VAT_PER (NUMBER) [Nullable]
+   Description: نسبة الضريبة - Tax rate
+ - VAT_AMT (NUMBER) [Nullable, Default: 0 ]
+   Description: ضريبة - tax
+ - OTHR_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الأعباء و الضريبة - Burdens and tax
+ - OTHR_AMT_ITM (NUMBER) [Nullable, Default: 0]
+   Description: الأعباء - Burdens
+ - I_PRICE_LEV_NO (NUMBER) [Nullable]
+   Description: سعر مستوى التسعيرة-Pricing level price
+ - USE_SERIALNO (NUMBER) [Nullable, Default: 0]
+   Description: S/N
+ - SERVICE_ITEM (NUMBER) [Nullable, Default: 0]
+   Description: صنف خدمي - Service class
+ - RCRD_NO (NUMBER) [Not Nullable]
+   Description: م - M
+ - DOC_SEQUENCE (NUMBER) [Not Nullable]
+   Description: الحركة - Movement
+ - ITEM_DESC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - SI_TYPE (NUMBER) [Nullable]
+   Description: نوع الفاتورة -Sales Invoice Type
+ - BARCODE (VARCHAR2) [Nullable]
+   Description: رقم الباركود - Barcode number
+ - SO_NO (NUMBER) [Nullable]
+   Description: رقم طلب العميل - Customer request number
+ - SO_SER (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - DOC_TYPE_REF (NUMBER) [Nullable]
+   Description: النوع الفرعي لمرجع الوثيقة - The sub -type of the document reference
+ - DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم الطلب - order number
+ - DOC_SER_REF (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - USE_ATTCH (NUMBER) [Nullable, Default: 0]
+   Description: إستخدام الملحقات - Using accessories
+ - REC_ATTCH (NUMBER) [Nullable]
+   Description: الملحقات - Accessories
+ - ADD_DIS_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الفاتورة-Additional discount amount By Invoice
+ - ADD_DIS_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الصنف-Additional discount amount By Item
+ - DIS_PER2 (NUMBER) [Nullable]
+   Description: الخصم2% - Discount 2%
+ - DIS_AMT_DTL2 (NUMBER) [Nullable]
+   Description: خصم2 - Discount 2
+ - DIS_PER3 (NUMBER) [Nullable]
+   Description: الخصم3% - Discount 3%
+ - DIS_AMT_DTL3 (NUMBER) [Nullable]
+   Description: خصم3 - Discount 3
+ - RCRD_NO_REF (NUMBER) [Nullable]
+   Description: رقم السجل المرجع - Reference registry number
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - I_LENGTH (NUMBER) [Nullable]
+   Description: الطول - height
+ - I_PRICE_VAT (NUMBER) [Nullable]
+   Description: السعرشامل الضريبة - Price Including Tax
+ - I_WIDTH (NUMBER) [Nullable]
+   Description: العرض - the offer
+ - I_HEIGHT (NUMBER) [Nullable]
+   Description: الإرتفاع - Height
+ - I_NUMBER (NUMBER) [Nullable]
+   Description: العدد - number
+ - CNT_LENGTH (NUMBER) [Nullable]
+   Description: كم طول - How long
+ - CNT_WIDTH (NUMBER) [Nullable]
+   Description: كم عرض - How much offered
+ - CRCMFRNC_CRCL (NUMBER) [Nullable]
+   Description: محيط دائرة - Circle
+ - DMTR_CRCL (NUMBER) [Nullable]
+   Description: قطر الدائرة - diameter
+ - WT_UNT (VARCHAR2) [Nullable]
+   Description: الوحدة العددية - Numerical unit
+ - WT_QTY (NUMBER) [Nullable]
+   Description: الكمية العددية - Numerical quantity
+ - DIFF_I_QTY (NUMBER) [Nullable]
+   Description: فارق الكمية-Quantity difference
+ - POST_CODE (VARCHAR2) [Nullable]
+   Description: كود ترحيل لحسابات المخزون-Stock Accounts Transfer Code
+ - QT_PRM_NO (NUMBER) [Nullable]
+   Description: رقم العرض - Quotation number
+ - QT_PRM_SER (NUMBER) [Nullable]
+   Description: تسلسل العرض-Quotation sequence
+ - QT_PRM_RCRD_NO (NUMBER) [Nullable]
+   Description: رقم سجل العرض-Quotation record number
+ - INSRNCE_LOAD_PER (NUMBER) [Nullable]
+   Description: نسبة التحمل - The tolerance ratio
+ - INSRNCE_LOAD_AMT (NUMBER) [Nullable]
+   Description: مبلغ التحمل - Endure
+ - INSRNCE_ADD_LMT (NUMBER) [Nullable]
+   Description: فارق السقف - Ceiling
+ - INSRNCE_ADD_LMT_MST (NUMBER) [Nullable]
+   Description: فارق السقف للفترة - Limit Difference For Priod
+ - INSRNCE_ADD_LMT_VAT_AMT (NUMBER) [Nullable]
+   Description: مبلغ ضريبة فارق السقف للفترة- Tax Amount For Limit Difference For Priod
+ - INSRNCE_APPRVD_CODE (VARCHAR2) [Nullable]
+   Description: كود الموافقة - Approval code
+ - INSRNCE_LOAD_AMT_VAT_AMT (NUMBER) [Nullable]
+   Description: مبلغ ضريبة مبلغ التحمل-Tax amount deductible amount
+ - INSRNCE_I_CODE_VAT_AMT (VARCHAR2) [Nullable]
+   Description: رقم الصنف لضريبة التحمل -Item No For Load Tax Amount.
+ - SUB_C_CODE (VARCHAR2) [Nullable]
+   Description: رقم المستفيد - The beneficiary number
+ - I_PRICE_OUTGONG (NUMBER) [Nullable]
+   Description: سعر الصنف الخاص بالصرف-Item Price For Outgoing 
+ - PKG_UNT (VARCHAR2) [Nullable]
+   Description: الوحدة - Unity
+ - PKG_UNT_SIZE (NUMBER) [Nullable]
+   Description: العبوه - Playback
+ - PKG_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - PKG_LENGTH (NUMBER) [Nullable]
+   Description: الطول - height
+ - PKG_WIDTH (NUMBER) [Nullable]
+   Description: العرض - the offer
+ - PKG_HEIGHT (NUMBER) [Nullable]
+   Description: الإرتفاع - Height
+ - PKG_SIZE (NUMBER) [Nullable]
+   Description: الحجم - Size
+ - PKG_WEIGHT (NUMBER) [Nullable]
+   Description: الوزن - the weight
+ - FIELD_DTL1 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 1 -Add Field 1
+ - FIELD_DTL2 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 2-Add Field 2
+ - FIELD_DTL3 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 3-Add Field 3
+ - FIELD_DTL4 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 4 -Add Field 4
+ - FIELD_DTL5 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 5-Add Field 5
+ - FIELD_DTL6 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 6- Add Field 6
+ - FIELD_DTL7 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 7-Add Field 7
+ - FIELD_DTL8 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 8-Add Field 8
+ - FIELD_DTL9 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 9-Add Field 9
+ - FIELD_DTL10 (VARCHAR2) [Nullable]
+   Description: الحقل الاضافي 10 -Add Field 10
+ - PRCNT_PRICE (NUMBER) [Nullable]
+   Description: سعر نسبة الطبيب - The percentage of the doctor's ratio
+ - PRCNT_AMT (NUMBER) [Nullable]
+   Description: مبلغ نسب الاطباء - The amount of doctors ’ratios
+ - PRCDR_TYP (NUMBER) [Nullable]
+   Description: نوع الإجراء الطبي - Type of medical procedure
+ - PRCNT_FLG (NUMBER) [Nullable]
+   Description: الخدمه عليها نسبة - Service has a percentage
+ - LEV_NO (NUMBER) [Nullable]
+   Description: المستوى - Level
+ - MEASUR_PRICE (NUMBER) [Nullable, Default: 0]
+   Description: سعر الوحده - Unity price
+ - ARGMNT_NO (NUMBER) [Nullable]
+   Description: المعامل - Laboratory
+ - CPN_QTY (NUMBER) [Nullable]
+   Description: كمية الكوبون-Coupon Quantity
+ - DOC_SEQ_TMP (NUMBER) [Nullable]
+   Description: تسلسل مؤقت-Sequence temporary
+ - USED_ITM (NUMBER) [Nullable, Default: 0]
+   Description: صنف مستخدم-Used Item
+ - VAT_AMT_OTHR (NUMBER) [Nullable]
+   Description: مبلغ ضريبة الاعباء-Tax Amount Charges
+ - PRM_GRP_NO (NUMBER) [Nullable]
+   Description: رقم مجموعة العروض الترويجية-Promotional Group Number
+ - ADD_DISC_AMT_DTL_YR (NUMBER) [Nullable, Default: 0]
+   Description: ملبغ الخصم الاضافي على مستوى الصنف سنوي-Additional discount amount By item annually
+ - QR_CODE (VARCHAR2) [Nullable]
+   Description: رمز الاستجابة السريع-QR code
+ - SSCC_CODE (VARCHAR2) [Nullable]
+   Description: رمز حاوية الشحن التسلسلي-Serial Shipping Container Code
+ - GTIN_CODE (VARCHAR2) [Nullable]
+   Description: الرقم التجاري العالمي للصنف-Global Trade Item Number
+ - SRLNO_CODE (VARCHAR2) [Nullable]
+   Description: رمز تسلسل الصنف-Item serial code
+ - MFG_DATE (DATE) [Nullable]
+   Description: تاريخ التصنيع-Manufacturing Date
+ - REP_CODE_SP (VARCHAR2) [Nullable]
+   Description: رقم المندوب العلمي - Scientific delegate number
+ - PRM_CODE_OUT (VARCHAR2) [Nullable]
+   Description: رقم المسوق الخارجي - External marketer number
+ - CMP_NO (NUMBER) [Not Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - COMM_PER (NUMBER) [Nullable, Default: 0]
+   Description: نسبة العمولة - Commission
+ - COMM_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ العمولة - Commission
+ - DOC_SEQUENCE_REF (NUMBER) [Nullable]
+   Description: تسلسل الصنف للوثيقة المرجعية-Item sequence for reference document
+ - DOC_SEQUENCE_BR (NUMBER) [Nullable]
+   Description: تسلسل الصنف للوثيقة المرجعية-Item sequence for reference document
+ - RCRD_NO_BR (NUMBER) [Nullable]
+   Description: رقم السجل للوثيقة المرجعية-Reference document registration number
+ - NOT_OUT_QTY (NUMBER) [Nullable]
+   Description: كمية المرتجع الغير منصرف - The quantity of the returning is not spent
+ - NOT_OUT_FREE_QTY (NUMBER) [Nullable]
+   Description: الكمية المجانية للمرتجع الغير منصرف- The Free quantity of the returning is not spent
+ - BNK_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ بطاقة الائتمان -Credit card amount 
+ - DOC_NO_FDA (NUMBER) [Nullable]
+   Description: This column is not used
+ - FDA_CODE (VARCHAR2) [Nullable]
+   Description: كود الوصفة الطبية-Prescription code
+ - FDA_ID (NUMBER) [Nullable]
+   Description: رقم الوصفة الطبية-Prescription number
+ - USG_ITM (VARCHAR2) [Nullable]
+   Description: تعليمات استخدام الصنف-Instructions for using the product
+ - FDA_CMNT (VARCHAR2) [Nullable]
+   Description: ملاحظات الوصفة الطبية-Prescription notes
+ - ITM_QR_SQ (NUMBER) [Nullable]
+   Description: تسلسل رمز الاستجابة السريع-QR code sequence
+ - OTHR_AMT_AC (NUMBER) [Nullable]
+   Description: مبلغ عبئ حساب الطرف الاخر-The amount of the other party's account charge
+ - OTHR_AMT_ITM_AC (NUMBER) [Nullable]
+   Description: مبلغ عبئ حساب الطرف الاخر حسب الصنف-The amount of the other party's account charge by Item
+ - OTHR_AMT_DISC_AC (NUMBER) [Nullable]
+   Description: مبلغ خصم عبئ حساب الطرف الاخر -The amount of the other party's account charge is deducted.
+ - OTHR_AMT_DISC_ITM_AC (NUMBER) [Nullable]
+   Description: مبلغ خصم عبئ حساب الطرف الاخر على مستوى الصنف-The amount of the other party's account charge discount By Item
+ - VAT_AMT_OTHR_AC (NUMBER) [Nullable]
+   Description: مبلغ الضريبة للعبئ حساب الطرف الاخر-The tax amount to be charged to the other party's account
+ - VAT_AMT_OTHR_ITM (NUMBER) [Nullable]
+   Description: مبلغ الضريبة للعبئ حساب الطرف الاخر على مستوى الصنف-The tax amount to be charged to the other party's account By Item.
+ - PRSPN_DOSAGE (VARCHAR2) [Nullable]
+   Description: الجرعة-DOSAGE
+ - PRSPN_USG (VARCHAR2) [Nullable]
+   Description: الاستخدام-Use
+ - PRSPN_USG_DRTON (VARCHAR2) [Nullable]
+   Description: مدة الاستخدام-Duration of use
+ - PRSPN_USG_MTHD (VARCHAR2) [Nullable]
+   Description: طريقة الاستخدام -Instructions for use
+ - SFDA_CODE (VARCHAR2) [Nullable]
+   Description: رمز الدواء الخاص بهئية الغذاء والدواء-FDA drug code
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+Foreign Keys:
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (EMP_NO) → S_EMP(EMP_NO)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (BILL_SER) → IAS_BILL_MST(BILL_SER)
+ - (I_CODE, I_CODE, ITM_UNT, ITM_UNT) → IAS_ITM_DTL(I_CODE, ITM_UNT, I_CODE, ITM_UNT)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+================================================================================
+
+Table: IAS_BILL_MST
+Description: Sales Invoices Master - فواتير المبيعات رئيسي
+Columns:
+ - BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: طريقة الدفع - payment method
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - BILL_DATE (DATE) [Not Nullable]
+   Description: تاريخ الفاتورة-Invoice Date
+ - BILL_CURRENCY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - BILL_RATE (NUMBER) [Not Nullable]
+   Description: سعر التحويل - Transfer price
+ - STOCK_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل لعملة المخزون-Stock currency exchange rate
+ - C_CODE (VARCHAR2) [Nullable]
+   Description: رقم العميل - Customer number
+ - C_NAME (VARCHAR2) [Nullable]
+   Description: اسم العميل - Customer name
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - CHEQUE_NO (NUMBER) [Nullable]
+   Description: رقم الشيك - Check
+ - NOTE_NO (VARCHAR2) [Nullable]
+   Description: رقم الإشعار - Notice number
+ - CHEQUE_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الشيك - Check
+ - CHEQUE_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الشيك-Check due date
+ - BILL_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - BILL_POST (NUMBER) [Nullable, Default: 0]
+   Description: مرحل - غير مرحل
+ - DISC_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DISC_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DISC_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: خصم الأصناف - Varieties
+ - DISC_AMT_MST_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم - opponent
+ - VAT_AMT_DISC_MST (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الفاتورة -Tax Discount Amount By Invoice 
+ - OTHR_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الأعباء و الضريبة - Burdens and tax
+ - VAT_AMT (NUMBER) [Nullable, Default: 0]
+   Description: ضريبة - tax
+ - BILL_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الفاتورة - The bill amount
+ - CPN_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الكوبون - Coupon
+ - CPN_DIFF_AMT (NUMBER) [Nullable]
+   Description: مبلغ الفارق بين قيمة الكوبونات وقيمة الفاتورة-The difference between the value of the coupons and the value of the invoice
+ - ADVNC_PYMNT_PRCNT_CNTRCT (NUMBER) [Nullable]
+   Description: نسبة الدفعة المقدمة للعقد - The proportion of the batch submitted to the contract
+ - ADVNC_PYMNT_VAT_PER (NUMBER) [Nullable]
+   Description: نسبة ضريبة الدفعة المقدمة-advance payment Vat Percent
+ - W_CODE (NUMBER) [Nullable]
+   Description: المخزن - Warehouse
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CASH_NO (NUMBER) [Nullable]
+   Description: رقم الصندوق - Fund number
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: رقم المركز - Center number
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - CR_CARD_NO (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الفيزا - Visa
+ - CREDIT_CARD (NUMBER) [Nullable, Default: 0]
+   Description: طريقة دفع بطاقة ائتمان -Payment Method Credit Card
+ - SI_TYPE (NUMBER) [Nullable]
+   Description: نوع الفاتورة - The type of bill
+ - ATTACH_CNT (NUMBER) [Nullable]
+   Description: عدد المرفقات - Number of attachments
+ - EXPORT (NUMBER) [Nullable, Default: 0]
+   Description: تصدير - export
+ - STAND_BY (NUMBER) [Nullable, Default: 0]
+   Description: تعليق - comment
+ - CNCL_FLG (NUMBER) [Nullable, Default: 0]
+   Description: ملغية-Canceled
+ - COL_NO (NUMBER) [Nullable]
+   Description: رقم المحصل - The number number
+ - CASH_AC_FCC (VARCHAR2) [Nullable]
+   Description: حساب الصندوق - Fund account
+ - CASH_NO_FCC (NUMBER) [Nullable]
+   Description: رقم الصندوق - Fund number
+ - A_DESC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - COMM_PER (NUMBER) [Nullable]
+   Description: نسبة العمولة - Commission
+ - PR_REP (NUMBER) [Nullable, Default: 0]
+   Description: مرات الطباعة - Print times
+ - PROCESSED (NUMBER) [Nullable, Default: 0]
+   Description: تم صرفها - It has been spent
+ - BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: مصدر الفاتورة - The source of the bill
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - DOC_SER_EXTRNL (VARCHAR2) [Nullable]
+   Description: تسلسل الوثيقة المرجعية-Reference document sequence
+ - DOC_NO_EXTRNL (VARCHAR2) [Nullable]
+   Description: رقم الوثيقة المرجعيه-Reference document number
+ - LOAD_NO (NUMBER) [Nullable]
+   Description: أمر التحميل - Download order
+ - LOAD_SER (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - CLC_VAT_PRICE_TYP (NUMBER) [Nullable]
+   Description: نوع السعر - Price type
+ - AUDIT_REF (NUMBER) [Nullable, Default: 0]
+   Description: روجع - Roja
+ - AUDIT_REF_DESC (VARCHAR2) [Nullable]
+   Description: ملاحظات - comments
+ - AUDIT_REF_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المراجع - Reference user
+ - AUDIT_REF_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - BILL_NO_CONN (NUMBER) [Nullable]
+   Description: الفاتورة المرتبطة - The associated bill
+ - BILL_SER_CONN (NUMBER) [Nullable]
+   Description: سريال الفاتورة السابقة - Serial former bill
+ - CLC_TYP_NO_TAX (NUMBER) [Nullable]
+   Description: طريقة إحتساب الضريبة - How to calculate the tax
+ - AC_AMT (NUMBER) [Nullable]
+   Description: مبلغ الحساب - The account amount
+ - CLC_TAX_INSRNC_CMPNY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: إحتساب الضريبة على شركة التأمين - Calculate the tax on the insurance company
+ - CLC_INSRNCE_LOAD_AMT_MTHD (NUMBER) [Nullable, Default: 1]
+   Description: طريقة إحتساب مبلغ التحمل - How to calculate the endurance amount
+ - CLC_TAX_FREE_QTY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: احتساب الضريبة على الكميات المجانية-Calculating tax on free quantities
+ - OUT_BILL_TYP (NUMBER) [Nullable]
+   Description: نوع الصرف - Drainage
+ - TAX_BILL_TYP (NUMBER) [Nullable]
+   Description: نوع الفاتورة الضريبي - Type of tax bill
+ - HRS_DOC_NO_REF (NUMBER) [Nullable]
+   Description:  رقم الوثيقة المرجعية للنظام الموارد البشرية-Human Resources System Reference Document Number
+ - HRS_DOC_TYPE_REF (NUMBER) [Nullable]
+   Description: نوع الوثيقة المرجعية-Reference document type
+ - HRS_DOC_SER_REF (NUMBER) [Nullable]
+   Description: تسلسل الوثيقة المرجعية للنظام الموارد البشرية-HR System Reference Document Sequence
+ - DOC_PST_SQ (NUMBER) [Nullable]
+   Description: تسلسل الي للترحيل-Sequence to Posting
+ - GRNT_DSCNT_FREE_MTHD (NUMBER) [Nullable, Default: 0]
+   Description: طريقة المنح للخصم والمجاني للاصناف - Method of grants for deduction and for free for items
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: الحقل1 - Field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: الحقل2 - Field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: الحقل3 - Field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: الحقل4 - Field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: الحقل5 - Field 5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description: الحقل6 - Field 6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: الحقل7 - Field 7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: الحقل8 - Field 8
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: الحقل9 - Field 9
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: الحقل10 - Field 10
+ - FIELD11 (VARCHAR2) [Nullable]
+   Description: حقل إضافي11 - Additional field 11
+ - FIELD12 (VARCHAR2) [Nullable]
+   Description: حقل إضافي12 - Additional field 12
+ - FIELD13 (VARCHAR2) [Nullable]
+   Description: حقل إضافي13 - Additional field 13
+ - FIELD14 (VARCHAR2) [Nullable]
+   Description: حقل إضافي14 - Additional field 14
+ - DOC_HASH (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - C_TEL (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - C_ADDRESS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - RECEIVE_NM (VARCHAR2) [Nullable]
+   Description: اسم المستلم في فاتورة التوزيع- Recipient's name on the distribution invoice
+ - DOC_NO_PDA (NUMBER) [Nullable]
+   Description: رقم الفاتورة في الجهاز الكفي - The bill number in the enough device
+ - PDA_NM (VARCHAR2) [Nullable]
+   Description: الأجهزة الكفية - Sufficient devices
+ - CR_CARD_NO_SCND (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT_SCND (NUMBER) [Nullable]
+   Description: المبلغ - Amount
+ - CR_CARD_NO_THRD (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT_THRD (NUMBER) [Nullable]
+   Description: المبلغ - Amount
+ - DRIVER_NO (NUMBER) [Nullable]
+   Description: رقم السائق - Driver number
+ - ADD_DISC_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الفاتورة-Additional discount amount at the invoice level
+ - ADD_DISC_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الاصناف-Additional discount amount by Items
+ - OTHR_AMT_DISC (NUMBER) [Nullable]
+   Description: مبلغ خصم الاعباء - Discount Amount Charges
+ - PAID_AMT (NUMBER) [Nullable]
+   Description: المبلغ المدفوع - The paid amount
+ - PAID_BILL (NUMBER) [Nullable, Default: 0]
+   Description: تدفيع - Pushing
+ - PAID_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المدّفَع - Paid User Number
+ - PAID_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - REC_INV_BILL (NUMBER) [Nullable, Default: 0]
+   Description: تم تسليمه - Delivery
+ - REC_INV_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المُسَلِم-Delivery User Number
+ - REC_INV_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - BILL_VALUED (NUMBER) [Nullable, Default: 0]
+   Description: الإستحقاق - Entitlement
+ - VALUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - POS_POST (NUMBER) [Nullable, Default: 0]
+   Description: مرحل - Stagnant
+ - CR_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم الوثيقة - Document number
+ - BILL_WITHOUT_AUTO_OTHR_AMT (NUMBER) [Nullable, Default: 0]
+   Description: عدم إضافة الأعباء الآلية لفاتورة المبيعات - Not adding the mechanical burdens to the sales bill
+ - CR_VALUED (NUMBER) [Nullable, Default: 0]
+   Description: استحقاق مبلغ بطاقة الائتمان-Credit card amount due
+ - CR_VALUED_SCND (NUMBER) [Nullable, Default: 0]
+   Description: 2استحقاق مبلغ بطاقة الائتمان-Credit card amount due2
+ - CR_VALUED_THRD (NUMBER) [Nullable, Default: 0]
+   Description: 3استحقاق مبلغ بطاقة الائتمان-Credit card amount due3
+ - CR_DOC_NO_REF_SCND (NUMBER) [Nullable]
+   Description: رقم المرجع لالة بطاقة الائتمان-Credit Card Machine Reference Number
+ - CR_DOC_NO_REF_THRD (NUMBER) [Nullable]
+   Description: 3رقم المرجع لالة بطاقة الائتمان-Credit Card Machine Reference Number
+ - CR_VALUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - CR_VALUE_DATE_SCND (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - CR_VALUE_DATE_THRD (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - CR_CARD_COMM_PER (NUMBER) [Nullable]
+   Description: نسبة العمولة لبطاقة الائتمان-Credit card commission Percent
+ - CR_CARD_COMM_PER_SCND (NUMBER) [Nullable]
+   Description: 2نسبة العمولة لبطاقة الائتمان-Credit card commission Percent2
+ - CR_CARD_COMM_PER_THRD (NUMBER) [Nullable]
+   Description: 3نسبة العمولة لبطاقة الائتمان-Credit card commission Percent3
+ - CR_CARD_MAX_COMM_AMT (NUMBER) [Nullable]
+   Description: اعلى مبلغ لعمولة بطاقة الائتمان-Maximum credit card commission amount
+ - CR_CARD_MAX_COMM_AMT_SCND (NUMBER) [Nullable]
+   Description: 2اعلى مبلغ لعمولة بطاقة الائتمان-Maximum credit card commission amount2
+ - CR_CARD_MAX_COMM_AMT_THRD (NUMBER) [Nullable]
+   Description: 3اعلى مبلغ لعمولة بطاقة الائتمان-Maximum credit card commission amount3
+ - CR_CARD_CST_NO (VARCHAR2) [Nullable]
+   Description: رقم بطاقة الائتمان 1 - Credit card number 1
+ - CR_CARD_CST_NO_SCND (VARCHAR2) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CR_CARD_CST_NO_THRD (VARCHAR2) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CR_CARD_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم المرجع لبطاقة الائتمان1 - Reference number for credit card 1
+ - CR_CARD_DOC_NO_REF_SCND (NUMBER) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CR_CARD_DOC_NO_REF_THRD (NUMBER) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CR_CARD_DSC (VARCHAR2) [Nullable]
+   Description: البيان لبطاقة الائتمان 1 - The statement of credit card 1
+ - CR_CARD_DSC_SCND (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - CR_CARD_DSC_THRD (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - QT_PRM_NO (NUMBER) [Nullable]
+   Description: رقم العرض الترويجي - Promotional offer number
+ - QT_PRM_SER (NUMBER) [Nullable]
+   Description: تسلسل العرض الترويجي على مستوى الفاتورة-promotion sequence By Invoice
+ - QT_PRM_RCRD_NO (NUMBER) [Nullable]
+   Description: رقم سجل العرض الترويحي على مستوى الفاتورة-Promotional offer record number By Invoice
+ - PRM_CODE (VARCHAR2) [Nullable]
+   Description: رقم المسوق - Market number
+ - DOC_BRN_NO (NUMBER) [Nullable]
+   Description: الفرع المستفيد - The beneficiary branch
+ - CMPNY_NO (NUMBER) [Nullable]
+   Description: شركة الإتصالات - Communications Company
+ - MOBILE_NO (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - SEND_TEL_SUCCESS (NUMBER) [Nullable, Default: 0 ]
+   Description: تمت عملية شحن الرصيد بنجاح - The balance was successfully shipped
+ - SEND_TEL_RESULTCODE (NUMBER) [Nullable, Default: 0 ]
+   Description: رمز نتيجة الارسال-Result Code Send 
+ - NOT_USE_QUT_PRM (NUMBER) [Nullable, Default: 0 ]
+   Description: عدم إنزال العروض الترويجية - Not to download promotional offers
+ - INSRNCE_CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - INSRNCE_BNF_NO (NUMBER) [Nullable]
+   Description: الجهة المستفيدةمن التأمين - Insurance Beneficiary
+ - INSRNCE_PRSON_NM (VARCHAR2) [Nullable]
+   Description: إسم المشترك - Subscriber
+ - INSRNCE_CARD_NO (VARCHAR2) [Nullable]
+   Description: الرقم التأميني للمشترك - The insurance number of the subscriber
+ - INSRNCE_CARD_NO_FMLY (VARCHAR2) [Nullable]
+   Description: الرقم التأميني للعائلة-Family insurance number
+ - INSRNCE_RLTN_TYP (NUMBER) [Nullable]
+   Description: صلة القرابة - Kinship
+ - INSRNCE_CLSS_NO (VARCHAR2) [Nullable]
+   Description: رقم فئة التأمين-Insurance class number
+ - INSRNCE_LOAD_PER (NUMBER) [Nullable]
+   Description: نسبة التحمل - The tolerance ratio
+ - INSRNCE_DIAGNOSIS (VARCHAR2) [Nullable]
+   Description: التشخيص - Diagnosis
+ - INSRNCE_MDCL_NO (NUMBER) [Nullable]
+   Description: جهة التطبيب - Medical authority
+ - INSRNCE_APPRVD_CODE (VARCHAR2) [Nullable]
+   Description: كود الموافقة - Approval code
+ - INSRNCE_CSH_AMT (NUMBER) [Nullable]
+   Description: مبلغ التحمل-The deductible amount
+ - INSRNCE_ADD_LMT_MST (NUMBER) [Nullable]
+   Description: فارق السقف للفترة - The ceiling difference for the period
+ - INSRNCE_ADD_LMT_DTL (NUMBER) [Nullable]
+   Description: فارق السقف للاصناف - The ceiling difference for items
+ - INSRNCE_ADD_LMT_DOC (NUMBER) [Nullable]
+   Description: فارق السقف للفاتورة - The ceiling difference for the bill
+ - INSRNCE_MDCN_CHRONIC_FLG (NUMBER) [Nullable, Default: 0]
+   Description: أدوية مزمنة - Chronic medicines
+ - INSRNCE_LMT_AMT_LOC_DOC (NUMBER) [Nullable]
+   Description: سقف الفاتورة بالمحلي - The roof of the bill in the local
+ - INSRNCE_LMT_APPRVD_AMT_LOC_DOC (NUMBER) [Nullable]
+   Description: السقف المعتمد من شركة التأمين - Limit Approved From Insurance Company
+ - INSRNCE_LOAD_AMT_TAX_TYP (NUMBER) [Nullable]
+   Description: نوع ضريبة مبلغ التحمل-Tax type deductible amount
+ - BILL_STAT_TYP (NUMBER) [Nullable]
+   Description: حالة الفاتورة - The case of the bill
+ - PRCDR_TYP (NUMBER) [Nullable]
+   Description: نوع الإجراء الطبي - Type of medical procedure
+ - PRCNT_AMT (NUMBER) [Nullable]
+   Description: اجمالي مبلغ  نسب الاطباء - The total amount of doctors ’ratios
+ - CLNC_NO (NUMBER) [Nullable]
+   Description: رقم العيادة - Clinic number
+ - VST_TYP_NO (NUMBER) [Nullable]
+   Description: رقم نوع الزيارة - Visiting type number
+ - PRD_NO (NUMBER) [Nullable]
+   Description: رقم الفترة - Period
+ - DOC_NO_RES (NUMBER) [Nullable]
+   Description: رقم الحجز - Reservation number
+ - DOC_SRL_RES (NUMBER) [Nullable]
+   Description: تسلسل الحجز-Reservation sequence
+ - BLOCK_RSLT_FLG (NUMBER) [Nullable, Default: 0]
+   Description: حجب النتيجة - Block
+ - SFDA_DCTR_NO (VARCHAR2) [Nullable]
+   Description: رقم الطبيب - Doctor No.
+ - SFDA_PTNT_ID (VARCHAR2) [Nullable]
+   Description: رقم هوية المريض - Patient ID number
+ - SFDA_PRSPCT_NO (VARCHAR2) [Nullable]
+   Description: رقم الوصفة الطبية - Medical prescription number
+ - SFDA_PRSPCT_DATE (DATE) [Nullable]
+   Description: تاريخ الوصفة الطبية - History of the prescription
+ - COMM_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: عمولة المندوب حسب الصنف - The commission of the delegate by category
+ - CONN_SI_WITH_OUTGONG (NUMBER) [Nullable, Default: 0]
+   Description: الصرف قبل الفاتورة - The exchange before the bill
+ - C_CODE_CSH (VARCHAR2) [Nullable]
+   Description: رقم العميل النقدي - Customer cash number
+ - CPN_FLG (NUMBER) [Nullable, Default: 0]
+   Description: كوبون - coupon
+ - CST_GCC (NUMBER) [Nullable, Default: 0]
+   Description: عميل مجلس التعاون الخليجي - Gulf Cooperation Council customer
+ - REC_NOTE (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - TANK_CODE (VARCHAR2) [Nullable]
+   Description: رمز الخزان-Tank Code
+ - POINT_RPLC_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الإستبدال - Replacement
+ - VAT_AMT_OTHR (NUMBER) [Nullable]
+   Description: مبلغ ضريبة العبئ-Tax Amount Charges
+ - C_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي - The tax number
+ - BRN_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي للفرع-Branch Tax number
+ - CNTRCT_DATE (DATE) [Nullable]
+   Description: تاريخ العقد - Contract date
+ - CNTRCT_NO (VARCHAR2) [Nullable]
+   Description: رقم العقد - Contract number
+ - CRD_NO_DISC (VARCHAR2) [Nullable]
+   Description: رقم بطاقة الخصم - Discount card number
+ - CRD_DISC_PER (NUMBER) [Nullable]
+   Description: نسبة الخصم - The discount ratio
+ - CRD_DISC_AMT (NUMBER) [Nullable]
+   Description: مبلغ الخصم - Deduction
+ - DOC_SRL_CNTRCT (NUMBER) [Nullable]
+   Description: تسلسل عقد المبيعات-sequence Sales Contract
+ - CNTRCT_BTCH_NO (NUMBER) [Nullable]
+   Description: رقم الدفعة - Batch number
+ - POINT_TYP_NO (NUMBER) [Nullable]
+   Description: نوع برنامج نقاطي - The type of Naqati program
+ - POINT_CALC_TYP_NO (NUMBER) [Nullable, Default: 0]
+   Description: إستبدال برصيد النقاط - Replacement
+ - POINT_CNT (NUMBER) [Nullable]
+   Description: عدد النقاط - Number of points
+ - POINT_CNT_ALL (NUMBER) [Nullable]
+   Description: رصيد النقاط - Points
+ - POINT_RPLC_CNT (NUMBER) [Nullable]
+   Description: عدد نقاط الاستبدال - Number of replacement points
+ - ASS_AMT (NUMBER) [Nullable]
+   Description: مبلغ التبرع-Donation amount
+ - DISC_AMT_AFTR_VAT (NUMBER) [Nullable]
+   Description: الخصم بعد الضريبة - The deduction after the tax
+ - AC_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description:  رقم الحساب التحليلي-Analytical account number
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - PTNT_NO (VARCHAR2) [Nullable]
+   Description: رقم المريض - Patient number
+ - DCTR_NO (VARCHAR2) [Nullable]
+   Description: الطبيب المعالج - Treating Doctor
+ - PTNT_TYP (NUMBER) [Nullable]
+   Description: نوع المريض - Patient type
+ - DOC_NO_ADMSON (NUMBER) [Nullable]
+   Description: رقم التنويم - Hypnosis number
+ - DOC_SRL_ADMSON (NUMBER) [Nullable]
+   Description: السريال الخاص برقم الترقيد - Surreal for the numbering number
+ - PYMNT_AC (NUMBER) [Nullable, Default: 0]
+   Description: طريقة دفع الى حساب-Payment method to an account
+ - RMS_BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع في نظام المطاعم-Payment method in the restaurant system
+ - RMS_FREE_FLG (NUMBER) [Nullable, Default: 0]
+   Description: فاتورة مجانية نظام المطاعم-Free billing system for restaurants
+ - WEB_SRVC_TRNSFR_DATA_FLG (NUMBER) [Nullable, Default: 0]
+   Description: تم نقلها عبر الويب سيرفس-Moved via web service
+ - WEB_SRVC_TRNSFR_DATA_DSC (VARCHAR2) [Nullable]
+   Description: وصف المزامنه عبر الويب سيرفس-Web Service Sync Description
+ - WEB_SRVC_UUID (VARCHAR2) [Nullable]
+   Description: ناتج المزامنه للويب سيرفس UUID-Web Service Sync Output UUID
+ - E_INVC_MTHD_NO (NUMBER) [Nullable]
+   Description: رقم طريقة الفاتورة الالكترونية -Electronic invoice method number
+ - ADVNC_PYMNT_AMT (NUMBER) [Nullable]
+   Description: مبلغ الدفعة المقدمة - The amount of the batch provided
+ - ADVNC_PYMNT_VAT_AMT (NUMBER) [Nullable]
+   Description: مبلغ ضريبة الدفعه المقدمة-Advance tax amount
+ - ADVNC_PYMNT_PER (NUMBER) [Nullable]
+   Description: نسبة الدفعة المقدمة- Advance payment percentage
+ - DOC_M_SQ (NUMBER) [Nullable]
+   Description: تسلسل فرعي للوثيقة-Document subsequence
+ - ADD_DISC_AMT_YR (NUMBER) [Nullable, Default: 0]
+   Description: مبالغ الخصومات الاضافية سنوي-Additional discount amounts annually
+ - FDA_CODE (VARCHAR2) [Nullable]
+   Description: رمز الوصفة الطبية-Prescription symbol
+ - FDA_ENTITY_ID (VARCHAR2) [Nullable]
+   Description: الرقم الراجع من المزامنه مع منصة وصفتي-The number returned from synchronization with the Wasfati platform
+ - SYS_DOC_ID (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - SHO_SYS_TYP (NUMBER) [Nullable]
+   Description: نوع المتجر الالكتروني-Type of online store
+ - BNK_AMT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ بطاقة الائتمان-Credit card amount
+ - OTHR_AMT_AC (NUMBER) [Nullable]
+   Description: مبلغ العبئ حساب الطرف الاخر-The amount of the burden on the other party's account
+ - OTHR_AMT_DISC_AC (NUMBER) [Nullable]
+   Description: مبلغ العبئ خصم حساب الطرف الاخر-The amount of the charge is deducted from the other party's account
+ - VAT_AMT_OTHR_AC (NUMBER) [Nullable]
+   Description: مبلغ ضريبة العبئ حساب الطرف الاخر-The amount of the burden tax is the other party's account
+ - IS_CVRD_GRNTEE (NUMBER) [Nullable, Default: 0]
+   Description: تحت الضمان-Under warranty
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_DATE_CLK (DATE) [Nullable]
+   Description: وقت وتاريخ الاضافة-Time and date of addition
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - POST_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المرحل - The user is deported
+ - POST_DATE (DATE) [Nullable]
+   Description: تاريخ الترحيل - Date of deportation
+ - UNPOST_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المراجع - Reference user
+ - UNPOST_DATE (DATE) [Nullable]
+   Description: تاريخ إلغاء الترحيل - Date of canceling the deportation
+ - CMP_NO (NUMBER) [Not Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - HOW_DID_YOU_KNOW_US (NUMBER) [Nullable]
+   Description: كيف عرفتنا-How did you know us
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (EMP_NO) → S_EMP(EMP_NO)
+ - (A_CODE, A_CODE, BILL_CURRENCY, BILL_CURRENCY) → ACCOUNT_CURR(A_CODE, A_CY, A_CODE, A_CY)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (COL_NO) → COLLERCTOR(COL_NO)
+ - (CR_CARD_NO) → CREDIT_CARD_TYPES(CR_CARD_NO)
+ - (PRM_CODE) → IAS_PROMOTERS(PRM_CODE)
+ - (REP_CODE) → SALES_MAN(REPRS_CODE)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (SI_TYPE) → IAS_SALES_TYPES(SI_TYPE)
+================================================================================
+
+Table: IAS_BILL_MST_EXTND
+Description: Sales Invoices Additional Data - Master - فواتير المبيعات بيانات إضافية -رئيسي
+Columns:
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - Invoice No
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - E_INVC_DOC_TYP (NUMBER) [Nullable]
+   Description: This column is not used
+ - E_INVC_TRNS_CODE (NUMBER) [Nullable]
+   Description: This column is not used
+ - ADDR_BRN_SQ (NUMBER) [Nullable]
+   Description: This column is not used
+ - ADDR_CST_SQ (NUMBER) [Nullable]
+   Description: This column is not used
+ - ADDR_DLVRY_SQ (NUMBER) [Nullable]
+   Description: This column is not used
+ - CID_BRN_SQ (NUMBER) [Nullable]
+   Description: This column is not used
+ - CID_CST_SQ (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الإعفاء - Exempt Code
+ - VAT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الإعفاء - Exempt Reason
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: كود الضريبة - Vat Code
+ - TAX_CUR_CODE (VARCHAR2) [Nullable]
+   Description: عملة الضريبة - Tax Currency
+ - TAX_CUR_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Exch. Rate
+ - TAX_CUR_AMT (NUMBER) [Nullable]
+   Description: This column is not used
+ - STRT_GODS_RCVD_DATE (DATE) [Nullable]
+   Description: تاريخ بداية تسليم البضاعة - Start Goods Received Date
+ - END_GODS_RCVD_DATE (DATE) [Nullable]
+   Description: تاريخ انتهاء تسليم البضاعة - End Goods Received Date
+ - TAX_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الضريبة - The Tax Dua Date
+ - CLC_TYP_NO_TAX_INPT (NUMBER) [Nullable]
+   Description: طريقة احتساب الضريبة للاعباء-calculate tax Type Charges
+ - VAT_INPT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: كود الضريبة للاعباء - Vat Code Other Charges
+ - VAT_INPT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الإعفاء للاعباء- Exempt Reason Charges
+ - VAT_INPT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء للاعباء - Tax Exemption Code For Other Charges
+ - BILL_TAX_STATUS (NUMBER) [Nullable, Default: 1]
+   Description: حالة الضريبة - Tax Status
+ - BILL_DOC_TYPE_SUB (NUMBER) [Nullable]
+   Description: طريقة الدفع التحليلي - Pay Type Sub
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - ASS_NO (NUMBER) [Nullable]
+   Description: رقم الجهة-Agency number
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (BILL_SER) → IAS_BILL_MST(BILL_SER)
+================================================================================
+
+Table: IAS_CARGO_SERVICES
+Description: Shipping data for sales - بيانات الشحن للمبيعات
+Columns:
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - BILL_OF_LADING (VARCHAR2) [Nullable]
+   Description: رقم بوليصة الشحن - Shipping Politech number
+ - GOODS_BILLNO (VARCHAR2) [Nullable]
+   Description: رقم فاتورة البضاعة - The merchandise bill number
+ - SERVICE_TYPE (NUMBER) [Nullable]
+   Description: نوع الخدمة - Service type
+ - WEIGHT (NUMBER) [Nullable]
+   Description: (KG)الوزن - (KG) Weight
+ - CUSTOMS_DESC_NO (VARCHAR2) [Nullable]
+   Description: رقم البيان الجمركي - Customs statement number
+ - CUSTOMS_DESC_TYPE (NUMBER) [Nullable]
+   Description: نوع البيان الجمركي - Customs statement type
+ - RECIEVE_COM (VARCHAR2) [Nullable]
+   Description: الشركة المستلمة - The receiving company
+ - TRANSPORT_COM (VARCHAR2) [Nullable]
+   Description: الشركة الناقلة - The carrier company
+ - PACKAGE_COUNT (NUMBER) [Nullable]
+   Description: عدد الطرود - Number of parcels
+ - SERVICE_SERIAL (NUMBER) [Nullable]
+   Description: رقم التسلسل - Sequence number
+ - A_DESC (VARCHAR2) [Nullable]
+   Description: نوع البضاعة - The type of goods
+ - ARRIVAL_DATE (DATE) [Nullable]
+   Description: تاريخ التسليم - Date of delivery
+ - ARRIVAL_TIME (DATE) [Nullable]
+   Description: وقت التسليم - Delivery time
+ - BILL_TYPE (NUMBER) [Nullable]
+   Description: نوع المستند - Document type
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - DOC_SER_EXTRNL (VARCHAR2) [Nullable]
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+================================================================================
+
+Table: IAS_CASH_CUSTMR
+Description: Cash customer data - بيانات العملاء النقديون
+Columns:
+ - CUST_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الجوال - Mobile number
+ - CUST_L_NM (VARCHAR2) [Not Nullable]
+   Description: اسم العميل - Customer name
+ - CUST_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - CUST_GRP_CODE (NUMBER) [Nullable]
+   Description: المجموعة - Group
+ - MOBILE_NO (VARCHAR2) [Not Nullable]
+   Description: رقم الجوال - Mobile number
+ - POINT_TYP_NO (NUMBER) [Nullable]
+   Description: نوع برنامج نقاطي - The type of Naqati program
+ - POINT_TYP_ACTV_DATE (DATE) [Nullable]
+   Description: تاريخ التفعيل - Activation date
+ - TEL_NO (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - FAX_NO (VARCHAR2) [Nullable]
+   Description: رقم الفاكس - Fax
+ - PBOX (VARCHAR2) [Nullable]
+   Description: رقم صندوق البريد - Post box number
+ - E_MAIL (VARCHAR2) [Nullable]
+   Description: البريد الالكتروني - e-mail
+ - WEB_SITE (VARCHAR2) [Nullable]
+   Description: الموقع على الانترنت - The site on the Internet
+ - C_PWD (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - CITY_NO (NUMBER) [Nullable]
+   Description: المدينه - City
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - ADDRESS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - BIRTH_DATE (DATE) [Nullable]
+   Description: تاريخ الميلاد_م - Date of birth m
+ - FIRST_DEAL_DATE (DATE) [Nullable]
+   Description: تاريخ التعامل - Date of dealing
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - C_BOX_CODE (VARCHAR2) [Nullable]
+   Description: الرمز البريدي - zip code
+ - C_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي - The tax number
+ - CNTRY_NO (NUMBER) [Nullable]
+   Description: الدولة - State
+ - PROV_NO (NUMBER) [Nullable]
+   Description: رقم المحافظة
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: حقل اضافي1 - Additional field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: حقل اضافي2 - Additional field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: حقل اضافي3 - Additional field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: حقل اضافي4 - Additional field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 5 - Additional field 5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 6 - Additional field 6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 7 - Additional field 7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 9 - Additional field 9
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 8 - Additional field 8
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 10 - Additional field 10
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: توقيف العميل - Customer arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - CRD_NO_DISC (VARCHAR2) [Nullable]
+   Description: رقم بطاقة الخصم - Discount card number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم الفرع - Branch number
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - C_CMPNY_NM (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - C_ACTVTY_TYP (NUMBER) [Nullable]
+   Description: This column is not used
+ - C_ACTVTN_CODE (NUMBER) [Nullable]
+   Description: This column is not used
+ - C_ACTVTN_FLG (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - BLK_LST (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - BLK_LST_RES (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - BLK_LST_DATE (DATE) [Nullable]
+   Description: This column is not used
+ - RGN_NO (NUMBER) [Nullable]
+   Description: This column is not used
+ - CSTMR_BUILD_NO (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - CSTMR_FLOOR_NO (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - CSTMR_APRTMNT_NO (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - DRIVER_NO (NUMBER) [Nullable]
+   Description: رقم السائق- Driver No.
+ - BUILDING_NO (VARCHAR2) [Nullable]
+   Description: رقم المبنى - Building No
+ - STREET (VARCHAR2) [Nullable]
+   Description: الشارع - Street
+ - DSTRCT_NM (VARCHAR2) [Nullable]
+   Description: الحي - District 
+ - ADD_NO (VARCHAR2) [Nullable]
+   Description: الرقم الاضافي - Add. Number
+ - CR_NO (VARCHAR2) [Nullable]
+   Description: رقم السجل التجاري - Commercial Register No
+ - CSTMR_IDNTFR (VARCHAR2) [Nullable]
+   Description: المعرف - Identifier
+ - SHRT_ADD (VARCHAR2) [Nullable]
+   Description: العنوان المختصر - Short Address
+ - C_GENDER (NUMBER) [Nullable]
+   Description: الجنس - Gender
+ - NTNLTY_NO (NUMBER) [Nullable]
+   Description: الجنسية - Nationality
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: IAS_CONN_ITM_MSUR_UNT
+Description: Sub-unit items - وحدات الصنف الجزئية
+Columns:
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Nullable]
+   Description: عبوة الصنف - Variety
+ - DFLT_UNIT (NUMBER) [Nullable, Default: 0 ]
+   Description: الوحدة الإفتراضية - The virtual unit
+ - MSUR_WT_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: تفاصيل الضمانة - Details of the guarantee
+ - ARGMNT_NO (NUMBER) [Nullable]
+   Description: المعامل - Laboratory
+ - MSUR_QTY_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: الوحدة العددية - Numerical unit
+ - MIN_UNT (NUMBER) [Nullable, Default: 0 ]
+   Description: أصغر الوحدة - The smallest unit
+ - FACTOR (VARCHAR2) [Nullable, Default: '/']
+   Description: المعامل - Laboratory
+ - USE_FRACTION (NUMBER) [Nullable, Default: 0]
+   Description: السماح بالكسور في الكميات - Allow fractures in quantities
+ - SCL_I_CODE (VARCHAR2) [Nullable]
+   Description: رقم صنف الميزان - Libra class number
+ - A_DESC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - MAX_WT_QTY (NUMBER) [Nullable]
+   Description: الحد الأعلى - ceiling
+ - MIN_WT_QTY (NUMBER) [Nullable]
+   Description: الحد الأدني - minimum
+ - UPD_FLG (NUMBER) [Nullable]
+   Description: قابل للتعديل - Adjustable
+ - NO_SALE (NUMBER) [Nullable, Default: 0]
+   Description: غير قابل للبيع - Not for sale
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: IAS_CPN_DTL
+Description: Coupon Data -Details - بيانات الكوبونات تفصيلي
+Columns:
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - CPN_TYP_NO (NUMBER) [Not Nullable]
+   Description: نوع الكوبون - Coupon
+ - CPN_BOOK_NO (VARCHAR2) [Nullable]
+   Description: رقم دفتر الكوبونات - Coupons notebook number
+ - CPN_NO (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الكوبون - Coupon number
+ - I_PRICE (NUMBER) [Nullable]
+   Description: السعر - the price
+ - DIS_PER (NUMBER) [Nullable]
+   Description: نسبة الخصم
+ - CPN_DSC_DOC (VARCHAR2) [Nullable]
+   Description: البيان التحليلي - Analytical statement
+ - PRCSSD_FLG (NUMBER) [Nullable, Default: 0]
+   Description: مستخدم - user
+ - DOC_SEQ (NUMBER) [Not Nullable]
+   Description: تسلسل تراكمي - Calcular sequence
+ - CPN_SRL (NUMBER) [Nullable]
+   Description: تسلسل الكوبون - Coupon sequence
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: التوقيف - Arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المُوقّف-Suspended user
+ - SAL_FLG (NUMBER) [Nullable, Default: 0]
+   Description: مباع - Sold
+ - USE_MLTI_FLG (NUMBER) [Nullable, Default: 0]
+   Description: يستخدم أكثر من مرة - Used more than once
+ - FREE_FLG (NUMBER) [Nullable, Default: 0]
+   Description: مجاني - Free
+ - ISSUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإصدار - Release date
+ - EXP_DATE (DATE) [Nullable]
+   Description: تاريخ الإنتهاء - The end date
+ - I_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: م - M
+ - DSTR_FLG (NUMBER) [Nullable, Default: 0]
+   Description: تم توزيعه على المندوبين - It was distributed to the delegates
+ - TAX_PER (NUMBER) [Nullable]
+   Description: نسبة الضريبة-Tax Percent
+ - DOC_SRL_ADVNC (NUMBER) [Nullable]
+   Description: تسلسل الدفعة المقدمة- Advance payment sequence
+ - STN_CPN_NO_REF (VARCHAR2) [Nullable]
+   Description: رقم كوبون المحطات المرجعي-Stations Coupon Reference Number
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز المدخل - The name of the entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز المعدل - The name of the modified device
+Foreign Keys:
+ - (DOC_NO) → IAS_CPN_MST(DOC_NO)
+================================================================================
+
+Table: IAS_CPN_MST
+Description: Coupon Data -Master - بيانات الكوبونات رئيسي
+Columns:
+ - DOC_NO (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل العملية - Operation sequence
+ - DOC_DATE (DATE) [Not Nullable]
+   Description: التاريخ - the date
+ - CPN_TYP_NO (NUMBER) [Not Nullable]
+   Description: رقم النوع - Type number
+ - CPN_CNT (NUMBER) [Not Nullable]
+   Description: عدد الكوبونات - Number of coupons
+ - CPN_BOOK_NO (VARCHAR2) [Nullable]
+   Description: رقم الدفتر - Book number
+ - F_CPN_NO (VARCHAR2) [Nullable]
+   Description: من رقم كوبون - From a coupon number
+ - T_CPN_NO (VARCHAR2) [Nullable]
+   Description: إلى - to
+ - DOC_DSC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - BOOK_NO (NUMBER) [Nullable]
+   Description: تسلسل الدفتر - The book sequence
+ - BOOK_I_PRICE (NUMBER) [Nullable]
+   Description: سعر دفتر الكوبونات - The price of the coupons notebook
+ - DSTR_FLG (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - SAL_FLG (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - PRCSSD_FLG (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 1 - Additional field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 2 - Additional field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 3 - Additional field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 4 - Additional field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 5 - Additional field 5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description: حقل إضافي6 - Additional field 6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: حقل إضافي7 - Additional field 7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: حقل إضافي8 - Additional field 8
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: حقل إضافي9 - Additional field 9
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: حقل إضافي10 - Additional field 10
+ - FUEL_TYP_NO (NUMBER) [Nullable]
+   Description: الي تاريخ تفعيل - To the date of activation
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+Foreign Keys:
+ - (FUEL_TYP_NO) → STN_FUEL_TYP(FUEL_TYP_NO)
+ - (CPN_TYP_NO) → IAS_CPN_TYP_MST(CPN_TYP_NO)
+================================================================================
+
+Table: IAS_DETAIL_GROUP
+Description: Detailed Groups - المجموعات التفصيلية
+Columns:
+ - G_CODE (VARCHAR2) [Nullable]
+   Description: مجموعة رئيسيه - Major
+ - MNG_CODE (VARCHAR2) [Nullable]
+   Description: رقم م.الفرعية - Branch
+ - SUBG_CODE (VARCHAR2) [Nullable]
+   Description: رقم م. تحت الفرعية - No. M.Sub -subtitle
+ - ASSISTANT_NO (VARCHAR2) [Nullable]
+   Description: رقم المجموعة - Group number
+ - DETAIL_NO (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم المجموعة - Group number
+ - DET_I_CODE (VARCHAR2) [Nullable]
+   Description: كود رقم الصنف - Code number code
+ - DETAIL_A_NAME (VARCHAR2) [Not Nullable]
+   Description: الاسم - the name
+ - DETAIL_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - SYNCHRNZ_TO_WEB_FLG (NUMBER) [Nullable, Default: 0 ]
+   Description: مزامنة إلى موقع الويب - Sync to the web site
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+================================================================================
+
+Table: IAS_DRIVERS
+Description: Drivers data - بيانات السائقين
+Columns:
+ - DRIVER_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم السائق - Driver number
+ - DRIVER_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم السائق - The name of the driver
+ - DRIVER_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - DRIVER_NOTES (VARCHAR2) [Nullable]
+   Description: ملاحظات - comments
+ - DRIVER_TEL (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - DRIVER_MOBILE (VARCHAR2) [Nullable]
+   Description: رقم الجوال - Mobile number
+ - DRIVER_ADDRESS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - DRIVER_E_MAIL (VARCHAR2) [Nullable]
+   Description: البريد الالكتروني - e-mail
+ - ROUTE_NO (NUMBER) [Nullable]
+   Description: خط السير - Running line
+ - SORTINROUTE (NUMBER) [Nullable]
+   Description: ترتيب خط السير - Ranking line arrangement
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - CAR_NO (VARCHAR2) [Nullable]
+   Description: رقم المركبة - Vehicle number
+ - CITY_NO (NUMBER) [Nullable]
+   Description: المدينه - City
+ - STNDR_WGHT (NUMBER) [Nullable]
+   Description: وزن المركبة فارغ - Vehicle weight empty
+ - CAR_OWNR (VARCHAR2) [Nullable]
+   Description: اسم المالك - The owner's name
+ - DRVR_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم - User number
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - NTNLTY_NO (NUMBER) [Nullable]
+   Description: الجنسية - Nationality
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - DRVR_GRP_NO (NUMBER) [Nullable]
+   Description: This column is not used
+ - C_CODE (VARCHAR2) [Nullable]
+   Description: رقم العميل - Customer number
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 1 - Additional field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 2 - Additional field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 3 - Additional field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 4 - Additional field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: حقل إضافي 5 - Additional field 5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description: حقل إضافي6 - Additional field 6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: حقل إضافي7 - Additional field 7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: حقل إضافي8 - Additional field 8
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: حقل إضافي9 - Additional field 9
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: حقل إضافي10 - Additional field 10
+ - TRNSPRT_TYP (NUMBER) [Nullable]
+   Description: This column is not used
+ - DRV_LCNC (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - GRNT_DATA (VARCHAR2) [Nullable]
+   Description: This column is not used
+Foreign Keys:
+ - (EMP_NO) → S_EMP(EMP_NO)
+================================================================================
+
+Table: IAS_INSRNCE_CARD
+Description: Insurance subscriber data - بيانات المشتركين للتأمين
+Columns:
+ - INS_CMP_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الشركة - Company number
+ - BNF_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الجهة - Region number
+ - PRSON_NO (NUMBER) [Nullable]
+   Description: رقم المشترك - Subscriber
+ - PRSON_SER (NUMBER) [Nullable]
+   Description: تسلسل - sequence
+ - PRSON_CARD_NO (VARCHAR2) [Not Nullable] Primary Key
+   Description: الرقم التأميني للمشترك - The insurance number of the subscriber
+ - RLTN_TYP (NUMBER) [Nullable]
+   Description: صلة القرابة - Kinship
+ - PRSON_CARD_NO_FMLY (VARCHAR2) [Nullable]
+   Description: الرقم التأميني العائلي - Family insurance number
+ - PRSON_L_NM (VARCHAR2) [Nullable]
+   Description: إسم المشترك - Subscriber
+ - PRSON_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - PRSON_SEX (NUMBER) [Nullable]
+   Description: الجنس - Sex
+ - CARD_ISSUE_DATE (DATE) [Nullable]
+   Description: تاريخ إصدار بطاقة التأمين - The date of issuing the insurance card
+ - CARD_EXPIRE_DATE (DATE) [Nullable]
+   Description: تاريخ الإنتهاء - The end date
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - CARD_NO (NUMBER) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CARD_NO_TYP (NUMBER) [Nullable]
+   Description: نوع البطاقة - Card type
+ - PRSON_TEL (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - PRSON_ADDRSS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - CLSS_NO (VARCHAR2) [Nullable]
+   Description: رقم الفئة - Category number
+ - LOAD_PER (NUMBER) [Nullable]
+   Description: نسبة التحمل - The tolerance ratio
+ - LOAD_PER_OUT_NET (NUMBER) [Nullable]
+   Description: نسبة التحمل (خارج الشبكة) - Contribution Percent Out of Network
+ - LMT_AMT_LOC_NET_DOC (NUMBER) [Nullable]
+   Description: سقف الفاتورة داخل الشبكة بالمحلي - The roof of the bill inside the network in the local
+ - LMT_AMT_LOC_OUT_NET_DOC (NUMBER) [Nullable]
+   Description: سقف الفاتورة خارج الشبكة بالمحلي - The ceiling of the bill outside the network in the local
+ - LOAD_AMT_LOC_LMT_DOC (NUMBER) [Nullable]
+   Description: الحد الأعلى بالفاتورة لمبلغ التحمل بالمحلي - Contribution Max. Local Amount in Invoice
+ - PRSON_E_MAIL (VARCHAR2) [Nullable]
+   Description: البريد الالكتروني - e-mail
+ - SEND_MSG (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - BRTH_DATE (DATE) [Nullable]
+   Description: تاريخ الميلاد - date of birth
+ - INS_CARD_IMG (VARCHAR2) [Nullable]
+   Description: صورة بطاقة التأمين-A copy of the insurance card
+ - NTNLTY_NO (NUMBER) [Nullable]
+   Description: الجنسية - Nationality
+ - EXMPT_LOADAMT_TAX_BYNTNLTY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: معفي من ضريبة التحمل حسب الجنسية - Exempt from the endurance tax according to nationality
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+================================================================================
+
+Table: IAS_INSRNCE_CMP
+Description: Insurance companies data - بيانات شركات التأمين
+Columns:
+ - INS_CMP_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم الشركة - Company number
+ - INS_CMP_L_NM (VARCHAR2) [Nullable]
+   Description: اسم الشركة - Company Name
+ - INS_CMP_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - INS_CMP_TEL (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - INS_CMP_ADDRSS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - WEB_SITE (VARCHAR2) [Nullable]
+   Description: الموقع على الانترنت - The site on the Internet
+ - DIS_PER (NUMBER) [Nullable]
+   Description: نسبة الخصم - The discount ratio
+ - CLC_TAX_INSRNC_CMPNY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: إحتساب الضريبة على شركة التأمين - Calculate the tax on the insurance company
+ - CLC_INSRNCE_LOAD_AMT_MTHD (NUMBER) [Nullable, Default: 1]
+   Description: طريقة إحتساب مبلغ التحمل - How to calculate the endurance amount
+ - ALLW_MOD_LOAD_PRCNT_IN_SI (NUMBER) [Nullable, Default: 0]
+   Description: السماح بتعديل نسبة التحمل في الفاتورة للفئة - Allow Modification Load Per In Bill For Classfying
+ - SHW_LMT_INSRNC_APPRVD_IN_SI (NUMBER) [Nullable, Default: 0]
+   Description: إظهار السقف المعتمد من شركة التأمين في الفاتورة - Show Limit Approved Insurance company In Bill
+ - ALLW_ENTR_MAX_LOAD_AMT_INS_CRD (NUMBER) [Nullable, Default: 0]
+   Description: السماح بادخال الحد الاعلى لمبلغ التحمل للفاتورة في بيانات المشترك - Allow Entry Maximum Load Amount For Bill In Subscriberis Data
+ - PRSON_CARD_GEN_AR (NUMBER) [Nullable, Default: 2]
+   Description: تسلسل رقم المشترك - Member No. Sequence
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+================================================================================
+
+Table: IAS_INSRNCE_CNTRCT_CNDTN_BILL
+Description: Insurance Companies' Contract Terms for Sales Invoices - شروط التعاقد لشركات التأمين لفواتير المبيعات
+Columns:
+ - BILL_NO (NUMBER) [Nullable]
+   Description: رقم الفاتورة -Invoice No
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفاتورة-Invoice Sequence
+ - INS_CMP_NO (NUMBER) [Nullable]
+   Description: رقم شركة التأمين-Insurance company number
+ - CNDTN_NO (NUMBER) [Not Nullable] Primary Key
+   Description: الرقم - Number
+ - CNDTN_VERFY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: التحقق - Verification
+ - AD_U_ID (NUMBER) [Nullable]
+   Description:  مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: الوحدة المحاسبية - Accounting unit
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (INS_CMP_NO) → IAS_INSRNCE_CMP(INS_CMP_NO)
+ - (BILL_SER) → IAS_BILL_MST(BILL_SER)
+================================================================================
+
+Table: IAS_ITEM_SERIALNO
+Description: Movement of serial numbers - حركة الأرقام التسلسلية
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable]
+   Description: نوع المستند - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SER (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Nullable]
+   Description: عبوة الصنف - Variety
+ - SERIALNO (VARCHAR2) [Not Nullable] Primary Key
+   Description: الرقم التسلسلي للصنف-Item serial number
+ - DESC_NO (NUMBER) [Nullable]
+   Description: الرقم - Number
+ - W_CODE (NUMBER) [Not Nullable] Primary Key
+   Description: المخزن - Warehouse
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - EXPIRE_DATE (DATE) [Nullable]
+   Description: تاريخ الإنتهاء - The end date
+ - BATCH_NO (VARCHAR2) [Nullable, Default: 0]
+   Description: رقم الدفعة - Batch number
+ - FREE_FLG (NUMBER) [Nullable, Default: 0]
+   Description: مجاني - Free
+ - BILL_COST (NUMBER) [Nullable, Default: 0]
+   Description: تم حساب التكلفة ام لا - للمشتريات
+ - OUT_NO (NUMBER) [Nullable]
+   Description: رقم أمر الصرف - Draining order number
+ - OUT_GR_SER (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - IN_OUT (NUMBER) [Not Nullable]
+   Description: نوع الحركة - Mobility
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: م - M
+ - RCRD_NO_DOC (NUMBER) [Nullable]
+   Description: رقم سجل الصنف - Category Register number
+ - QR_CODE (VARCHAR2) [Nullable]
+   Description: كود رمز الاستجابه السريع-QR code
+ - ACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - ACTIVE_U_ID (NUMBER) [Nullable]
+   Description: This column is not used
+ - ACTIVE_DATE (DATE) [Nullable]
+   Description: This column is not used
+ - ACTIVE_NOTE (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - SRL_SQ (NUMBER) [Nullable]
+   Description: تسلسل-sequence
+ - PRV_SERIALNO (VARCHAR2) [Nullable]
+   Description: الرقم التسلسلي السابق - Previous serial number
+ - DOC_TYPE_REF (NUMBER) [Nullable]
+   Description: نوع الوثيقة المرجعي-Reference document type
+ - DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم الوثيقة المرجعي-Reference document number
+ - DOC_SER_REF (NUMBER) [Nullable]
+   Description: تسلسل الوثيقة المرجعي-Reference document sequence
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+Foreign Keys:
+ - (I_CODE, I_CODE, ITM_UNT, ITM_UNT) → IAS_ITM_DTL(ITM_UNT, I_CODE, I_CODE, ITM_UNT)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+================================================================================
+
+Table: IAS_ITM_ATTACH_MOVEMENT
+Description: Movement of item attachments - حركة ملحقات الأصناف
+Columns:
+ - I_CODE (VARCHAR2) [Nullable]
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Not Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Nullable]
+   Description: عبوة الصنف - Variety
+ - ATTCH_NO1 (NUMBER) [Nullable]
+   Description: رقم الملحق1-attachments No 1
+ - ATTCH_DESC_NO1 (NUMBER) [Nullable]
+   Description: وصف الملحق1-attachments Description 1
+ - ATTCH_NO2 (NUMBER) [Nullable]
+   Description: رقم الملحق2-attachments No 2
+ - ATTCH_DESC_NO2 (NUMBER) [Nullable]
+   Description: وصف الملحق2-attachments Description 2
+ - ATTCH_NO3 (NUMBER) [Nullable]
+   Description:  رقم الملحق3-attachments No 3
+ - ATTCH_DESC_NO3 (NUMBER) [Nullable]
+   Description: وصف الملحق3- attachments Description 3
+ - ATTCH_NO4 (NUMBER) [Nullable]
+   Description: رقم الملحق4-attachments No 4
+ - ATTCH_DESC_NO4 (NUMBER) [Nullable]
+   Description: وصف الملحق4-attachments Description 4
+ - ATTCH_NO5 (NUMBER) [Nullable]
+   Description:  رقم الملحق5-attachments No 5
+ - ATTCH_DESC_NO5 (NUMBER) [Nullable]
+   Description: وصف الملحق5-attachments Description 5
+ - FLEX_FIELD (VARCHAR2) [Nullable]
+   Description: الوصف التحليلي-Analytical description
+ - FLEX_NO (NUMBER) [Nullable]
+   Description: الرقم التحليلي-Analytical number
+ - REC_ATTCH (NUMBER) [Nullable]
+   Description: الملحقات - Accessories
+ - ATTCH_NOTE (VARCHAR2) [Nullable]
+   Description: البيان-description
+ - DOC_TYPE (NUMBER) [Nullable]
+   Description: نوع المستند - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - DOC_NO (NUMBER) [Not Nullable]
+   Description: رقم الوثيقة - Document number
+ - DOC_SER (NUMBER) [Not Nullable]
+   Description: التسلسل - Sequence
+ - W_CODE (NUMBER) [Not Nullable]
+   Description: رقم المخزن - Store number
+ - BILL_COST (NUMBER) [Nullable, Default: 0  ]
+   Description: تم حساب التكلفة ام لا -Is the cost calculated or not
+ - RCRD_NO_DOC (NUMBER) [Nullable]
+   Description: رقم السجل للصنف-Item Record No
+ - IN_OUT (NUMBER) [Not Nullable]
+   Description: نوع الحركة - Mobility
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - C_CODE (VARCHAR2) [Nullable]
+   Description: رقم العميل - Customer number
+ - EXPIRE_DATE (DATE) [Nullable]
+   Description: تاريخ الإنتهاء - The end date
+ - BATCH_NO (VARCHAR2) [Nullable]
+   Description: رقم الدفعة - Batch number
+ - I_QTY (NUMBER) [Nullable]
+   Description: الكمية - Quantity
+ - P_QTY (NUMBER) [Nullable]
+   Description: الكمية بالاب - Quantity
+ - FREE_QTY (NUMBER) [Nullable]
+   Description: الكميات المجانيه - Free quantities
+ - PF_QTY (NUMBER) [Nullable]
+   Description: الكميات المجانيه - Free quantities
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: رقم السجل - Register number
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0  ]
+   Description: النظام - order
+ - DOC_TYPE_REF (NUMBER) [Nullable]
+   Description: النوع الفرعي لمرجع الوثيقة - The sub -type of the document reference
+ - DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم الوثيقة المرجع - Document number reference
+ - DOC_SER_REF (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - OUT_NO (NUMBER) [Nullable]
+   Description: رقم أمر الصرف - Draining order number
+ - OUT_GR_SER (NUMBER) [Nullable]
+   Description: التسلسل - Sequence
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - A_CY (VARCHAR2) [Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Transfer price
+ - STK_RATE (NUMBER) [Nullable]
+   Description: سعر تحويل المخزون - Inventory transfer price
+ - I_PRICE (NUMBER) [Nullable, Default: 0]
+   Description: السعر - the price
+ - DIS_AMT (NUMBER) [Nullable]
+   Description: الخصم - opponent
+ - I_COST (NUMBER) [Nullable]
+   Description: التكلفة - Cost
+ - STK_COST (NUMBER) [Nullable]
+   Description: التكلفة - Cost
+ - VAT_AMT (NUMBER) [Nullable]
+   Description: ضريبة - tax
+ - OTHR_AMT (NUMBER) [Nullable]
+   Description: الأعباء و الضريبة - Burdens and tax
+ - V_CODE (VARCHAR2) [Nullable]
+   Description: رقم المورد - Supplier number
+ - RT_TYPE (NUMBER) [Nullable]
+   Description: nan
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - CMP_NO (NUMBER) [Not Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Not Nullable]
+   Description: رقم النشاط - Activity number
+Foreign Keys:
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (I_CODE) → IAS_ITM_MST(I_CODE)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+================================================================================
+
+Table: IAS_PROMOTERS
+Description: Marketers data - بيانات المسوقين
+Columns:
+ - PRM_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم المسوق - Market number
+ - PRM_L_NM (VARCHAR2) [Nullable]
+   Description: اسم المسوق - The name of the marketer
+ - PRM_F_NM (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign name
+ - CNTRY_NO (NUMBER) [Nullable]
+   Description: الدولة - State
+ - CITY_NO (NUMBER) [Nullable]
+   Description: المدينه - City
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - PRM_PHONE (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Phone number
+ - PRM_MOBILE (VARCHAR2) [Nullable]
+   Description: رقم الجوال - Mobile number
+ - PRM_BOX (VARCHAR2) [Nullable]
+   Description: رقم صندوق البريد - Post box number
+ - PRM_FAX (VARCHAR2) [Nullable]
+   Description: رقم الفاكس - Fax
+ - PRM_ADDRESS (VARCHAR2) [Nullable]
+   Description: العنوان - the address
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - PRM_NOTE (VARCHAR2) [Nullable]
+   Description: ملاحظات - comments
+ - PRM_TYPE (NUMBER) [Nullable]
+   Description: نوع المسوق - Marketer
+ - ROUTE_NO (NUMBER) [Nullable]
+   Description: خط السير - Running line
+ - SORTINROUTE (NUMBER) [Nullable]
+   Description: ترتيب خط السير - Ranking line arrangement
+ - PRM_DEGREE (NUMBER) [Nullable]
+   Description: الدرجة - Degree
+ - PRM_A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: نوع الحساب التحليلي-Analytical account Type
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: توقيف - Arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 1- Field Add1 
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 2-Field Add2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 3-Field Add3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 4-Field Add4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: حقل اضافي 5-Field Add5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description:حقل اضافي6 -Field Add6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: حقل اضافي7-Field Add7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: حقل اضافي8-Field Add8
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: حقل اضافي9-Field Add9
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: حقل اضافي10-Field Add10
+ - SECRET_KEY (VARCHAR2) [Nullable]
+   Description: الرمز السري-secret Key
+ - BANK_NO (NUMBER) [Nullable]
+   Description: رقم البنك-Bank No.
+ - W_CODE (NUMBER) [Nullable]
+   Description: رقم المخزن-Store No
+ - CASH_NO (NUMBER) [Nullable]
+   Description: رقم الصندوق-cash No.
+ - GRP_CODE (VARCHAR2) [Nullable]
+   Description: رقم المجموعة-Group No.
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - GPS (VARCHAR2) [Nullable]
+   Description: الموقع الجغرافي-GPS
+ - LATITUDE (VARCHAR2) [Nullable]
+   Description: خط العرض-latitude
+ - LONGITUDE (VARCHAR2) [Nullable]
+   Description: خط الطول-Longitude
+ - SMAN_PASS (VARCHAR2) [Nullable]
+   Description: الباسورد-Password
+ - USE_INV_DTS (NUMBER) [Nullable, Default: 0 ]
+   Description: This column is not used
+ - CONN_SP_SMAN (NUMBER) [Nullable, Default: 0]
+   Description: مرتبط بمندوب علمي - Associated with a scientific representative
+ - PRM_CODE_TRGT (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - NTNLTY_NO (NUMBER) [Nullable]
+   Description: الجنسية - Nationality
+ - TYP_CRD (NUMBER) [Nullable]
+   Description: نوع الهوية - ID type
+ - CRD_NO (VARCHAR2) [Nullable]
+   Description: رقم الهوية - ID number
+ - CRD_ISSUSE_PLAC (VARCHAR2) [Nullable]
+   Description: مكان الأصدار - place of issue
+ - CRD_ISSUSE_DATE (DATE) [Nullable]
+   Description: تاريخ الاصدار - م
+ - CRD_END_DATE (DATE) [Nullable]
+   Description: تاريخ الانتهاء - م
+ - CRD_ISSUSE_DATE_AH (DATE) [Nullable]
+   Description: تاريخ الاصدار - هـ
+ - CRD_END_DATE_AH (DATE) [Nullable]
+   Description: تاريخ الانتهاء - هـ
+ - MRTL_STAT (NUMBER) [Nullable]
+   Description: الحالة الإجتماعية - marital status
+ - BRTH_DATE (DATE) [Nullable]
+   Description: تاريخ الميلاد_م - Date of birth m
+ - BRTH_DATE_AH (DATE) [Nullable]
+   Description: تاريخ الميلاد_هـ - Date of birth_H
+ - BRTH_PLC (VARCHAR2) [Nullable]
+   Description: مكان الميلاد - place of birth
+ - WORK_PLC (VARCHAR2) [Nullable]
+   Description: عنوان العمل - Work address
+ - CMPNY_WORK (VARCHAR2) [Nullable]
+   Description: جهة العمل - The employer
+ - SRC_INC (VARCHAR2) [Nullable]
+   Description: مصادر الدخل - Entry sources
+ - C_GENDER (NUMBER) [Nullable]
+   Description: الجنس - Sex
+ - SRC_INC_RATE (NUMBER) [Nullable]
+   Description: معدل الدخل الشهري - Monthly income rate
+ - C_PROFF (NUMBER) [Nullable]
+   Description: المهنة - Profession
+ - CONN_BRN_NO (NUMBER) [Nullable]
+   Description: رقم الفرع - Branch number
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+Foreign Keys:
+ - (EMP_NO) → S_EMP(EMP_NO)
+ - (REP_CODE) → SALES_MAN(REPRS_CODE)
+================================================================================
+
+Table: IAS_RT_BILL_MST
+Description: Sales Return Invoices Details - فواتير مردود المبيعات تفصيلي
+Columns:
+ - RT_BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: طريقة الدفع - payment method
+ - RT_BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم المردود - Return number
+ - RT_BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: التسلسل - Sequence
+ - P_YEAR (NUMBER) [Nullable, Default: 0]
+   Description: النوع - Gender
+ - RT_BILL_DATE (DATE) [Not Nullable]
+   Description: التاريخ - the date
+ - RT_BILL_CURRENCY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - RT_BILL_RATE (NUMBER) [Nullable]
+   Description: تاريخ فاتورة-Return Invoice Date
+ - STOCK_RATE (NUMBER) [Nullable]
+   Description: سعر تحويل عملة المخزون-Inventory currency exchange rate
+ - C_CODE (VARCHAR2) [Nullable]
+   Description: رقم العميل - Customer number
+ - C_NAME (VARCHAR2) [Nullable]
+   Description: اسم العميل - Customer name
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - CHEQUE_NO (NUMBER) [Nullable]
+   Description: رقم الشيك - Check
+ - CHEQUE_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الشيك - Check
+ - CHEQUE_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الشيك-Check due date
+ - RT_BILL_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ الإستحقاق - due date
+ - RT_BILL_POST (NUMBER) [Nullable, Default: 0]
+   Description: مرحل - غير مرحل
+ - DISC_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DISC_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: الخصم - opponent
+ - DISC_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: خصم الأصناف - Varieties
+ - DISC_AMT_MST_VAT (NUMBER) [Nullable, Default: 0 ]
+   Description: الخصم - opponent
+ - VAT_AMT_DISC_MST (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ ضريبة الخصم على مستوى الفاتورة -Tax Discount Amount By Invoice 
+ - BILL_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الفاتورة - The bill amount
+ - VAT_AMT (NUMBER) [Nullable, Default: 0]
+   Description: ضريبة - tax
+ - OTHR_AMT (NUMBER) [Nullable, Default: 0]
+   Description: الأعباء و الضريبة - Burdens and tax
+ - W_CODE (NUMBER) [Nullable]
+   Description: رقم المخزن - Store number
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - CASH_NO (NUMBER) [Nullable]
+   Description: رقم الصندوق - Fund number
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: رقم المركز - Center number
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - CASH_AC_FCC (VARCHAR2) [Nullable]
+   Description: حساب الصندوق - Fund account
+ - CASH_NO_FCC (NUMBER) [Nullable]
+   Description: رقم الصندوق - Fund number
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - COL_NO (NUMBER) [Nullable]
+   Description: رقم المحصل - The number number
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - SR_TYPE (NUMBER) [Nullable]
+   Description: نوع المردود - The type of return
+ - COMM_PER (NUMBER) [Nullable]
+   Description: نسبة العمولة - Commission
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - A_DESC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - ATTACH_CNT (NUMBER) [Nullable]
+   Description: عدد المرفقات - Number of attachments
+ - RETURN_RES (VARCHAR2) [Nullable]
+   Description: سبب الإرتجاع - The cause of reflux
+ - PROCESSED (NUMBER) [Nullable, Default: 0]
+   Description: تم إرجاعها - It is returned
+ - PR_REP (NUMBER) [Nullable, Default: 0]
+   Description: مرات الطباعة - Print times
+ - PREV_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - CLASSIFY_NO (NUMBER) [Nullable]
+   Description: أمر الفرز - Sorting
+ - CLASSIFY_SER (NUMBER) [Nullable]
+   Description: تسلسل امر الفرز-Sorting order sequence
+ - RT_BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - RT_BILL_TYP (NUMBER) [Nullable, Default: 1]
+   Description: نوع الصرف - Drainage
+ - RT_OPRTN_TYP (NUMBER) [Nullable, Default: 1]
+   Description: نوع العملية - Type of operation
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - CLC_VAT_PRICE_TYP (NUMBER) [Nullable]
+   Description: نوع السعر - Price type
+ - DOC_SER_EXTRNL (VARCHAR2) [Nullable]
+   Description: تسلسل الوثيقة المرجعية-Reference document sequence
+ - DOC_NO_EXTRNL (VARCHAR2) [Nullable]
+   Description: رقم الوثيقة المرجعيه-Reference document number
+ - AUDIT_REF (NUMBER) [Nullable, Default: 0]
+   Description: روجع - Roja
+ - DISC_AMT_AFTR_VAT (NUMBER) [Nullable, Default: 0]
+   Description: الخصم بعد الضريبة - The deduction after the tax
+ - AUDIT_REF_DESC (VARCHAR2) [Nullable]
+   Description: ملاحظات - comments
+ - AUDIT_REF_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المراجع - Reference user
+ - AUDIT_REF_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - CLC_TAX_FREE_QTY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: احتساب الضريبة على الكمية المجانية-Calculate tax on free quantity
+ - W_CODE_BILL (NUMBER) [Nullable]
+   Description: رقم مخزن الفاتورة-Invoice store number
+ - CC_CODE_BILL (VARCHAR2) [Nullable]
+   Description: رقم مركز التكلفة للفاتورة-Cost center number for the invoice
+ - REP_CODE_BILL (VARCHAR2) [Nullable]
+   Description: رقم المندوب للفاتورة-Sales Man No for Invoice.
+ - RETURN_TYPE (NUMBER) [Nullable]
+   Description: نوع المردود-Type of return
+ - PAID_RT_BILL (NUMBER) [Nullable, Default: 0]
+   Description: تدفيع - Pushing
+ - PAID_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المدّفَع - Paid User Number
+ - PAID_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - REC_INV_RT_BILL (NUMBER) [Nullable, Default: 0]
+   Description: تم تسليمه - Delivery
+ - REC_INV_U_ID (NUMBER) [Nullable]
+   Description: رقم المستخدم المُسَلِم-Delivery User Number
+ - REC_INV_DATE (DATE) [Nullable]
+   Description: التاريخ - the date
+ - STAND_BY (NUMBER) [Nullable, Default: 0]
+   Description: تعليق - comment
+ - CNCL_FLG (NUMBER) [Nullable, Default: 0]
+   Description: ملغية-Canceled
+ - NOTE_NO (VARCHAR2) [Nullable]
+   Description: رقم الإشعار - Notice number
+ - DRIVER_NO (NUMBER) [Nullable]
+   Description: رقم السائق - Driver number
+ - DOC_BRN_NO (NUMBER) [Nullable]
+   Description: الفرع المستفيد - The beneficiary branch
+ - BILL_BRN_NO (NUMBER) [Nullable]
+   Description: رقم فرع الفاتورة - The bill number
+ - RES_TYP (NUMBER) [Nullable]
+   Description: سبب الإرتجاع - The cause of reflux
+ - PRM_CODE (VARCHAR2) [Nullable]
+   Description: رقم المسوق - Market number
+ - DOC_NO_PDA (NUMBER) [Nullable]
+   Description: رقم الفاتورة في الجهاز الكفي - The bill number in the enough device
+ - PDA_NM (VARCHAR2) [Nullable]
+   Description: الأجهزة الكفية - Sufficient devices
+ - INSRNCE_CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - INSRNCE_BNF_NO (NUMBER) [Nullable]
+   Description: الجهة المستفيدةمن التأمين - Insurance Beneficiary
+ - INSRNCE_PRSON_NM (VARCHAR2) [Nullable]
+   Description: إسم المشترك - Subscriber
+ - INSRNCE_CARD_NO (VARCHAR2) [Nullable]
+   Description: الرقم التأميني للمشترك - The insurance number of the subscriber
+ - INSRNCE_CARD_NO_FMLY (VARCHAR2) [Nullable]
+   Description: الرقم التأميني للعائلة-Family insurance number
+ - INSRNCE_RLTN_TYP (NUMBER) [Nullable]
+   Description: صلة القرابة - Kinship
+ - INSRNCE_CLSS_NO (VARCHAR2) [Nullable]
+   Description: رقم فئة التأمين-Insurance class number
+ - INSRNCE_CSH_AMT (NUMBER) [Nullable]
+   Description: مبلغ التحمل-The deductible amount
+ - INSRNCE_ADD_LMT_MST (NUMBER) [Nullable]
+   Description: فارق السقف للفترة - The ceiling difference for the period
+ - INSRNCE_ADD_LMT_DTL (NUMBER) [Nullable]
+   Description: فارق السقف للاصناف - The ceiling difference for items
+ - INSRNCE_ADD_LMT_DOC (NUMBER) [Nullable]
+   Description: فارق السقف للفاتورة - The ceiling difference for the bill
+ - INSRNCE_LOAD_PER (NUMBER) [Nullable]
+   Description: نسبة التحمل - The tolerance ratio
+ - INSRNCE_MDCL_NO (NUMBER) [Nullable]
+   Description: جهة التطبيب - Medical authority
+ - INSRNCE_LMT_AMT_LOC_DOC (NUMBER) [Nullable]
+   Description: سقف الفاتورة بالمحلي - The roof of the bill in the local
+ - INSRNCE_DIAGNOSIS (VARCHAR2) [Nullable]
+   Description: التشخيص - Diagnosis
+ - INSRNCE_MDCN_CHRONIC_FLG (NUMBER) [Nullable, Default: 0]
+   Description: أدوية مزمنة - Chronic medicines
+ - INSRNCE_APPRVD_CODE (VARCHAR2) [Nullable]
+   Description: كود الموافقة - Approval code
+ - INSRNCE_LMT_APPRVD_AMT_LOC_DOC (NUMBER) [Nullable]
+   Description: السقف المعتمد من شركة التأمين - Limit Approved From Insurance Company
+ - CLC_TAX_INSRNC_CMPNY_FLG (NUMBER) [Nullable, Default: 0]
+   Description: إحتساب الضريبة على شركة التأمين - Calculate the tax on the insurance company
+ - CLC_INSRNCE_LOAD_AMT_MTHD (NUMBER) [Nullable, Default: 1]
+   Description: طريقة إحتساب مبلغ التحمل - How to calculate the endurance amount
+ - PRCDR_TYP (NUMBER) [Nullable]
+   Description: نوع الإجراء الطبي - Type of medical procedure
+ - PRCNT_AMT (NUMBER) [Nullable]
+   Description: nan
+ - COMM_AMT_DTL (NUMBER) [Nullable]
+   Description: مبلغ العمولة حسب الصنف-Commission amount by item
+ - CST_GCC (NUMBER) [Nullable, Default: 0]
+   Description: عميل مجلس التعاون الخليجي - Gulf Cooperation Council customer
+ - EXPORT (NUMBER) [Nullable, Default: 0]
+   Description: تصدير-export
+ - VAT_AMT_OTHR (NUMBER) [Nullable]
+   Description: مبلغ ضريبة الاعباء-Tax Amount Charges
+ - ADD_DISC_AMT_MST (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الفاتورة-Additional discount amount at the invoice level
+ - ADD_DISC_AMT_DTL (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ الخصم الاضافي على مستوى الاصناف-Additional discount amount by Items
+ - OTHR_AMT_DISC (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ خصم الاعباء-Discount Amount For Charges
+ - WITHOUT_VAT (NUMBER) [Nullable, Default: 0]
+   Description: بدون ضريبة-Without tax
+ - RT_VAT_PRD_TYP (NUMBER) [Nullable, Default: 1]
+   Description: الفترة الضريبية - Tax period
+ - C_TEL (VARCHAR2) [Nullable]
+   Description: رقم الجوال - Mobile number
+ - C_CODE_CSH (VARCHAR2) [Nullable]
+   Description: رقم العميل النقدي - Customer cash number
+ - POINT_RPLC_AMT (NUMBER) [Nullable]
+   Description: مبلغ الإستبدال - Replacement
+ - POINT_TYP_NO (NUMBER) [Nullable]
+   Description: نوع برنامج نقاطي - The type of Naqati program
+ - POINT_CNT (NUMBER) [Nullable]
+   Description: عدد النقاط - Number of points
+ - POINT_RPLC_CNT (NUMBER) [Nullable]
+   Description: عدد نقاط الاستبدال - Number of replacement points
+ - CREDIT_CARD (NUMBER) [Nullable, Default: 0]
+   Description: بطاقة ائتمان - credit card
+ - CR_CARD_NO (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT (NUMBER) [Nullable, Default: 0  ]
+   Description: مبلغ الفيزا - Visa
+ - CR_CARD_COMM_PER (NUMBER) [Nullable, Default: 0]
+   Description: نسبة العمولة لبطاقة الائتمان-Credit card commission Percent
+ - CR_CARD_NO_SCND (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT_SCND (NUMBER) [Nullable, Default: 0]
+   Description: المبلغ - Amount
+ - CR_CARD_COMM_PER_SCND (NUMBER) [Nullable, Default: 0]
+   Description: 2نسبة العمولة لبطاقة الائتمان-Credit card commission Percent2
+ - CR_CARD_NO_THRD (NUMBER) [Nullable]
+   Description: نوع الفيزا - Visa type
+ - CR_CARD_AMT_THRD (NUMBER) [Nullable, Default: 0]
+   Description: المبلغ - Amount
+ - CR_CARD_COMM_PER_THRD (NUMBER) [Nullable, Default: 0]
+   Description: نسبة العمولة لبطاقة الائتمان3 -Credit card commission Percent3
+ - CR_CARD_DSC (VARCHAR2) [Nullable]
+   Description: البيان لبطاقة الائتمان 1 - The statement of credit card 1
+ - CR_CARD_DSC_SCND (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - CR_CARD_DSC_THRD (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - CR_CARD_CST_NO_THRD (VARCHAR2) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CR_CARD_CST_NO_SCND (VARCHAR2) [Nullable]
+   Description: رقم البطاقة - Card number
+ - CR_CARD_CST_NO (VARCHAR2) [Nullable]
+   Description: رقم بطاقة الائتمان 1 - Credit card number 1
+ - CR_CARD_DOC_NO_REF_SCND (NUMBER) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CR_CARD_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم المرجع لبطاقة الائتمان1 - Reference number for credit card 1
+ - CR_CARD_DOC_NO_REF_THRD (NUMBER) [Nullable]
+   Description: رقم المرجع - Reference number
+ - CR_CARD_MAX_COMM_AMT (NUMBER) [Nullable]
+   Description: اعلى مبلغ لعمولة بطاقة الائتمان-Maximum credit card commission amount
+ - CR_CARD_MAX_COMM_AMT_SCND (NUMBER) [Nullable]
+   Description: اعلى مبلغ لعمولة بطاقة الائتمان2-Maximum credit card commission amount2
+ - CR_CARD_MAX_COMM_AMT_THRD (NUMBER) [Nullable]
+   Description: على مبلغ لعمولة بطاقة الائتمان3-Maximum credit card commission amount3
+ - DOC_M_SQ (NUMBER) [Nullable]
+   Description: تسلسل-sequence
+ - CLC_TYP_NO_TAX (NUMBER) [Nullable]
+   Description: طريقة إحتساب الضريبة - How to calculate the tax
+ - AC_AMT (NUMBER) [Nullable]
+   Description: مبلغ الحساب - The account amount
+ - PTNT_NO (VARCHAR2) [Nullable]
+   Description: رقم المريض - Patient number
+ - DCTR_NO (VARCHAR2) [Nullable]
+   Description: الطبيب المعالج - The attending physician
+ - PTNT_TYP (NUMBER) [Nullable]
+   Description: نوع المريض - Patient type
+ - DOC_NO_ADMSON (NUMBER) [Nullable]
+   Description: رقم التنويم - Hypnosis number
+ - DOC_SRL_ADMSON (NUMBER) [Nullable]
+   Description: السريال الخاص برقم الترقيد - Surreal for the numbering number
+ - AC_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - PYMNT_AC (NUMBER) [Nullable, Default: 0]
+   Description: إلى حساب - To an account
+ - RMS_RT_BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة دفع المردود لنظام المطاعم-Restaurant System Refund Payment Method
+ - RMS_FREE_FLG (NUMBER) [Nullable, Default: 0]
+   Description: فاتورة مجانية نظام المطاعم-Free billing system for restaurants
+ - WEB_SRVC_TRNSFR_DATA_FLG (NUMBER) [Nullable, Default: 0]
+   Description: تم نقلها عبر الويب سيرفس-Moved via web service
+ - WEB_SRVC_TRNSFR_DATA_DSC (VARCHAR2) [Nullable]
+   Description: وصف المزامنه عبر الويب سيرفس-Web Service Sync Description
+ - WEB_SRVC_UUID (VARCHAR2) [Nullable]
+   Description: ناتج المزامنه للويب سيرفس UUID-Web Service Sync Output UUID
+ - E_INVC_MTHD_NO (NUMBER) [Nullable]
+   Description: رقم طريقة الفاتورة الالكترونية -Electronic invoice method number
+ - HRS_DOC_NO_REF (NUMBER) [Nullable]
+   Description: رقم الوثيقة المرجعية للنظام الموارد البشرية-Human Resources System Reference Document Number
+ - HRS_DOC_TYPE_REF (NUMBER) [Nullable]
+   Description: نوع الوثيقة المرجعية-Reference document type
+ - HRS_DOC_SER_REF (NUMBER) [Nullable]
+   Description: تسلسل الوثيقة المرجعية للنظام الموارد البشرية-HR System Reference Document Sequence
+ - DOC_PST_SQ (NUMBER) [Nullable]
+   Description: تسلسل الي للترحيل-Sequence to Posting
+ - C_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي - The tax number
+ - BRN_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي للفرع-branch tax number
+ - TAX_BILL_TYP (NUMBER) [Nullable]
+   Description: نوع الفاتورة الضريبي - Type of tax bill
+ - BILL_NO_MNL (VARCHAR2) [Nullable]
+   Description: رقم الفاتورة المرجع - The bill number reference
+ - BILL_DOC_TYPE_SUB (NUMBER) [Nullable]
+   Description: طريقة الدفع التحليلية -Sub-payment method
+ - ASS_NO (NUMBER) [Nullable]
+   Description: رقم الجهة-Agency No
+ - ASS_AMT (NUMBER) [Nullable]
+   Description: مبلغ العملية -Transction Amount
+ - ASS_ITM_TYP (VARCHAR2) [Nullable]
+   Description: نوع البند - Article Type
+ - ASS_BLNC_TYP (VARCHAR2) [Nullable]
+   Description: نوع الرصيد - Balance Type
+ - ASS_REF_NO_TRNS (NUMBER) [Nullable]
+   Description: رقم العملية المرجعية-Reference transaction number
+ - ASS_ADRS (VARCHAR2) [Nullable]
+   Description: عنوان الجهة المرجعية - Address of the reference body
+ - ASS_CRD_ID (NUMBER) [Nullable]
+   Description: رقم البطاقة للمستفيد-The beneficiary's card number
+ - ASS_TAX_CODE (VARCHAR2) [Nullable]
+   Description: الرقم الضريبي - Tax number
+ - ASS_NM_REF (VARCHAR2) [Nullable]
+   Description:  اسم الجهة المرجعية - Name of the referring agency
+ - ASS_NO_REF (NUMBER) [Nullable]
+   Description: رقم الجهة المرجعية - Reference agency number
+ - ASS_REF_NO_RTN_TRNS (NUMBER) [Nullable]
+   Description: رقم عملية المردود المرجعية-Reference Return Transaction Number
+ - FIELD1 (VARCHAR2) [Nullable]
+   Description: الحقل1 - Field 1
+ - FIELD2 (VARCHAR2) [Nullable]
+   Description: الحقل2 - Field 2
+ - FIELD3 (VARCHAR2) [Nullable]
+   Description: الحقل3 - Field 3
+ - FIELD4 (VARCHAR2) [Nullable]
+   Description: الحقل4 - Field 4
+ - FIELD5 (VARCHAR2) [Nullable]
+   Description: الحقل5 - Field 5
+ - FIELD6 (VARCHAR2) [Nullable]
+   Description: الحقل6 - Field 6
+ - FIELD7 (VARCHAR2) [Nullable]
+   Description: الحقل7 - Field 7
+ - FIELD8 (VARCHAR2) [Nullable]
+   Description: الحقل8 - Field 8
+ - FIELD9 (VARCHAR2) [Nullable]
+   Description: الحقل9 - Field 9
+ - FIELD10 (VARCHAR2) [Nullable]
+   Description: الحقل10 - Field 10
+ - DOC_HASH (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - SYS_DOC_ID (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - RET_BILL_TYP (NUMBER) [Nullable]
+   Description: نوع الإرجاع - Return type
+ - BNK_AMT (NUMBER) [Nullable, Default: 0 ]
+   Description: مبلغ بطاقة الائتمان-Credit card amount
+ - VAT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء-Exemption code
+ - VAT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الاعفاء -Reason for exemption
+ - TAX_CUR_CODE (VARCHAR2) [Nullable]
+   Description: رمز عملة الضريبة-Tax currency symbol
+ - TAX_CUR_RATE (NUMBER) [Nullable]
+   Description: سعر الصرف من عملة الضريبة-Exchange rate From Tax Currency 
+ - TAX_CUR_AMT (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: رمز الضريبة-Tax Code
+ - VAT_INPT_CAT_CODE (VARCHAR2) [Nullable]
+   Description: كود الضريبة للاعباء - Vat Code Other Charges
+ - VAT_INPT_EXMPT_RSN_CODE (VARCHAR2) [Nullable]
+   Description: كود الاعفاء للاعباء - Tax Exemption Code For Other Charges
+ - BILL_TAX_STATUS (NUMBER) [Nullable, Default: 1]
+   Description: حالة استحقاق الضريبة-Tax due Status
+ - VAT_INPT_EXMPT_RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب الإعفاء للاعباء- Exempt Reason Charges
+ - TAX_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ استحقاق الضريبة-tax due date
+ - CLC_TYP_NO_TAX_INPT (NUMBER) [Nullable]
+   Description: طريقة احتساب الضريبة للاعباء-calculate tax Type Charges
+ - RT_BILL_WITHOUT_AUTO_OTHR_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مردود بدون انزال الاعباء الالية-Return without deducting mechanical burdens
+ - OTHR_AMT_AC (NUMBER) [Nullable]
+   Description: مبلغ عبئ حساب الطرف الاخر-The amount of the other party's account charge
+ - OTHR_AMT_DISC_AC (NUMBER) [Nullable]
+   Description: مبلغ خصم عبئ حساب الطرف الاخر -The amount of the other party's account charge is deducted.
+ - VAT_AMT_OTHR_AC (NUMBER) [Nullable]
+   Description: مبلغ الضريبة للعبئ حساب الطرف الاخر-The tax amount to be charged to the other party's account
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - AD_DATE_CLK (DATE) [Nullable]
+   Description:  وقت وتاريخ الاضافة-Time and date of addition
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - POST_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المرحل - The user is deported
+ - POST_DATE (DATE) [Nullable]
+   Description: تاريخ الترحيل - Date of deportation
+ - UNPOST_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المراجع - Reference user
+ - UNPOST_DATE (DATE) [Nullable]
+   Description: تاريخ إلغاء الترحيل - Date of canceling the deportation
+ - CMP_NO (NUMBER) [Not Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Not Nullable]
+   Description: رقم الفرع - Branch number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (EMP_NO) → S_EMP(EMP_NO)
+ - (PRM_CODE) → IAS_PROMOTERS(PRM_CODE)
+ - (A_CODE, A_CODE, RT_BILL_CURRENCY, RT_BILL_CURRENCY) → ACCOUNT_CURR(A_CODE, A_CY, A_CODE, A_CY)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (REP_CODE) → SALES_MAN(REPRS_CODE)
+ - (SR_TYPE) → IAS_RT_SALES_TYPES(SR_TYPE)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+================================================================================
+
+Table: IAS_RT_SALES_TYPES
+Description: Types of sales return invoices - أنواع فواتير مردود المبيعات
+Columns:
+ - SR_TYPE (NUMBER) [Not Nullable] Primary Key
+   Description: نوع المردود - Return Type
+ - SR_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم النوع - Type Name
+ - SR_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign Name
+ - SR_SER (NUMBER) [Nullable]
+   Description: التسلسل-sequence
+ - PRICE_LVL (NUMBER) [Nullable]
+   Description: مستوى التسعيرة - Pricing Level
+ - TAX_ACTV_CODE (VARCHAR2) [Nullable]
+   Description: رقم النشاط الضريبي - Tax Actv Code
+ - CASH_NO (NUMBER) [Nullable]
+   Description: الصندوق/البنك - Fund/bank
+ - DFLT_REP_SMPLE (NUMBER) [Nullable]
+   Description: نموذج الطباعة الإفتراضي - Default Printing Form
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Insertd by
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - SR_CMPNS (NUMBER) [Nullable, Default: 0]
+   Description: مردود فاتورة تعويضية - Return Compensatory  Bills
+ - SR_FOR_SCRP (NUMBER) [Nullable, Default: 0]
+   Description: مردود خاص بالتوالف - Return For Scraps
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: IAS_SALES_TYPES
+Description: Types of sales invoices - أنواع فواتير المبيعات
+Columns:
+ - SI_TYPE (NUMBER) [Not Nullable] Primary Key
+   Description: نوع الفاتورة - Invoice Type
+ - SI_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم النوع - Type Name
+ - SI_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign Name
+ - SI_SER (NUMBER) [Nullable]
+   Description: التسلسل-sequence
+ - PRICE_LVL (NUMBER) [Nullable]
+   Description: مستوى التسعيرة - Pricing Level
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع - Payment Method
+ - TAX_ACTV_CODE (VARCHAR2) [Nullable]
+   Description: رقم النشاط الضريبي - Tax Actv Code
+ - DFLT_CASH_NO (NUMBER) [Nullable]
+   Description: الصندوق الإفتراضي - Default Cash
+ - DFLT_W_CODE (NUMBER) [Nullable]
+   Description: المخزن الافتراضي - Default Warehouse
+ - DFLT_REP_SMPLE (NUMBER) [Nullable]
+   Description: نموذج الطباعة الإفتراضي - Default Printing Form
+ - SI_CMPNS (NUMBER) [Nullable, Default: 0]
+   Description: فاتورة تعويضية - Compensatory Bills
+ - NO_MNL_INVC (NUMBER) [Nullable, Default: 0]
+   Description: فاتورة اسمية - nominal Invoice
+ - NO_RETURN (NUMBER) [Nullable, Default: 0]
+   Description: غير قابل للإرجاع - Non returnable
+ - NOT_QTY_CMPNS (NUMBER) [Nullable, Default: 0]
+   Description: بدون كميات تعويضية - Without compensatory quantities
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Insertd by
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+================================================================================
+
+Table: INSTALLMENT
+Description: Customer premiums - أقساط العملاء
+Columns:
+ - DOC_TYPE (NUMBER) [Not Nullable]
+   Description: نوع المستند - Document type
+ - BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - I_NO (NUMBER) [Not Nullable] Primary Key
+   Description: الرقم - Number
+ - I_DATE (DATE) [Not Nullable]
+   Description: التاريخ - the date
+ - I_AMT (NUMBER) [Nullable]
+   Description: القيمه - Value
+ - AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Transfer price
+ - CHEQUE_NO (NUMBER) [Nullable]
+   Description: رقم الشيك - Check
+ - CHEQUE_DUE_DATE (DATE) [Nullable]
+   Description: تاريخ إستحقاق الشيك - The date of the check is due
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - C_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم العميل - Customer number
+ - A_CY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - DR_TYP (NUMBER) [Nullable, Default: 1]
+   Description: AAAAAAAAAAAA
+ - PAID_AMT (NUMBER) [Nullable, Default: 0]
+   Description: المبلغ المدفوع - The paid amount
+ - PAID_DATE (DATE) [Nullable]
+   Description: تاريخ إستحقاق السداد - Payment due date
+ - ADJ_AMT (NUMBER) [Nullable, Default: 0]
+   Description: مبلغ التسوية - Settlement
+ - REP_CODE (VARCHAR2) [Nullable]
+   Description: رقــــم المندوب - The number of the delegate
+ - REF_NO (VARCHAR2) [Nullable]
+   Description: رقم المرجع - Reference number
+ - DOC_DSC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - DR_NO (NUMBER) [Nullable]
+   Description: رقم تسوية المديونية-Debt settlement number
+ - I_PY (NUMBER) [Not Nullable, Default: 0] Primary Key
+   Description: من سنة سابقة او لا - From a previous year or not
+ - MOVE_CY (NUMBER) [Nullable, Default: 0 ]
+   Description: This column is not used
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - RCRD_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم السجل - Register number
+ - DOC_SEQUENCE (NUMBER) [Nullable]
+   Description: الحركة - Movement
+ - PRV_YR_AMT (NUMBER) [Nullable]
+   Description: المبالغ المنقولة من السنه السابقة-Amounts transferred from the previous year
+ - DIR_CODE1 (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - DIR_CODE2 (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - DIR_CODE3 (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - DIR_CODE4 (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - DIR_CODE5 (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable, Default: 0]
+   Description: مرات الطباعة - Print times
+Foreign Keys:
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+================================================================================
+
+Table: OTHER_CHARGES
+Description: Sales Charges Movement Master - حركة أعباء المبيعات رئيسي
+Columns:
+ - BILL_TYPE (NUMBER) [Not Nullable]
+   Description: نوع المستند - Document type
+ - BILL_DOC_TYPE (NUMBER) [Not Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - BILL_NO (NUMBER) [Not Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - SC_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم العبء - The burden number
+ - A_CODE (VARCHAR2) [Not Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - A_CY (VARCHAR2) [Not Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Not Nullable]
+   Description: سعر التحويل - Transfer price
+ - PER (NUMBER) [Nullable]
+   Description: النسبة - Ratio
+ - AMT (NUMBER) [Nullable]
+   Description: القيمه - Value
+ - SC_BASE_AMT (NUMBER) [Nullable]
+   Description: This column is not used
+ - INV_ITEM (NUMBER) [Nullable, Default: 0]
+   Description: العبء على مستوى الفاتورة - الصنف
+ - RCRD_NO (NUMBER) [Nullable]
+   Description: رقم السجل - Register number
+ - BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - VAT_AMT (NUMBER) [Nullable]
+   Description: الضريبة - Tax
+ - VAT_PER (NUMBER) [Nullable]
+   Description: نسبة الضريبة-tax percentage
+ - SC_AMT (NUMBER) [Nullable]
+   Description: المبلغ بعملة العبئ - Amount in Charges Curr.
+ - SC_AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل-Exchange rate
+ - SC_A_CY (VARCHAR2) [Nullable]
+   Description: عملة العبئ-Currency Charge
+ - INPT_TAX_FLG (NUMBER) [Nullable, Default: 0]
+   Description: عبئ ضريبة-Tax Charge
+ - DOC_DESC (VARCHAR2) [Nullable]
+   Description: البيان - Statement
+ - A_CODE_OTHR (VARCHAR2) [Nullable]
+   Description: حساب الطرف الاخر-The other party's account
+ - AC_CODE_DTL_OTHR (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي للطرف الاخر -Other party's analytical account
+ - AC_DTL_TYP_OTHR (NUMBER) [Nullable]
+   Description: نوع الحساب التحليلي للطرف الاخر-Other party's analytical account type
+ - INPT_EX_RSN_CODE (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - INPT_EX_RSN_TXT (VARCHAR2) [Nullable]
+   Description: This column is not used
+ - AMT_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_PER_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_AMT_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - PER_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+Foreign Keys:
+ - (SC_NO) → SALES_CHARGES(SC_NO)
+ - (A_CODE, A_CODE, A_CY, A_CY) → ACCOUNT_CURR(A_CODE, A_CY, A_CY, A_CODE)
+================================================================================
+
+Table: OTHER_CHARGES_ITEMS
+Description: Sales Charges Movement for Items Details - حركة أعباء المبيعات للاصناف تفصيلي
+Columns:
+ - BILL_TYPE (NUMBER) [Nullable]
+   Description: نوع المستند - Document type
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: النوع الفرعي للوثيقة - The sub -type of the document
+ - BILL_NO (NUMBER) [Nullable]
+   Description: رقم الفاتورة - The bill number
+ - BILL_SER (NUMBER) [Not Nullable] Primary Key
+   Description: تسلسل الفواتير - Serial invoices
+ - DOC_DATE (DATE) [Nullable]
+   Description: تاريخ الوثيقة - The date of the document
+ - SC_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم العبء - The burden number
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - A_CY (VARCHAR2) [Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Transfer price
+ - PER (NUMBER) [Nullable]
+   Description: النسبة - Ratio
+ - AMT (NUMBER) [Nullable]
+   Description: القيمه - Value
+ - W_CODE (NUMBER) [Nullable]
+   Description: رقم المخزن - Store number
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - RCRD_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم السجل - Register number
+ - SI_TYPE (NUMBER) [Nullable]
+   Description: نوع الفاتورة -Invoice Type
+ - I_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Not Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Not Nullable]
+   Description: عبوة الصنف - Variety
+ - BILL_PY (NUMBER) [Nullable, Default: 0]
+   Description: من سنة سابقة او لا - From a previous year or not
+ - EXTERNAL_POST (NUMBER) [Nullable, Default: 0]
+   Description: النظام - order
+ - TRNSFR_FLG (NUMBER) [Nullable, Default: 0]
+ - UNIT_AMT (NUMBER) [Nullable]
+   Description: العبء للوحدة - The burden of loneliness
+ - POST_CODE (VARCHAR2) [Nullable]
+   Description: كود ترحيل لحسابات المخزون-Stock Accounts Transfer Code
+ - A_CODE_OTHR (VARCHAR2) [Nullable]
+   Description: حساب الطرف الاخر-The other party's account
+ - AC_CODE_DTL_OTHR (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي للطرف الاخر -Other party's analytical account
+ - AC_DTL_TYP_OTHR (NUMBER) [Nullable]
+   Description: نوع الحساب التحليلي للطرف الاخر-Other party's analytical account type
+ - PER_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - AMT_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_PER_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - VAT_AMT_AC (NUMBER) [Nullable]
+   Description: This column is not used
+ - CMP_NO (NUMBER) [Nullable]
+   Description: رقم الشركة - Company number
+ - BRN_NO (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BRN_YEAR (NUMBER) [Nullable]
+   Description: السنة - Sunnah
+ - BRN_USR (NUMBER) [Nullable]
+   Description: رقم النشاط - Activity number
+Foreign Keys:
+ - (A_CODE, A_CODE, A_CY, A_CY) → ACCOUNT_CURR(A_CODE, A_CY, A_CODE, A_CY)
+ - (I_CODE, I_CODE, ITM_UNT, ITM_UNT) → IAS_ITM_DTL(I_CODE, ITM_UNT, I_CODE, ITM_UNT)
+ - (SC_NO) → SALES_CHARGES(SC_NO)
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+================================================================================
+
+Table: SALES_CHARGES
+Description: Sales Charge Coding - Master - ترميز أعباء المبيعات -رئيسي
+Columns:
+ - SC_NO (NUMBER) [Not Nullable] Primary Key
+   Description: رقم العبء - The burden number
+ - SC_NAME (VARCHAR2) [Nullable]
+   Description: اسم العبء - The name of the burden
+ - A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - A_CY (VARCHAR2) [Nullable]
+   Description: العملة - Currency
+ - AC_RATE (NUMBER) [Nullable]
+   Description: سعر التحويل - Transfer price
+ - AMT_TYPE (NUMBER) [Nullable]
+   Description: نوع العبء - The type of burden
+ - SC_TYPE (NUMBER) [Nullable]
+   Description: تصنيف العبء - Classification of burden
+ - AMT (NUMBER) [Nullable]
+   Description: القيمه - Value
+ - FILL_AUTO (NUMBER) [Nullable]
+   Description: إنزال العبء آلياً - The burden is automatically removed
+ - CALC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الاحتساب - How to calculate
+ - INV_ITEM (NUMBER) [Nullable, Default: 0]
+   Description: نوع التأثير - The type of effect
+ - ALLOW_RETURN (NUMBER) [Nullable]
+   Description: يتم إرجاعه في المردود - It is returned in the returns
+ - SC_QTY_TYPE (NUMBER) [Nullable]
+   Description: طريقة إحتساب العبء - How to calculate the burden
+ - POSTED_TO_SALES (NUMBER) [Nullable, Default: 0]
+   Description: تُرحل الى الإيرادات - Remove to revenue
+ - SC_RET_WITHOUT_BILLNO (NUMBER) [Nullable, Default: 0]
+   Description: إرجاع العبء في المردودات بدون تحديد رقم الفاتورة - Return the burden in the returns without specifying the bill number
+ - ADD_TO_BILL_DISC (NUMBER) [Nullable, Default: 0]
+   Description: This column is not used
+ - BILL_DOC_TYPE (NUMBER) [Nullable]
+   Description: طريقة الدفع - payment method
+ - VAT_PER (NUMBER) [Nullable]
+   Description: نسبة الضريبة-Tax Percent
+ - USE_VAT (NUMBER) [Nullable, Default: 1]
+   Description: عليه ضريبة - On a tax
+ - AMT_TYP_VAL (NUMBER) [Nullable, Default: 2]
+   Description: نوع القيمة - Value type
+ - SC_POST_WITH_ACY (NUMBER) [Nullable, Default: 0]
+   Description: ترحيل المبلغ بعملة العبء - Replace the amount in the burden currency
+ - SC_ADD_FRC_INVOICE (NUMBER) [Nullable, Default: 0]
+   Description: إضافة الكسور الى العبء اليا في الفاتورة - Add fractures to the burden on the bill
+ - SC_COMM_FLG (NUMBER) [Nullable, Default: 0]
+   Description: عمولة - commission
+ - SC_CST_TYPE (NUMBER) [Nullable]
+   Description: نوع الأعباء حسب العميل - The type of burdens according to the customer
+ - SC_WCODE_TYPE (NUMBER) [Nullable]
+   Description: نوع الاعباء حسب المخزن - Type of burdens according to the store
+ - SC_SI_TYPE (NUMBER) [Nullable]
+   Description: نوع الاعباء حسب نوع الفاتورة - Type of burden according to the type of bill
+ - USE_SC_IN_SHO_SYS_FLG (NUMBER) [Nullable, Default: 0]
+   Description: يستخدم في نظام التجارة الألكترونية - It is used in the electronic commerce system
+ - SYNC_FLG (NUMBER) [Nullable, Default: 0]
+   Description: مزامنة البيانات - Synchronize Data
+ - TAX_TYP_CODE (VARCHAR2) [Nullable]
+   Description: رمز نوع الضريبة-Tax type code .
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - DIFF_CMPNS_QTY_SR (NUMBER) [Nullable, Default: 0]
+   Description: خاص بفوارق مردود الكميات التعويضية - For differences in compensatory amounts of compensatory quantities
+ - CLC_VAT_OTHR_TYP (NUMBER) [Nullable, Default: 1]
+   Description: نوع مبلغ العبئ - Charge Amount Type
+ - A_CODE_OTHR (VARCHAR2) [Nullable]
+   Description: حساب الطرف الاخر-The other party's account
+ - AC_CODE_DTL_OTHR (VARCHAR2) [Nullable]
+   Description:  الحساب التحليلي للطرف الاخر -Other party's analytical account
+ - AC_DTL_TYP_OTHR (NUMBER) [Nullable]
+   Description:  نوع الحساب التحليلي للطرف الاخر-Other party's analytical account type
+ - ALLW_MOD_A_CODE_OTHR (NUMBER) [Nullable]
+   Description: السماح بتعديل حساب الطرف الاخر-Allow modification of the other party's account
+ - OTHR_ACCNT_CST_ACCNT_FLG (NUMBER) [Nullable, Default: 0]
+   Description: حساب الطرف الاخر هو العميل-The other party's account is the customer
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - RSN_CODE (VARCHAR2) [Nullable]
+   Description: سبب العبء - The cause of the burden
+ - RSN_TXT (VARCHAR2) [Nullable]
+   Description: سبب العبء - The cause of the burden
+ - ORDR_VAT (NUMBER) [Nullable]
+   Description: ترتيب الضريبة-Tax arrangement
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (A_CODE) → ACCOUNT(A_CODE)
+================================================================================
+
+Table: SALES_CHARGES_ITEMS
+Description: Sales Charge Coding - Details - ترميز أعباء المبيعات -تفصيلي
+Columns:
+ - SC_NO (NUMBER) [Nullable]
+   Description: رقم العبء - The burden number
+ - C_CLASS (NUMBER) [Nullable]
+   Description: نوع العميل - Customer
+ - C_CODE (VARCHAR2) [Nullable]
+   Description: رقم العميل - Customer number
+ - I_CODE (VARCHAR2) [Nullable]
+   Description: رقم الصنف - Category number
+ - ITM_UNT (VARCHAR2) [Nullable]
+   Description: الوحدة - Unity
+ - P_SIZE (NUMBER) [Nullable]
+   Description: عبوة الصنف - Variety
+ - G_CODE (VARCHAR2) [Nullable]
+   Description: رقم المجموعة - Group number
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+ - AC_DTL_TYP (NUMBER) [Nullable]
+ - AMT (NUMBER) [Nullable]
+   Description: المبلغ - Amount
+ - PER_AMT (NUMBER) [Nullable]
+   Description: النسبة - Ratio
+ - INV_ITM (NUMBER) [Nullable]
+   Description: نوع العبئ-Sales Charge Type
+ - W_CODE (NUMBER) [Nullable]
+   Description: المخزن - Warehouse
+ - WHG_CODE (NUMBER) [Nullable]
+   Description: المجموعة المخزنية - The Makhzen Group
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - C_GROUP_CODE (NUMBER) [Nullable]
+   Description: المجموعة - Group
+ - C_DEGREE (NUMBER) [Nullable]
+   Description: رقم الدرجة - Class number
+ - C_CLASS_TYP (NUMBER) [Nullable]
+   Description: التصنيف - Classification
+ - SI_TYPE (NUMBER) [Nullable]
+   Description: نوع الفاتورة - The type of bill
+ - F_DATE (DATE) [Nullable]
+   Description: من تاريخ - From the date
+ - T_DATE (DATE) [Nullable]
+   Description: إلى تاريخ - To a date
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Register entrance
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المدخل - The entrance device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (I_CODE, I_CODE, ITM_UNT, ITM_UNT) → IAS_ITM_DTL(ITM_UNT, I_CODE, I_CODE, ITM_UNT)
+ - (SC_NO) → SALES_CHARGES(SC_NO)
+ - (G_CODE) → GROUP_DETAILS(G_CODE)
+================================================================================
+
+Table: SALES_MAN
+Description: Sales Representative Data - بيانات مندوبي المبيعات
+Columns:
+ - REPRS_CODE (VARCHAR2) [Not Nullable] Primary Key
+   Description: رقم مندوب المبيعات - Sales Rep. No.
+ - REPRS_A_NAME (VARCHAR2) [Not Nullable]
+   Description: اسم المندوب - Rep. Person Name
+ - REPRS_E_NAME (VARCHAR2) [Nullable]
+   Description: الاسم الأجنبي - Foreign Name
+ - R_A_CODE (VARCHAR2) [Nullable]
+   Description: رقم الحساب - Account Code
+ - SMAN_TYPE (NUMBER) [Nullable]
+   Description: نوع المندوب - Sales Rep Type
+ - CNTRY_NO (NUMBER) [Nullable]
+   Description: رقم الدولة - State number
+ - CITY_NO (NUMBER) [Nullable]
+   Description: رقم المدينة - City number
+ - R_CODE (NUMBER) [Nullable]
+   Description: رقم المنطقه - Region number
+ - R_PHONE (VARCHAR2) [Nullable]
+   Description: رقم التلفون - Telephone No
+ - INACTIVE (NUMBER) [Nullable, Default: 0]
+   Description: موقف - position
+ - R_BOX (VARCHAR2) [Nullable]
+   Description: رقم صندوق البريد - P.O. Box
+ - R_FAX (VARCHAR2) [Nullable]
+   Description: رقم الفاكس - Fax No
+ - R_NOTE (VARCHAR2) [Nullable]
+   Description: ملاحظات - Remarks
+ - R_MOBILE (VARCHAR2) [Nullable]
+   Description: رقم الجوال - Mobile No.
+ - R_ADDRESS (VARCHAR2) [Nullable]
+   Description: عنوانه - Address
+ - COMM_PER (NUMBER) [Nullable]
+   Description: نسبة العمولة - Commission %
+ - G_NAME (VARCHAR2) [Nullable]
+   Description: اسم الضامن - Guarantor Name
+ - G_ADDRESS (VARCHAR2) [Nullable]
+   Description: عنوان الضامن - Guarantor Address
+ - G_START_DATE (DATE) [Nullable]
+   Description: تاريخ بدء الضمانة - Guarantee Start Date
+ - G_EXPIRE_DATE (DATE) [Nullable]
+   Description: تاريخ إنتهاء الضمانة - Guarantee End Date
+ - G_TYPE (NUMBER) [Nullable]
+   Description: نوع الضمانة - Guarantee Type
+ - G_AMT (NUMBER) [Nullable]
+   Description: قيمة الضمانة - Guarantee Amount
+ - G_STATUS (NUMBER) [Nullable]
+   Description: حالة الضمانة - Guarantee Status
+ - G_FIN_CENTER (VARCHAR2) [Nullable]
+   Description: المركز المالي - Financial Position
+ - G_WORK (VARCHAR2) [Nullable]
+   Description: طبيعة نشاط الضامن - Guarantor Activity Nature
+ - G_DOC_DATE (DATE) [Nullable]
+   Description: تاريخ توثيق الضمان - Guarantee Reg. Date
+ - G_REG_COURT (VARCHAR2) [Nullable]
+   Description: رقم التسجيل في المحكمة - Record No. in Court
+ - G_REG_TRADA (VARCHAR2) [Nullable]
+   Description: رقم التسجيل بالغرفة التجارية - Reg. No. at CofC
+ - G_FILE_TRADA (VARCHAR2) [Nullable]
+   Description: رقم السجل التجاري للضامن - Guarantor CR No.
+ - G_TEL (VARCHAR2) [Nullable]
+   Description: رقم تلفون الضامن - Guarantor Tel. No.
+ - G_FAX (VARCHAR2) [Nullable]
+   Description: رقم فاكس الضامن - Guarantor Fax No.
+ - REP_CODE_PARENT (VARCHAR2) [Nullable]
+   Description: رقم المندوب الرئيسي - Main Sales Rep Code'
+ - ROUTE_NO (NUMBER) [Nullable]
+   Description: رقم خط السير - Traffic line number
+ - SORTINROUTE (NUMBER) [Nullable]
+   Description: ترتيب خط السير - Route Order
+ - CASH_NO (NUMBER) [Nullable]
+   Description: الصندوق/البنك - Fund/bank
+ - W_CODE (NUMBER) [Nullable]
+   Description: رقم المخزن - Store number
+ - CC_CODE (VARCHAR2) [Nullable]
+   Description: مركز التكلفة - Cost center
+ - PJ_NO (VARCHAR2) [Nullable]
+   Description: رقم المشروع - Project number
+ - ACTV_NO (VARCHAR2) [Nullable]
+   Description: رقم النشاط - Activity number
+ - BANK_NO (NUMBER) [Nullable]
+   Description: رقم البنك - Bank No
+ - GRP_CODE (VARCHAR2) [Nullable]
+   Description: مجموعة التوزيع - Distribution Group
+ - SMAN_PASS (VARCHAR2) [Nullable]
+   Description: الباسورد-Password
+ - USE_INV_DTS (NUMBER) [Nullable, Default: 0 ]
+   Description: This column is not used
+ - ALLW_MOD_CST_LOCTN (NUMBER) [Nullable, Default: 0]
+   Description: السماح بتعديل موقع العميل - Allow Modifying Customer Location
+ - NOT_ALLW_ENTR_RTRN_SAL (NUMBER) [Nullable, Default: 0]
+   Description: عدم السماح بالتعامل مع مردود المبيعات - Sales Return Are Not Allowed
+ - CONN_SP_SMAN (NUMBER) [Nullable, Default: 0]
+   Description: مرتبط بمندوب علمي  - Linked to Scientific Rep.
+ - NO_SAL (NUMBER) [Nullable]
+   Description: عدم إمكانية البيع - Can''t Sell
+ - NO_COLCT (NUMBER) [Nullable]
+   Description: عدم إمكانية التحصيل - Can''t Collect
+ - CR_LMT (NUMBER) [Nullable]
+   Description: حد الدين بالعملة المحلية - Credit Limit in Local Currency
+ - AC_CODE_DTL (VARCHAR2) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - AC_DTL_TYP (NUMBER) [Nullable]
+   Description: الحساب التحليلي - Analytical account
+ - CHEQ_TYPE (NUMBER) [Nullable, Default: 0 ]
+   Description: طريقة ترحيل الشيكات - Checks Posting Method
+ - POST_CHEQ_TYPE_REC (NUMBER) [Nullable]
+   Description: طريقة ترحيل الشيكات-How to transfer checks
+ - CONN_BRN_NO (NUMBER) [Nullable]
+   Description: رقم الفرع - Branch No
+ - WRK_WITHOUT_PLN (NUMBER) [Nullable, Default: 0]
+   Description: العمل خارج الخطة - Work Beyond Plan
+ - VST_OPN_TYP (NUMBER) [Nullable, Default: 1]
+   Description: طريقة فتح الزيارة - Opening Visit Method
+ - VST_OPN_DSTNC (NUMBER) [Nullable, Default: 100]
+   Description: مسافة فتح الزيارة لموقع العميل بالمتر - Open Visit Distance to Customers Location
+ - REGN_RNG (NUMBER) [Nullable]
+   Description: نطاق المنطقة بالمتر - Region Range In Meters
+ - IMPLMNT_PLAN_SRTROUTE_MNDTRY (NUMBER) [Nullable, Default: 0]
+   Description: تنفيذ الخطه بحسب ترتيب خط السير-Implement the plan according to the route order
+ - ALLW_CNCL_DOC (NUMBER) [Nullable, Default: 0]
+   Description: السماح بإلغاء الوثائق - Allow Docs Cancelation
+ - ALLW_RTRN_ALL_ITM_FLG (NUMBER) [Nullable, Default: 0]
+   Description: السماح بالتعامل مع كل الاصناف في المردود - Allow Dealing with All Items in Returns
+ - APP_ROUT_MAX_LMT_EXPCTN (NUMBER) [Nullable]
+   Description: الحد الاعلى للتجاوز في خط السير - Max. Exceeding Limit in Route
+ - CLC_TYP_NO_TAX (NUMBER) [Nullable]
+   Description: طريقة إحتساب الضريبة - Method Of Tax.Calc
+ - ALLW_CHNG_CST_GPS (NUMBER) [Nullable]
+   Description: السماح بتعديل موقع العميل الجغرافي-Allow modification of customer geographic location
+ - APP_CSTMR_PLN_INSRT_MAX_LMT (NUMBER) [Nullable]
+   Description: الحد الاعلى لادراج عميل في الخطة - Max. Limit for Including Customer in Plan
+ - AUTO_MOBILE_POSTING (NUMBER) [Nullable, Default: 0]
+   Description: الترحيل الالي من تطبيق التوزيع-Automated transfer from the distribution application
+ - SHW_QTY_IN_ALL_WRHS (NUMBER) [Nullable, Default: 0]
+   Description: اظهار الكميات بكل المخازن-Show quantities in all stores
+ - ALLW_FILE_SHARE (NUMBER) [Nullable, Default: 0]
+   Description: السماح بمشاركة الملفات في التطبيق - Allow File Sharing In App
+ - APP_VER_CODE (VARCHAR2) [Nullable]
+   Description: اصدار التطبيق-Application version
+ - SAVE_VCHR_ONLINE (NUMBER) [Nullable, Default: 0]
+   Description: حفظ السندات اونلاين-Save bonds online
+ - SYNC_METHOD (NUMBER) [Nullable, Default: 1]
+   Description: آلية حفظ الوثيقة في التطبيق - Method To Save The Document In The App
+ - LAST_UP_DATE_DTS (DATE) [Nullable]
+   Description: 'تاريخ أخر تحديث للتطبيق - Last Update Date to App
+ - LAST_POST_DATE_DTS (DATE) [Nullable]
+   Description: تاريخ أخر ترحيل من التطبيق - Last Post Date From App
+ - CASH_AMT_LMT (NUMBER) [Nullable]
+   Description: حد الصندوق التراكمي بالعملة المحلية - Cash Cumulative Limit in Local Currency
+ - CASH_AMT_DAILY_LMT (NUMBER) [Nullable]
+   Description: حد الصندوق اليومي بالعملة المحلية - Cash Daily Limit in Local Currency
+ - PLAN_NO (NUMBER) [Nullable]
+   Description: رقم مخطط المبيعات كميات - Quantities Sales Plan No.
+ - PLAN_SER (NUMBER) [Nullable]
+   Description: تسلسل مخطط المبيعات -sequence sales Plan 
+ - PLAN_NO_AMOUNT (NUMBER) [Nullable]
+   Description: رقم مخطط المبيعات مبالغ - Amounts Sales Plan No.
+ - PLAN_SER_AMOUNT (NUMBER) [Nullable]
+   Description: تسلسل مخطط المبيعات -sequence sales Plan 
+ - USE_CLOSE_UPDT_DAILY (NUMBER) [Nullable, Default: 0]
+   Description: استحدام الإقفال اليومي لحركة المندوب وتحديث البيانات - Use Daily Close Of The Rep.Movement And Update Data
+ - DTS_CLS_FLG (NUMBER) [Nullable, Default: 0]
+   Description: اغلاق حركة المندوب-Close Sales Man movement
+ - DTS_CLS_U_ID (NUMBER) [Nullable]
+   Description: المستخدم المغلق-Closed user No
+ - DTS_CLS_DATE (DATE) [Nullable]
+   Description: تاريخ الاغلاق-Closing date
+ - REP_SER (NUMBER) [Nullable]
+   Description: تسلسل عمليات المندوب-Sequence of delegate operations
+ - ALLW_SO_WH_REP_CONN_BRN (NUMBER) [Nullable, Default: 0]
+   Description: السماح بعمل طلب عميل من المخازن المرتبطة بفرع المندوب - Allow Customer Order From The Warehouses Connected To Sales Rep Branch
+ - USE_RET_WCODE (NUMBER) [Nullable, Default: 0]
+   Description: إستخدام مخزن خاص بالمرتجعات للمندوبين - Use Warehouse for Sales Rep Returns
+ - PRINT_BY_ULT_APP (NUMBER) [Nullable, Default: 0]
+   Description: الطباعة باستخدام تطبيق التميت - Print By use Ultimate app
+ - ALLW_INPUT_OUT_TRNS_REQ (NUMBER) [Nullable, Default: 0]
+   Description: السماح بادخال طلبات الصرف والتحويل - Allow Input W.H Out/Transfer Requests
+ - OPN_CLS_VST_AUTO (NUMBER) [Nullable, Default: 0]
+   Description: فتح واغلاق الزيارة الياً-Open and close the visit automatically
+ - ALLW_RTRN_BILL_OTHER_SMAN (NUMBER) [Nullable, Default: 0]
+   Description: السماح بإرجاع فواتير مندوب اخر حسب الصلاحيات - Allow Return Invoices for other Rep. By Privileges
+ - ALLW_UPDT_VCHR_APP (NUMBER) [Nullable, Default: 0]
+   Description: السماح بتعديل سند القبض في التطبيق-Allow modification of the receipt voucher in the application
+ - NOT_ALLW_UPDT_PARTIAL_DATA (NUMBER) [Nullable, Default: 0]
+   Description: عدم السماح بالتحديث الجزئي للبيانات في التطبيق - Partial Update of Data Is Not Allowed In the app
+ - RT_W_CODE (NUMBER) [Nullable]
+   Description: مخزن المرتجع - Return Warehouse
+ - EMP_NO (NUMBER) [Nullable]
+   Description: رقم الموظف - Employee number
+ - ALLW_WHTRNS_DIRCT (NUMBER) [Nullable, Default: 0]
+   Description: السماح بعمل تحويل مخزني مباشر الي اي مخزن اخر - Allowing a Direct W.H Transfers To any other WH
+ - USE_RES_IN_SO_APP (NUMBER) [Nullable, Default: 0]
+   Description: استخدام الحجز الالي لطبات العملاء في التطبيق - Use Auto Reservation In Sales Order in App
+ - SO_RES_PRD (NUMBER) [Nullable]
+   Description: مدة الحجز بالايام - Reservation Period in Days
+ - SO_W_CODE (NUMBER) [Nullable]
+   Description: مخزن طلبات العملاء - Sales Order Wh.
+ - INACTV_NONE_ADHERE_PLAN_FLG (NUMBER) [Nullable, Default: 0]
+   Description: توقيف المندوب في حالة عدم الإلتزام بالخطة - Suspend Sale Man In Case Of None Adherence To The Plan
+ - USE_RT_BILL_RQ_TYP (NUMBER) [Nullable, Default: 0 ]
+   Description: إستخدام طلب مردود مبيعات إجباري - Use Sales Return Request Is Mandatory
+ - CLS_VST_BY_GPS (NUMBER) [Nullable, Default: 0]
+   Description: إغلاق الزيارة بواسطة الجي بي اس - Close Visit by GPS
+ - SEND_GPS_PRD (NUMBER) [Nullable, Default: 3600]
+   Description: فترة إرسال الإحداثيات بالثانية - Coordinates Sending Period in seconds
+ - READ_GPS_DSTNC (NUMBER) [Nullable, Default: 100]
+   Description: مسافة قراءة إحداثيات جديدة بالمتر - Distance To Read New Coordinates  in Meters
+ - STOP_TRK (NUMBER) [Nullable, Default: 0]
+   Description: إيقاف تتبع المندوب - Stop Traking
+ - NOT_ALLW_SAL_OUT_LOCTN_GEO (NUMBER) [Nullable, Default: 0]
+   Description: عدم السماح بالبيع للعملاء خارج المواقع الجغرافية للمندوب - Not Allow Sales to Customers Outside Geographical Locations
+ - ALLW_APPROV_CSTMR_TRGT (NUMBER) [Nullable, Default: 0]
+   Description: السماح باعتماد عميل مستهدف - Allow Approving Target Customer
+ - COL_PLAN_NO (NUMBER) [Nullable]
+   Description: رقم مخطط التحصيل - Collection Plan No
+ - USE_VCHR_RCPT_RQ (NUMBER) [Nullable, Default: 0]
+   Description: استخدام طلب سند قبض في التطبيق - Use Receipt Voucher Request in App
+ - INACTIVE_DATE (DATE) [Nullable]
+   Description: تاريخ التوقيف - Date of arrest
+ - INACTIVE_RES (VARCHAR2) [Nullable]
+   Description: سبب التوقيف - The reason for the arrest
+ - INACTIVE_U_ID (NUMBER) [Nullable]
+   Description: المستخدم الموقف - User position
+ - AD_U_ID (NUMBER) [Nullable]
+   Description: مدخل السجل - Insertd by
+ - AD_DATE (DATE) [Nullable]
+   Description: تاريخ الإدخال - Date of input
+ - UP_U_ID (NUMBER) [Nullable]
+   Description: معدل السجل - Registry
+ - UP_DATE (DATE) [Nullable]
+   Description: تاريخ أخر تعديل - Last update date
+ - UP_CNT (NUMBER) [Nullable]
+   Description: مرات التعديل - Modification times
+ - PR_REP (NUMBER) [Nullable]
+   Description: مرات الطباعة - Print times
+ - AD_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: اسم الجهاز - The name of the device
+ - UP_TRMNL_NM (VARCHAR2) [Nullable]
+   Description: الجهاز المعدل - The modified device
+Foreign Keys:
+ - (EMP_NO) → S_EMP(EMP_NO)
+ - (REP_CODE_PARENT) → SALES_MAN(REPRS_CODE)
+ - (SMAN_TYPE) → IAS_SALESMAN_TYPES(SMAN_TYPE)
+ - (W_CODE) → WAREHOUSE_DETAILS(W_CODE)
+ - (ACTV_NO) → IAS_ACTVTY(ACTV_NO)
+ - (CC_CODE) → COST_CENTERS(CC_CODE)
+ - (PJ_NO) → IAS_PROJECTS(PJ_NO)
+ - (R_A_CODE) → ACCOUNT(A_CODE)
+================================================================================
